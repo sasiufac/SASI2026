@@ -109,8 +109,7 @@ export const partners = [
     "items": [
       {
         "name": "CASI",
-        "logo": "./assets/partners/logo-casi-enhanced-no-bg.png",
-        "theme": "dark"
+        "logo": "./assets/partners/logo-casi-enhanced-no-bg.png"
       },
       {
         "name": "LASI",
@@ -140,8 +139,7 @@ export const partners = [
     "items": [
       {
         "name": "Sem Fronteiras",
-        "logo": "./assets/partners/logo_sem_fronteiras.png",
-        "theme": "dark"
+        "logo": "./assets/partners/logo_sem_fronteiras.png"
       },
       {
         "name": "AWS",
