@@ -21,3 +21,48 @@
 .header .header-logo{display:inline-flex;align-items:center;flex-shrink:0;line-height:1}
 .header .header-logo img{display:block;width:auto;height:52px;max-width:190px;object-fit:contain}
 @media(max-width:700px){.header .header-logo img{height:43px;max-width:155px}}
+
+/* Logotipos oficiais dos parceiros — preserva proporções e evita cortes. */
+.partner-logos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 210px), 1fr));
+  gap: 16px;
+}
+.partner-card {
+  min-height: 142px;
+  border-radius: 14px;
+  padding: 20px;
+  background: #fff;
+  border: 1px solid #dfe3ea;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.partner-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 104px;
+  object-fit: contain;
+}
+.partner-logo[hidden], .partner-fallback[hidden] { display: none; }
+.partner-card--dark {
+  background: #061339;
+  border-color: #ffffff3d;
+}
+.partner-fallback {
+  color: #000431;
+  font: 700 18px "Space Grotesk", sans-serif;
+  text-align: center;
+}
+.partner-card--dark .partner-fallback { color: #fff; }
+.partner-tier:first-child .partner-card { min-height: 160px; }
+@media (max-width: 560px) {
+  .partner-logos { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+  .partner-card { min-height: 116px; padding: 12px; }
+  .partner-logo { max-height: 85px; }
+}
+@media (max-width: 370px) {
+  .partner-logos { grid-template-columns: 1fr; }
+}

@@ -15,7 +15,26 @@ showDay("23");
 
 document.querySelector("#workshop-grid").innerHTML=workshops.map(item=>'<article class="workshop"><div class="workshop-icon" aria-hidden="true">'+esc(item.icon)+'</div><p class="workshop-date">'+esc(item.day)+' · '+esc(item.time)+'</p><h3>'+esc(item.title)+'</h3><p>'+esc(item.description)+'</p>'+(item.speaker?'<div class="workshop-speaker">'+esc(item.speaker)+'</div>':'')+(item.place?'<div class="workshop-place">⌖ '+esc(item.place)+'</div>':'')+'</article>').join("");
 
-document.querySelector("#partner-groups").innerHTML=partners.map(group=>'<section class="partner-tier"><h3><span class="tier-diamond" aria-hidden="true">✦</span> PARCEIRO '+esc(group.tier.toUpperCase())+'</h3><div class="partner-logos">'+group.names.map(name=>'<div class="partner-name">'+esc(name)+'</div>').join("")+'</div></section>').join("");
+const partnerContainer = document.querySelector("#partner-groups");
+partnerContainer.innerHTML = partners.map(group =>
+  '<section class="partner-tier"><h3><span class="tier-diamond" aria-hidden="true">✦</span> PARCEIRO ' + esc(group.tier.toUpperCase()) + '</h3>' +
+  '<div class="partner-logos">' + group.items.map(item =>
+    '<div class="partner-card' + (item.theme === "dark" ? ' partner-card--dark' : '') + '">' +
+    '<img class="partner-logo" src="' + esc(item.logo) + '" alt="Logo de ' + esc(item.name) + '" loading="lazy" decoding="async">' +
+    '<span class="partner-fallback" hidden>' + esc(item.name) + '</span>' +
+    '</div>'
+  ).join("") + '</div></section>'
+).join("");
+
+// Mantém a identificação da organização mesmo caso um arquivo de imagem falhe.
+partnerContainer.querySelectorAll(".partner-logo").forEach(img => {
+  const displayFallback = () => {
+    img.hidden = true;
+    img.nextElementSibling.hidden = false;
+  };
+  img.addEventListener("error", displayFallback, { once: true });
+  if (img.complete && img.naturalWidth === 0) displayFallback();
+});
 
 const menu=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav-links");
 menu.addEventListener("click",()=>{const opened=menu.getAttribute("aria-expanded")==="true";menu.setAttribute("aria-expanded",String(!opened));nav.classList.toggle("open",!opened);});

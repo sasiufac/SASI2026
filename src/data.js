@@ -95,9 +95,67 @@ export const workshops = [
 
 // Patrocínios seguem a classificação institucional já utilizada no site.
 export const partners = [
-  { tier: "Diamante", names: ["UFAC"] },
-  { tier: "Platinum", names: ["CASI", "LASI", "AWS Builder Group", "IEEE"] },
-  { tier: "Esmeralda", names: ["Motorola"] },
-  { tier: "Ouro", names: ["Sem Fronteiras", "AWS"] },
-  { tier: "Bronze", names: ["Dona Cachos"] }
+  {
+    "tier": "Diamante",
+    "items": [
+      {
+        "name": "UFAC",
+        "logo": "./assets/partners/Logo-ufac.png"
+      }
+    ]
+  },
+  {
+    "tier": "Platinum",
+    "items": [
+      {
+        "name": "CASI",
+        "logo": "./assets/partners/logo-casi-enhanced-no-bg.png",
+        "theme": "dark"
+      },
+      {
+        "name": "LASI",
+        "logo": "./assets/partners/logo_LASI.png"
+      },
+      {
+        "name": "AWS Builder Group",
+        "logo": "./assets/partners/AWS-Student-Builder-Group_RGB_Program-Icon_Blue.png"
+      },
+      {
+        "name": "IEEE",
+        "logo": "./assets/partners/LOGO_IEEE.png"
+      }
+    ]
+  },
+  {
+    "tier": "Esmeralda",
+    "items": [
+      {
+        "name": "Motorola",
+        "logo": "./assets/partners/Logo-Motorola-Grande.png"
+      }
+    ]
+  },
+  {
+    "tier": "Ouro",
+    "items": [
+      {
+        "name": "Sem Fronteiras",
+        "logo": "./assets/partners/logo_sem_fronteiras.png",
+        "theme": "dark"
+      },
+      {
+        "name": "AWS",
+        "logo": "./assets/partners/AWS_Logo.svg"
+      }
+    ]
+  },
+  {
+    "tier": "Bronze",
+    "items": [
+      {
+        "name": "Dona Cachos",
+        "logo": "./assets/partners/logo_dona_cachos.PNG"
+      }
+    ]
+  }
 ];
