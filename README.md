@@ -33,6 +33,7 @@ O arquivo `.nojekyll` impede o processamento Jekyll e mantém a publicação fie
 - `src/data.js`: programação, minicursos e parceiros.
 - `src/main.js`: interação dos filtros de programação, cards e menu móvel.
 - `assets/favicon.svg`: ícone da página.
+- `assets/logosasi.svg`: logotipo oficial SASI UFAC 2026.
 
 ## Manutenção de conteúdo
 
