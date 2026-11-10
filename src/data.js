@@ -139,7 +139,8 @@ export const partners = [
     "items": [
       {
         "name": "Sem Fronteiras",
-        "logo": "./assets/partners/logo_sem_fronteiras.png"
+        "logo": "./assets/partners/logo_sem_fronteiras.png",
+        "theme": "dark"
       },
       {
         "name": "AWS",
