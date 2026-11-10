@@ -157,3 +157,135 @@ export const partners = [
     ]
   }
 ];
+
+// Convidados identificados na aba "Detalhes" do cronograma da SASI 2026 e
+// nas pastas de materiais dos participantes. Foto opcional: use caminho relativo
+// em "photo" quando o arquivo estiver disponível em assets/guests/.
+export const guests = [
+  {
+    "name": "Laura Costa Sarkis",
+    "role": "Mesa-redonda",
+    "activity": "Conversando com quem começou essa jornada",
+    "photo": ""
+  },
+  {
+    "name": "Valmir Saraiva de Oliveira",
+    "role": "Mesa-redonda",
+    "activity": "Conversando com quem começou essa jornada",
+    "photo": ""
+  },
+  {
+    "name": "Olacir Rodrigues Castro Junior",
+    "role": "Mesa-redonda",
+    "activity": "Conversando com quem começou essa jornada",
+    "photo": ""
+  },
+  {
+    "name": "João Gabriel Santana de Sousa",
+    "role": "Mesa-redonda",
+    "activity": "Conversando com quem começou essa jornada",
+    "photo": ""
+  },
+  {
+    "name": "Manuel Menezes de Oliveira Neto",
+    "role": "Palestrante e ministrante",
+    "activity": "Computação Gráfica e IA · Introdução a Deep Learning",
+    "photo": ""
+  },
+  {
+    "name": "Dayan Freitas Alves",
+    "role": "Palestrante",
+    "activity": "Iniciativas estudantis e inovação tecnológica na UFAC",
+    "photo": ""
+  },
+  {
+    "name": "Felipe de Pádua Silva",
+    "role": "Ministrante",
+    "activity": "Introdução à Pixel Art para Jogos",
+    "photo": ""
+  },
+  {
+    "name": "Clara Serena Farias Simone",
+    "role": "Ministrante",
+    "activity": "Introdução à Pixel Art para Jogos",
+    "photo": ""
+  },
+  {
+    "name": "Sabrina Cassol",
+    "role": "Convidada",
+    "activity": "Direito na Internet",
+    "photo": ""
+  },
+  {
+    "name": "Luís Geovani de Lima Moraes",
+    "role": "Ministrante",
+    "activity": "Introdução à Godot — Crie seu primeiro jogo",
+    "photo": ""
+  },
+  {
+    "name": "Caio Gabriel Pontes de Albuquerque",
+    "role": "Ministrante",
+    "activity": "Introdução à Godot — Crie seu primeiro jogo",
+    "photo": ""
+  },
+  {
+    "name": "Lucas (HEADSCON)",
+    "role": "Ministrante",
+    "activity": "Inferência em modelos locais de inteligência artificial",
+    "photo": ""
+  },
+  {
+    "name": "Elcio Hideiti Shiguemori",
+    "role": "Palestrante",
+    "activity": "Workshop de Pesquisa do PPGCC",
+    "photo": ""
+  },
+  {
+    "name": "Amanda Lemos de Souza",
+    "role": "Ministrante",
+    "activity": "Amazon Rekognition · AWS Lambda e S3",
+    "photo": ""
+  },
+  {
+    "name": "Bruna Soares Silva",
+    "role": "Ministrante",
+    "activity": "Amazon Rekognition · AWS Lambda e S3",
+    "photo": ""
+  },
+  {
+    "name": "Maxswell Emanoell Araújo de Melo",
+    "role": "Ministrante",
+    "activity": "Amazon Rekognition · AWS Lambda e S3",
+    "photo": ""
+  },
+  {
+    "name": "Gleice Beatriz Mourão Araújo",
+    "role": "Ministrante",
+    "activity": "Saúde Digital",
+    "photo": ""
+  },
+  {
+    "name": "Isaque Costa Santarém",
+    "role": "Ministrante",
+    "activity": "Saúde Digital",
+    "photo": ""
+  },
+  {
+    "name": "Kelvin do Nascimento Moreira",
+    "role": "Ministrante",
+    "activity": "Saúde Digital",
+    "photo": ""
+  },
+  {
+    "name": "Mayara Silva de Sousa",
+    "role": "Ministrante",
+    "activity": "Saúde Digital",
+    "photo": ""
+  },
+  {
+    "name": "Mirelle Campos Góis",
+    "role": "Ministrante",
+    "activity": "Saúde Digital",
+    "photo": ""
+  }
+];

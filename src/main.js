@@ -1,4 +1,4 @@
-import {days,schedule,workshops,partners} from "./data.js";
+import {days,schedule,workshops,partners,guests} from "./data.js";
 
 const tabs=document.querySelector("#day-tabs");
 const panel=document.querySelector("#schedule-panel");
@@ -12,6 +12,27 @@ function showDay(day,focus=false){
 }
 days.forEach((day,index)=>{const button=document.createElement("button");button.type="button";button.id="day-"+day.id;button.dataset.day=day.id;button.setAttribute("role","tab");button.setAttribute("aria-controls","schedule-panel");button.innerHTML='<small>'+esc(day.weekday)+'</small><strong>'+day.id+'</strong><span>NOV</span>';button.addEventListener("click",()=>showDay(day.id));button.addEventListener("keydown",e=>{if(!["ArrowRight","ArrowLeft","Home","End"].includes(e.key))return;e.preventDefault();const idx=days.findIndex(d=>d.id===button.dataset.day);const target=e.key==="Home"?0:e.key==="End"?days.length-1:e.key==="ArrowRight"?(idx+1)%days.length:(idx-1+days.length)%days.length;showDay(days[target].id,true);});tabs.append(button);});
 showDay("23");
+
+// Cards de convidados: fotos podem ser cadastradas depois via data.js.
+const guestGrid = document.querySelector("#guests-grid");
+const initials = name => {
+  const parts = name.replace(/\\([^)]*\\)/g,"").trim().split(/\\s+/).filter(Boolean);
+  return (parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : "");
+};
+guestGrid.innerHTML = guests.map(guest =>
+  '<article class="guest-card">' +
+  '<div class="guest-avatar" aria-hidden="true">' +
+  (guest.photo ? '<img src="' + esc(guest.photo) + '" alt="" loading="lazy" decoding="async">' : '<span>' + esc(initials(guest.name).toUpperCase()) + '</span>') +
+  '</div>' +
+  '<div class="guest-details">' +
+  '<h3>' + esc(guest.name) + '</h3>' +
+  '<p class="guest-role">' + esc(guest.role) + '</p>' +
+  '<p class="guest-activity">' + esc(guest.activity) + '</p>' +
+  '</div></article>'
+).join("");
+guestGrid.querySelectorAll(".guest-avatar img").forEach(img => {
+  img.addEventListener("error", () => { img.replaceWith(document.createTextNode("")); }, { once: true });
+});
 
 document.querySelector("#workshop-grid").innerHTML=workshops.map(item=>'<article class="workshop"><div class="workshop-icon" aria-hidden="true">'+esc(item.icon)+'</div><p class="workshop-date">'+esc(item.day)+' · '+esc(item.time)+'</p><h3>'+esc(item.title)+'</h3><p>'+esc(item.description)+'</p>'+(item.speaker?'<div class="workshop-speaker">'+esc(item.speaker)+'</div>':'')+(item.place?'<div class="workshop-place">⌖ '+esc(item.place)+'</div>':'')+'</article>').join("");
 
