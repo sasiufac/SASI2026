@@ -16,7 +16,7 @@ showDay("23");
 // Cards de convidados: fotos podem ser cadastradas depois via data.js.
 const guestGrid = document.querySelector("#guests-grid");
 const initials = name => {
-  const parts = name.replace(/\\([^)]*\\)/g,"").trim().split(/\\s+/).filter(Boolean);
+  const parts = name.split("(")[0].trim().split(" ").filter(Boolean);
   return (parts[0]?.[0] || "") + (parts.length > 1 ? parts[parts.length - 1][0] : "");
 };
 guestGrid.innerHTML = guests.map(guest =>
