@@ -69,8 +69,8 @@
 /* Contorno sutil nos elementos visíveis da marca Sem Fronteiras, para fundo branco. */
 .partner-logo[src*="logo_sem_fronteiras.png"] {
   filter:
-    drop-shadow(0.5px 0 0 #111827)
-    drop-shadow(-0.5px 0 0 #111827)
-    drop-shadow(0 0.5px 0 #111827)
-    drop-shadow(0 -0.5px 0 #111827);
+    drop-shadow(0.25px 0 0 #111827)
+    drop-shadow(-0.25px 0 0 #111827)
+    drop-shadow(0 0.25px 0 #111827)
+    drop-shadow(0 -0.25px 0 #111827);
 }
