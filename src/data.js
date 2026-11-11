@@ -215,37 +215,37 @@ export const guests = [
     "name": "Laura Costa Sarkis",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": ""
+    "photo": "./assets/inviteds/Laura Costa.png"
   },
   {
     "name": "Valmir Saraiva de Oliveira",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": ""
+    "photo": "./assets/inviteds/Valmir Saraiva.jpg"
   },
   {
     "name": "Olacir Rodrigues Castro Junior",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": ""
+    "photo": "./assets/inviteds/Olacir Rodrigues.png"
   },
   {
     "name": "João Gabriel Santana de Sousa",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": ""
+    "photo": "./assets/inviteds/João Gabriel.jpg"
   },
   {
     "name": "Manuel Menezes de Oliveira Neto",
     "role": "Palestrante e ministrante",
     "activity": "Computação Gráfica e IA · Introdução a Deep Learning",
-    "photo": ""
+    "photo": "./assets/inviteds/Manuel_Menezes_CNDB.JPG"
   },
   {
     "name": "Dayan Freitas Alves",
     "role": "Palestrante",
     "activity": "Iniciativas estudantis e inovação tecnológica na UFAC",
-    "photo": ""
+    "photo": "./assets/inviteds/Dayan Freitas.jpg"
   },
   {
     "name": "Felipe de Pádua Silva",
@@ -263,7 +263,7 @@ export const guests = [
     "name": "Sabrina Cassol",
     "role": "Palestrante",
     "activity": "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital",
-    "photo": ""
+    "photo": "./assets/inviteds/Sabrina Cassol.jpg"
   },
   {
     "name": "Luís Geovani de Lima Moraes",
@@ -287,25 +287,25 @@ export const guests = [
     "name": "Elcio Hideiti Shiguemori",
     "role": "Palestrante",
     "activity": "Workshop de Pesquisa do PPGCC",
-    "photo": ""
+    "photo": "./assets/inviteds/Elcio Hideiti Shiguemori.png"
   },
   {
     "name": "Amanda Lemos de Souza",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": ""
+    "photo": "./assets/inviteds/Amanda Lemos de Souza.jpg"
   },
   {
     "name": "Bruna Soares Silva",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": ""
+    "photo": "./assets/inviteds/Bruna Soares Silva.jpg"
   },
   {
     "name": "Maxswell Emanoell Araújo de Melo",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": ""
+    "photo": "./assets/inviteds/Maxwell Emanoell Araújo.jpg"
   },
   {
     "name": "Gleice Beatriz Mourão Araújo",
@@ -341,12 +341,12 @@ export const guests = [
     "name": "Clécio Elias Silva e Silva",
     "role": "Convidado",
     "activity": "Solenidade Comemorativa de 30 Anos",
-    "photo": ""
+    "photo": "./assets/inviteds/Clécio Elias.jpeg"
   },
   {
     "name": "Guilherme Félix Cavalcante",
     "role": "Ministrante",
     "activity": "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
-    "photo": ""
+    "photo": "./assets/inviteds/Guilherme Félix Cavalcante.jpg"
   }
 ];
