@@ -32,7 +32,7 @@ export const schedule = [
 
   // Terça-feira, 24/11
   activity("24", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
-  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "", "Centro de Convivência"),
+  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricélio, Laura Costa Sarkis e Ana Beatriz Alvarez · Mediação: João Gabriel Santana de Sousa", "Centro de Convivência"),
   activity("24", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol", "Centro de Convivência"),
@@ -71,6 +71,7 @@ export const schedule = [
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("27", "11:00", "12:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "", "Centro de Convivência"),
   activity("27", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
+  activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Atividade", "", "Lab 01 PAVIC"),
   activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo", ""),
 ];
 
@@ -232,7 +233,7 @@ export const guests = [
   {
     "name": "Laura Costa Sarkis",
     "role": "Mesa-redonda",
-    "activity": "Conversando com quem começou essa jornada",
+    "activity": "Conversando com quem começou essa jornada · Parcerias Público-Privadas e Convênios Tecnológicos",
     "photo": "./assets/inviteds/Laura Costa.png",
     "photoOffset": -6,
     "photoScale": 1.22
@@ -251,8 +252,8 @@ export const guests = [
   },
   {
     "name": "João Gabriel Santana de Sousa",
-    "role": "Mesa-redonda",
-    "activity": "Conversando com quem começou essa jornada",
+    "role": "Participante da equipe e mediador",
+    "activity": "Conversando com quem começou essa jornada · Mediação da mesa de Parcerias Público-Privadas e Convênios Tecnológicos",
     "photo": "./assets/inviteds/João Gabriel.jpg"
   },
   {
@@ -372,5 +373,17 @@ export const guests = [
     "role": "Ministrante",
     "activity": "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
     "photo": "./assets/inviteds/Guilherme Félix Cavalcante.jpg"
+  },
+  {
+    "name": "Daricélio",
+    "role": "Mesa-redonda",
+    "activity": "Parcerias Público-Privadas e Convênios Tecnológicos",
+    "photo": "./assets/inviteds/Daricélio.jpg"
+  },
+  {
+    "name": "Ana Beatriz Alvarez",
+    "role": "Mesa-redonda",
+    "activity": "Parcerias Público-Privadas e Convênios Tecnológicos",
+    "photo": "./assets/inviteds/Ana Beatriz Alvarez.jpg"
   }
 ];
