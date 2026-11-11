@@ -22,7 +22,7 @@ const initials = name => {
 guestGrid.innerHTML = guests.map(guest =>
   '<article class="guest-card">' +
   '<div class="guest-avatar" aria-hidden="true">' +
-  (guest.photo ? '<img src="' + esc(guest.photo) + '" alt="" loading="lazy" decoding="async"' + (guest.photoPosition ? ' style="object-position:' + esc(guest.photoPosition) + ';"' : '') + '>' : '<span>' + esc(initials(guest.name).toUpperCase()) + '</span>') +
+  (guest.photo ? '<img src="' + esc(guest.photo) + '" alt="" loading="lazy" decoding="async"' + (Number.isFinite(guest.photoOffset) && Number.isFinite(guest.photoScale) ? ' style="transform:translateY(' + guest.photoOffset + 'px) scale(' + guest.photoScale + ');"' : '') + '>' : '<span>' + esc(initials(guest.name).toUpperCase()) + '</span>') +
   '</div>' +
   '<div class="guest-details">' +
   '<h3>' + esc(guest.name) + '</h3>' +
