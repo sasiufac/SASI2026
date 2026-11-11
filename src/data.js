@@ -32,7 +32,7 @@ export const schedule = [
 
   // Terça-feira, 24/11
   activity("24", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
-  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricélio, Laura Costa Sarkis e Ana Beatriz Alvarez · Mediação: João Gabriel Santana de Sousa", "Centro de Convivência"),
+  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricelio Moreira Soares, Laura Costa Sarkis e Ana Beatriz Alvarez Mamani · Mediação: João Gabriel Santana de Sousa", "Centro de Convivência"),
   activity("24", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol", "Centro de Convivência"),
@@ -427,15 +427,23 @@ export const guests = [
     "profileLabel": "Currículo Lattes"
   },
   {
-    "name": "Daricélio",
+    "name": "Daricelio Moreira Soares",
     "role": "Mesa-redonda",
     "activity": "Parcerias Público-Privadas e Convênios Tecnológicos",
-    "photo": "./assets/inviteds/Daricélio.jpg"
+    "photo": "./assets/inviteds/Daricélio.jpg",
+    "affiliation": "UFAC · CCET",
+    "bio": "Professor associado e doutor em Ciência da Computação pela UFF. Atua em engenharia de software, mineração de repositórios e sistemas de apoio à decisão.",
+    "profileUrl": "http://lattes.cnpq.br/7376671815596508",
+    "profileLabel": "Currículo Lattes"
   },
   {
-    "name": "Ana Beatriz Alvarez",
+    "name": "Ana Beatriz Alvarez Mamani",
     "role": "Mesa-redonda",
     "activity": "Parcerias Público-Privadas e Convênios Tecnológicos",
-    "photo": "./assets/inviteds/Ana Beatriz Alvarez.jpg"
+    "photo": "./assets/inviteds/Ana Beatriz Alvarez.jpg",
+    "affiliation": "UFAC · Engenharia Elétrica e PPGCC",
+    "bio": "Professora e doutora em Engenharia Elétrica pela Unicamp. Coordena o PAVIC-Lab e pesquisa inteligência e visão computacional.",
+    "profileUrl": "http://lattes.cnpq.br/2945180266108059",
+    "profileLabel": "Currículo Lattes"
   }
 ];
