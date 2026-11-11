@@ -37,17 +37,26 @@ guestGrid.querySelectorAll(".guest-avatar img").forEach(img => {
 document.querySelector("#workshop-grid").innerHTML=workshops.map(item=>'<article class="workshop"><div class="workshop-icon" aria-hidden="true">'+esc(item.icon)+'</div><p class="workshop-date">'+esc(item.day)+' · '+esc(item.time)+'</p><h3>'+esc(item.title)+'</h3>'+(item.description?'<p>'+esc(item.description)+'</p>':'')+(item.speaker?'<div class="workshop-speaker">'+esc(item.speaker)+'</div>':'')+(item.place?'<div class="workshop-place">⌖ '+esc(item.place)+'</div>':'')+'</article>').join("");
 
 const partnerContainer = document.querySelector("#partner-groups");
-partnerContainer.innerHTML = partners.map(group =>
+const partnerDialog = document.querySelector("#partner-dialog");
+const partnerDialogTitle = document.querySelector("#partner-dialog-title");
+const partnerDialogTier = document.querySelector("#partner-dialog-tier");
+const partnerDialogDescription = document.querySelector("#partner-dialog-description");
+const partnerDialogLink = document.querySelector("#partner-dialog-link");
+
+partnerContainer.innerHTML = partners.map((group,groupIndex) =>
   '<section class="partner-tier"><h3><span class="tier-diamond" aria-hidden="true">✦</span> PARCEIRO ' + esc(group.tier.toUpperCase()) + '</h3>' +
-  '<div class="partner-logos">' + group.items.map(item =>
-    '<div class="partner-card' + (item.theme === "dark" ? ' partner-card--dark' : '') + '">' +
-    '<img class="partner-logo" src="' + esc(item.logo) + '" alt="Logo de ' + esc(item.name) + '" loading="lazy" decoding="async">' +
+  '<div class="partner-logos">' + group.items.map((item,itemIndex) =>
+    '<button type="button" class="partner-card' + (item.theme === "dark" ? ' partner-card--dark' : '') + '" ' +
+    'data-group="' + groupIndex + '" data-item="' + itemIndex + '" ' +
+    'aria-haspopup="dialog" aria-label="Saiba mais sobre ' + esc(item.name) + '">' +
+    '<img class="partner-logo" src="' + esc(item.logo) + '" alt="" loading="lazy" decoding="async">' +
     '<span class="partner-fallback" hidden>' + esc(item.name) + '</span>' +
-    '</div>'
+    '<span class="partner-more" aria-hidden="true"><span class="partner-more-icon">ⓘ</span> Saiba mais <span>↗</span></span>' +
+    '</button>'
   ).join("") + '</div></section>'
 ).join("");
 
-// Mantém a identificação da organização mesmo caso um arquivo de imagem falhe.
+// Permite que a identidade do parceiro continue visível se o logo não carregar.
 partnerContainer.querySelectorAll(".partner-logo").forEach(img => {
   const displayFallback = () => {
     img.hidden = true;
@@ -55,6 +64,25 @@ partnerContainer.querySelectorAll(".partner-logo").forEach(img => {
   };
   img.addEventListener("error", displayFallback, { once: true });
   if (img.complete && img.naturalWidth === 0) displayFallback();
+});
+
+// O card abre uma descrição curta; a visita ao Instagram é uma ação separada.
+partnerContainer.addEventListener("click", event => {
+  const card = event.target.closest(".partner-card");
+  if (!card || !partnerContainer.contains(card)) return;
+  const group = partners[Number(card.dataset.group)];
+  const item = group?.items[Number(card.dataset.item)];
+  if (!item) return;
+  partnerDialogTier.textContent = "PARCEIRO " + group.tier.toUpperCase();
+  partnerDialogTitle.textContent = item.name;
+  partnerDialogDescription.textContent = item.description;
+  partnerDialogLink.href = item.url;
+  partnerDialogLink.setAttribute("aria-label", "Ver Instagram de " + item.name + " (abre em nova aba)");
+  partnerDialog.showModal();
+});
+document.querySelector(".partner-dialog-close").addEventListener("click", () => partnerDialog.close());
+partnerDialog.addEventListener("click", event => {
+  if (event.target === partnerDialog) partnerDialog.close();
 });
 
 const menu=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav-links");

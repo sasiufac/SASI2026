@@ -149,7 +149,9 @@ export const partners = [
     "items": [
       {
         "name": "UFAC",
-        "logo": "./assets/partners/Logo-ufac.png"
+        "logo": "./assets/partners/Logo-ufac.png",
+        "url": "https://www.instagram.com/ufac_oficial/",
+        "description": "Universidade pública federal do Acre, dedicada ao ensino, à pesquisa e à extensão."
       }
     ]
   },
@@ -158,19 +160,27 @@ export const partners = [
     "items": [
       {
         "name": "CASI",
-        "logo": "./assets/partners/logo-casi-enhanced-no-bg.png"
+        "logo": "./assets/partners/logo-casi-enhanced-no-bg.png",
+        "url": "https://www.instagram.com/casi.ufac/",
+        "description": "Centro Acadêmico de Sistemas de Informação da UFAC, espaço de representação e integração estudantil."
       },
       {
         "name": "LASI",
-        "logo": "./assets/partners/logo_LASI.png"
+        "logo": "./assets/partners/logo_LASI.png",
+        "url": "https://www.instagram.com/lasi.ufac/",
+        "description": "Liga Acadêmica de Sistemas de Informação da UFAC, dedicada à formação e ao compartilhamento de conhecimentos em tecnologia."
       },
       {
         "name": "AWS Builder Group",
-        "logo": "./assets/partners/AWS-Student-Builder-Group_RGB_Program-Icon_Blue.png"
+        "logo": "./assets/partners/AWS-Student-Builder-Group_RGB_Program-Icon_Blue.png",
+        "url": "https://www.instagram.com/awssbgufac/",
+        "description": "Comunidade liderada por estudantes da UFAC, com foco em aprendizado prático e projetos de computação em nuvem com AWS."
       },
       {
         "name": "IEEE",
-        "logo": "./assets/partners/LOGO_IEEE.png"
+        "logo": "./assets/partners/LOGO_IEEE.png",
+        "url": "https://www.instagram.com/ramo_ieee_ufac/",
+        "description": "Ramo estudantil do IEEE na UFAC, que conecta estudantes a iniciativas e comunidades de engenharia e tecnologia."
       }
     ]
   },
@@ -179,7 +189,9 @@ export const partners = [
     "items": [
       {
         "name": "Motorola",
-        "logo": "./assets/partners/Logo-Motorola-Grande.png"
+        "logo": "./assets/partners/Logo-Motorola-Grande.png",
+        "url": "https://www.instagram.com/motorolabr/",
+        "description": "Marca de tecnologia reconhecida pelo desenvolvimento de smartphones e dispositivos conectados."
       }
     ]
   },
@@ -188,11 +200,15 @@ export const partners = [
     "items": [
       {
         "name": "Sem Fronteiras",
-        "logo": "./assets/partners/logo_sem_fronteiras.png"
+        "logo": "./assets/partners/logo_sem_fronteiras.png",
+        "url": "https://www.instagram.com/semfronteirasac/",
+        "description": "Empresa de telecomunicações que oferece serviços de internet e conectividade no Acre."
       },
       {
         "name": "AWS",
-        "logo": "./assets/partners/AWS_Logo.svg"
+        "logo": "./assets/partners/AWS_Logo.svg",
+        "url": "https://www.instagram.com/amazonwebservices/",
+        "description": "Amazon Web Services: serviços de computação em nuvem para aplicações, armazenamento, dados e inteligência artificial."
       }
     ]
   },
@@ -201,7 +217,9 @@ export const partners = [
     "items": [
       {
         "name": "Dona Cachos",
-        "logo": "./assets/partners/logo_dona_cachos.PNG"
+        "logo": "./assets/partners/logo_dona_cachos.PNG",
+        "url": "https://www.instagram.com/donnacachosoficial/",
+        "description": "Espaço especializado em cuidados e valorização de cabelos crespos, cacheados e ondulados."
       }
     ]
   }

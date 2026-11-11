@@ -219,3 +219,101 @@
   .guest-card { min-height: 116px; padding: 17px; }
   .guest-avatar { width: 60px; height: 60px; flex-basis: 60px; font-size: 18px; }
 }
+
+
+/* Cards interativos e descrição dos parceiros */
+.partner-card {
+  cursor: pointer;
+  color: #000431;
+  font: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 14px;
+  width: 100%;
+  transition: transform .18s ease, box-shadow .18s ease, border-color .18s ease;
+}
+.partner-card:hover {
+  transform: translateY(-3px);
+  border-color: #00B100;
+  box-shadow: 0 7px 22px rgba(0,4,49,.18);
+}
+.partner-card:focus-visible { outline: 3px solid #FF8E17; outline-offset: 3px; }
+.partner-card .partner-logo { flex: 1 1 auto; min-height: 45px; }
+.partner-more {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+  width: 100%;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0,4,49,.12);
+  color: #075c17;
+  font: 700 13px "DM Sans",sans-serif;
+  line-height: 1.25;
+}
+.partner-more > span:last-child { margin-left: 2px; font-size: 17px; }
+.partner-more-icon { font-size: 16px; line-height: 1; }
+.partner-card--dark { color: #fff; }
+.partner-card--dark .partner-more { color: #fff; border-top-color: rgba(255,255,255,.24); }
+.partner-dialog {
+  border: 1px solid #ccd7d3;
+  border-radius: 20px;
+  padding: 0;
+  color: #000431;
+  background: #fff;
+  width: min(460px, calc(100vw - 32px));
+  max-width: none;
+  max-height: min(85vh, 660px);
+  box-shadow: 0 26px 75px rgba(0,4,49,.35);
+}
+.partner-dialog::backdrop {
+  background: rgba(0,4,49,.78);
+  backdrop-filter: blur(3px);
+}
+.partner-dialog-inner { position: relative; padding: 36px 30px 30px; }
+.partner-dialog-close {
+  position: absolute;
+  top: 13px;
+  right: 14px;
+  width: 40px;
+  height: 40px;
+  border: 0;
+  border-radius: 50%;
+  background: #eef3f1;
+  color: #000431;
+  font-size: 27px;
+  line-height: 1;
+}
+.partner-dialog-close:hover { background: #e0ebe1; }
+.partner-dialog-eyebrow {
+  padding-right: 38px;
+  margin: 0 0 14px;
+  color: #006b12;
+  font: 700 12px "Space Grotesk",sans-serif;
+  letter-spacing: .1em;
+}
+.partner-dialog h3 { font: 700 clamp(24px, 5vw, 30px)/1.2 "Space Grotesk",sans-serif; margin: 0 0 16px; }
+.partner-dialog #partner-dialog-description { margin: 0; color: #3e4863; font-size: 16px; line-height: 1.6; }
+.partner-dialog-link {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-top: 24px;
+  min-height: 48px;
+  padding: 12px 20px;
+  border-radius: 9px;
+  background: #00B100;
+  color: #001c09;
+  font-weight: 800;
+}
+.partner-dialog-link:hover { background: #00a400; }
+.partner-dialog :focus-visible { outline: 3px solid #FF8E17; outline-offset: 3px; }
+@media (max-width: 560px) {
+  .partner-card { padding: 15px 10px; gap: 10px; }
+  .partner-more { font-size: 12px; }
+  .partner-dialog-inner { padding: 34px 22px 24px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .partner-card { transition: none; }
+}
