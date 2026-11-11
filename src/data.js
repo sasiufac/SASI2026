@@ -253,7 +253,7 @@ export const guests = [
   {
     "name": "João Gabriel Santana de Sousa",
     "role": "Participante da equipe e mediador",
-    "activity": "Conversando com quem começou essa jornada · Mediação da mesa de Parcerias Público-Privadas e Convênios Tecnológicos",
+    "activity": "Conversando com quem começou essa jornada · Parcerias Público-Privadas e Convênios Tecnológicos",
     "photo": "./assets/inviteds/João Gabriel.jpg"
   },
   {
