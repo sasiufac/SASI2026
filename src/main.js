@@ -34,7 +34,7 @@ guestGrid.querySelectorAll(".guest-avatar img").forEach(img => {
   img.addEventListener("error", () => { img.replaceWith(document.createTextNode("")); }, { once: true });
 });
 
-document.querySelector("#workshop-grid").innerHTML=workshops.map(item=>'<article class="workshop"><div class="workshop-icon" aria-hidden="true">'+esc(item.icon)+'</div><p class="workshop-date">'+esc(item.day)+' · '+esc(item.time)+'</p><h3>'+esc(item.title)+'</h3><p>'+esc(item.description)+'</p>'+(item.speaker?'<div class="workshop-speaker">'+esc(item.speaker)+'</div>':'')+(item.place?'<div class="workshop-place">⌖ '+esc(item.place)+'</div>':'')+'</article>').join("");
+document.querySelector("#workshop-grid").innerHTML=workshops.map(item=>'<article class="workshop"><div class="workshop-icon" aria-hidden="true">'+esc(item.icon)+'</div><p class="workshop-date">'+esc(item.day)+' · '+esc(item.time)+'</p><h3>'+esc(item.title)+'</h3>'+(item.description?'<p>'+esc(item.description)+'</p>':'')'+(item.speaker?'<div class="workshop-speaker">'+esc(item.speaker)+'</div>':'')+(item.place?'<div class="workshop-place">⌖ '+esc(item.place)+'</div>':'')+'</article>').join("");
 
 const partnerContainer = document.querySelector("#partner-groups");
 partnerContainer.innerHTML = partners.map(group =>

@@ -1,6 +1,6 @@
 // SASI 2026 — programação publicada a partir do "Cronograma Detalhado SASI".
 // Fonte: https://docs.google.com/spreadsheets/d/12EKpO2r8yDyjEWYG7r8ClESVPbKYGsxm/edit
-// Data da consulta: 09/11/2026. Os intervalos e as atividades simultâneas são preservados.
+// Data da consulta: 10/11/2026. Os intervalos e as atividades simultâneas são preservados.
 // Anotações de escala de voluntários, lembretes de logística e linhas vazias não integram a agenda pública.
 export const days = [
   { id: "23", weekday: "SEG", name: "Segunda-feira", theme: "Institucional" },
@@ -17,79 +17,128 @@ const activity = (day, time, endTime, title, type, speaker = "", place = "Centro
 });
 
 export const schedule = [
-  // Segunda-feira, 23/11 — Institucional
-  activity("23", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("23", "08:00", "08:30", "Cerimonial / Solenidade dos 30 anos", "Institucional"),
-  activity("23", "08:30", "09:30", "Conversando com quem começou essa jornada", "Mesa-redonda"),
+  // Segunda-feira, 23/11
+  activity("23", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
+  activity("23", "08:00", "08:30", "Solenidade Comemorativa de 30 Anos", "Institucional", "", "Centro de Convivência"),
+  activity("23", "08:30", "09:30", "Conversando com quem começou essa jornada", "Mesa-redonda", "", "Centro de Convivência"),
   activity("23", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("23", "09:45", "10:45", "Computação Gráfica, Jogos Ultrarealísticos e Inteligência Artificial", "Palestra", "Manuel Menezes de Oliveira Neto"),
+  activity("23", "09:45", "10:45", "Computação Gráfica, Jogos Ultrarealísticos e Inteligência Artificial", "Palestra", "Manuel Menezes de Oliveira Neto", "Centro de Convivência"),
   activity("23", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves"),
+  activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves", "Centro de Convivência"),
   activity("23", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("23", "14:00", "18:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simone", ""),
+  activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simone", ""),
   activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning — Especial Mulheres", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 1 PAVIC"),
+  activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", ""),
 
-  // Terça-feira, 24/11 — IEEE e cultura
-  activity("24", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("24", "08:00", "09:30", "Convênios", "Atividade"),
+  // Terça-feira, 24/11
+  activity("24", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
+  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "", "Centro de Convivência"),
   activity("24", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  // A célula de 09:45 contém apenas "pessoal"; não é um título publicável.
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("24", "11:00", "12:00", "Direito na Internet", "Atividade"),
+  activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol", "Centro de Convivência"),
   activity("24", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("24", "14:00", "18:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", ""),
-  activity("24", "17:00", "17:30", "Abertura da Game Jam", "Game Jam"),
+  activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", ""),
+  activity("24", "14:00", "17:00", "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial", "Minicurso", "Lucas (HEADSCON)", ""),
 
-  // Quarta-feira, 25/11 — PPGCC
-  activity("25", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("25", "08:00", "09:30", "PPGCC", "Atividade"),
+  // Quarta-feira, 25/11
+  activity("25", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
+  activity("25", "08:00", "09:30", "Workshop de Pesquisa do PPGCC — Palestra", "Palestra", "Elcio Hideiti Shiguemori", "Centro de Convivência"),
   activity("25", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("25", "09:45", "10:45", "PPGCC", "Atividade"),
+  activity("25", "09:45", "10:45", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação", "", "Centro de Convivência"),
   activity("25", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("25", "11:00", "12:00", "PPGCC", "Atividade"),
+  activity("25", "11:00", "12:00", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação", "", "Centro de Convivência"),
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("25", "14:00", "18:00", "Minicursos e atividades práticas", "Minicursos", "", ""),
+  activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo", ""),
 
-  // Quinta-feira, 26/11 — PPGCC e empreendedorismo
-  activity("26", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("26", "08:00", "09:30", "Inovação que transforma: Da faculdade ao mercado de trabalho", "Palestra", "SEBRAE"),
+  // Quinta-feira, 26/11
+  activity("26", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
+  activity("26", "08:00", "09:30", "Inovação que transforma: Da faculdade ao mercado de trabalho", "Palestra", "SEBRAE", "Centro de Convivência"),
   activity("26", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("26", "09:45", "10:45", "Do sonho ao negócio: Seja protagonista da sua história", "Palestra", "SEBRAE"),
+  activity("26", "09:45", "10:45", "Do sonho ao negócio: Seja protagonista da sua história", "Palestra", "SEBRAE", "Centro de Convivência"),
   activity("26", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("26", "11:00", "12:00", "PPGCC", "Atividade"),
+  activity("26", "11:00", "12:00", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação", "", "Centro de Convivência"),
   activity("26", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("26", "14:00", "18:00", "Minicursos e atividades práticas", "Minicursos", "", ""),
+  activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", "Gleice Beatriz Mourão Araújo, Isaque Costa Santarém, Kelvin do Nascimento Moreira, Mayara Silva de Sousa e Mirelle Campos Góis", ""),
+  activity("26", "15:00", "", "Término SASI: Game Jam", "Game Jam", "", ""),
+  activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", ""),
 
-  // Sexta-feira, 27/11 — Mostra e apresentações
-  activity("27", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("27", "08:00", "08:30", "Despedida", "Institucional"),
-  activity("27", "08:30", "09:30", "Palestra principal", "Palestra"),
+  // Sexta-feira, 27/11
+  activity("27", "07:30", "08:00", "Credenciamento", "Institucional", "", "Centro de Convivência"),
+  activity("27", "08:00", "08:30", "Despedida", "Institucional", "", "Centro de Convivência"),
+  activity("27", "08:30", "09:30", "Palestra nacional — HEADSCON", "Palestra", "", "Centro de Convivência"),
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("27", "09:45", "10:45", "Painel acreano de jogos e encerramento da Game Jam", "Painel"),
+  activity("27", "09:45", "10:45", "Painel: Comunidade acreana de games e experiências de Game Jams", "Painel", "HEADSCON", "Centro de Convivência"),
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("27", "11:00", "12:00", "Final da Game Jam", "Game Jam"),
+  activity("27", "11:00", "12:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "", "Centro de Convivência"),
   activity("27", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("27", "14:00", "18:00", "Minicursos e atividades práticas", "Minicursos", "", ""),
+  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo", ""),
 ];
 
 export const workshops = [
   {
-    title: "Introdução à Pixel Art para Jogos",
-    day: "Segunda, 23/11", time: "14h–18h", icon: "▦",
-    speaker: "Felipe de Pádua Silva e Clara Serena Farias Simone",
-    description: "Criação visual e fundamentos da estética pixel art aplicada a jogos."
+    "title": "Introdução à Pixel Art para Jogos",
+    "day": "Segunda, 23/11",
+    "time": "14h–16h",
+    "icon": "▦",
+    "description": "Criação visual e fundamentos da estética pixel art aplicada a jogos.",
+    "speaker": "Felipe de Pádua Silva e Clara Serena Farias Simone"
   },
   {
-    title: "Uma Breve Introdução a Deep Learning — Especial Mulheres",
-    day: "Segunda, 23/11", time: "14h–16h", icon: "✳",
-    speaker: "Manuel Menezes de Oliveira Neto", place: "Lab 1 PAVIC",
-    description: "Introdução aos principais conceitos e aplicações de aprendizado profundo."
+    "title": "Uma Breve Introdução a Deep Learning — Especial Mulheres",
+    "day": "Segunda, 23/11",
+    "time": "14h–16h",
+    "icon": "✳",
+    "description": "Introdução aos principais conceitos e aplicações de aprendizado profundo.",
+    "speaker": "Manuel Menezes de Oliveira Neto",
+    "place": "Lab 1 PAVIC"
   },
   {
-    title: "Introdução à Godot — Crie seu primeiro jogo",
-    day: "Terça, 24/11", time: "14h–18h", icon: "⌘",
-    speaker: "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque",
-    description: "Primeiros passos no desenvolvimento de jogos com a engine Godot."
+    "title": "Introdução à Godot — Crie seu primeiro jogo",
+    "day": "Terça, 24/11",
+    "time": "14h–17h",
+    "icon": "⌘",
+    "description": "Primeiros passos no desenvolvimento de jogos com a engine Godot.",
+    "speaker": "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque"
+  },
+  {
+    "title": "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial",
+    "day": "Terça, 24/11",
+    "time": "14h–17h",
+    "icon": "▦",
+    "description": "",
+    "speaker": "Lucas (HEADSCON)"
+  },
+  {
+    "title": "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition",
+    "day": "Quarta, 25/11",
+    "time": "14h–16h",
+    "icon": "✳",
+    "description": "",
+    "speaker": "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo"
+  },
+  {
+    "title": "Saúde Digital",
+    "day": "Quinta, 26/11",
+    "time": "14h–18h",
+    "icon": "⌘",
+    "description": "",
+    "speaker": "Gleice Beatriz Mourão Araújo, Isaque Costa Santarém, Kelvin do Nascimento Moreira, Mayara Silva de Sousa e Mirelle Campos Góis"
+  },
+  {
+    "title": "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
+    "day": "Quinta, 26/11",
+    "time": "16h–18h",
+    "icon": "▦",
+    "description": "",
+    "speaker": "Guilherme Félix Cavalcante"
+  },
+  {
+    "title": "AWS Lambda e S3: Automação Orientada a Eventos na Prática",
+    "day": "Sexta, 27/11",
+    "time": "16h–18h",
+    "icon": "✳",
+    "description": "",
+    "speaker": "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo"
   }
 ];
 
@@ -212,8 +261,8 @@ export const guests = [
   },
   {
     "name": "Sabrina Cassol",
-    "role": "Convidada",
-    "activity": "Direito na Internet",
+    "role": "Palestrante",
+    "activity": "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital",
     "photo": ""
   },
   {
@@ -231,7 +280,7 @@ export const guests = [
   {
     "name": "Lucas (HEADSCON)",
     "role": "Ministrante",
-    "activity": "Inferência em modelos locais de inteligência artificial",
+    "activity": "Treinamento em Engenharia Artificial — Módulo 1: Inferência em Modelos Locais de Inteligência Artificial",
     "photo": ""
   },
   {
@@ -286,6 +335,18 @@ export const guests = [
     "name": "Mirelle Campos Góis",
     "role": "Ministrante",
     "activity": "Saúde Digital",
+    "photo": ""
+  },
+  {
+    "name": "Clécio Elias Silva e Silva",
+    "role": "Convidado",
+    "activity": "Solenidade Comemorativa de 30 Anos",
+    "photo": ""
+  },
+  {
+    "name": "Guilherme Félix Cavalcante",
+    "role": "Ministrante",
+    "activity": "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
     "photo": ""
   }
 ];
