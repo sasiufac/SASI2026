@@ -236,37 +236,61 @@ export const guests = [
     "activity": "Conversando com quem começou essa jornada · Parcerias Público-Privadas e Convênios Tecnológicos",
     "photo": "./assets/inviteds/Laura Costa.png",
     "photoOffset": -6,
-    "photoScale": 1.22
+    "photoScale": 1.22,
+    "affiliation": "UFAC · Sistemas de Informação e PPGCC",
+    "bio": "Doutora em Ciência da Computação pela UFF. Pesquisa engenharia de requisitos, metodologias ativas e educação em computação.",
+    "profileUrl": "http://lattes.cnpq.br/6846153302568344",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Valmir Saraiva de Oliveira",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": "./assets/inviteds/Valmir Saraiva.jpg"
+    "photo": "./assets/inviteds/Valmir Saraiva.jpg",
+    "affiliation": "UFAC · Trajetória docente",
+    "bio": "Mestre em Ciências da Computação pela UFSC, com longa atuação no ensino universitário e em sistemas de computação.",
+    "profileUrl": "http://lattes.cnpq.br/1618079243544282",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Olacir Rodrigues Castro Junior",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": "./assets/inviteds/Olacir Rodrigues.png"
+    "photo": "./assets/inviteds/Olacir Rodrigues.png",
+    "affiliation": "UFAC · Professor",
+    "bio": "Doutor em Ciência da Computação pela UFPR. Atua em inteligência computacional e otimização.",
+    "profileUrl": "http://lattes.cnpq.br/1893693615984125",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "João Gabriel Santana de Sousa",
     "role": "Participante da equipe e mediador",
     "activity": "Conversando com quem começou essa jornada · Parcerias Público-Privadas e Convênios Tecnológicos",
-    "photo": "./assets/inviteds/João Gabriel.jpg"
+    "photo": "./assets/inviteds/João Gabriel.jpg",
+    "affiliation": "UFAC · Sistemas de Informação",
+    "bio": "Graduando em Sistemas de Informação e participante de pesquisa em visão computacional e aprendizado profundo para detecção de sonolência.",
+    "profileUrl": "http://lattes.cnpq.br/4076560803482553",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Manuel Menezes de Oliveira Neto",
     "role": "Palestrante e ministrante",
     "activity": "Computação Gráfica e IA · Introdução a Deep Learning",
-    "photo": "./assets/inviteds/Manuel_Menezes_CNDB.JPG"
+    "photo": "./assets/inviteds/Manuel_Menezes_CNDB.JPG",
+    "affiliation": "UFRGS · Instituto de Informática",
+    "bio": "Professor titular e doutor pela University of North Carolina at Chapel Hill. Pesquisa computação gráfica, processamento de imagens e inteligência artificial.",
+    "profileUrl": "http://www.inf.ufrgs.br/~oliveira",
+    "profileLabel": "Página acadêmica"
   },
   {
     "name": "Dayan Freitas Alves",
     "role": "Palestrante",
     "activity": "Iniciativas estudantis e inovação tecnológica na UFAC",
-    "photo": "./assets/inviteds/Dayan Freitas.jpg"
+    "photo": "./assets/inviteds/Dayan Freitas.jpg",
+    "affiliation": "UFAC · Sistemas de Informação",
+    "bio": "Atua com programação, análise de dados e projetos colaborativos, com interesse em inteligência artificial e desenvolvimento de software.",
+    "profileUrl": "http://lattes.cnpq.br/3295624815461329",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Felipe de Pádua Silva",
@@ -284,7 +308,11 @@ export const guests = [
     "name": "Sabrina Cassol",
     "role": "Palestrante",
     "activity": "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital",
-    "photo": "./assets/inviteds/Sabrina Cassol.jpg"
+    "photo": "./assets/inviteds/Sabrina Cassol.jpg",
+    "affiliation": "UFAC · Curso de Direito",
+    "bio": "Professora adjunta e doutora em Direito pela UnB, com atuação em direitos humanos, políticas públicas e educação jurídica.",
+    "profileUrl": "http://lattes.cnpq.br/3538062591852177",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Luís Geovani de Lima Moraes",
@@ -308,7 +336,11 @@ export const guests = [
     "name": "Elcio Hideiti Shiguemori",
     "role": "Palestrante",
     "activity": "Workshop de Pesquisa do PPGCC",
-    "photo": "./assets/inviteds/Elcio Hideiti Shiguemori.png"
+    "photo": "./assets/inviteds/Elcio Hideiti Shiguemori.png",
+    "affiliation": "IEAv/DCTA · INPE/ITA",
+    "bio": "Pesquisador e doutor em Computação Aplicada pelo INPE. Trabalha com IA, aprendizado de máquina, processamento de imagens e visão computacional.",
+    "profileUrl": "http://lattes.cnpq.br/7243145638158319",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Amanda Lemos de Souza",
@@ -316,13 +348,21 @@ export const guests = [
     "activity": "Amazon Rekognition · AWS Lambda e S3",
     "photo": "./assets/inviteds/Amanda Lemos de Souza.jpg",
     "photoOffset": -7,
-    "photoScale": 1.28
+    "photoScale": 1.28,
+    "affiliation": "Desenvolvimento de software",
+    "bio": "Desenvolvedora front-end com formação em Redes de Computadores e experiência em JavaScript, TypeScript, Angular e React.",
+    "profileUrl": "http://lattes.cnpq.br/8200344597088589",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Bruna Soares Silva",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": "./assets/inviteds/Bruna Soares Silva.jpg"
+    "photo": "./assets/inviteds/Bruna Soares Silva.jpg",
+    "affiliation": "UFAC · Sistemas de Informação",
+    "bio": "Bacharela em Sistemas de Informação e pós-graduanda em Engenharia de Testes com Inteligência Artificial. Participou de oficinas de programação.",
+    "profileUrl": "http://lattes.cnpq.br/9444526444477657",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Maxswell Emanoell Araújo de Melo",
@@ -330,7 +370,11 @@ export const guests = [
     "activity": "Amazon Rekognition · AWS Lambda e S3",
     "photo": "./assets/inviteds/Maxwell Emanoell Araújo.jpg",
     "photoOffset": -10,
-    "photoScale": 1.34
+    "photoScale": 1.34,
+    "affiliation": "Creditas · Engenharia de Software",
+    "bio": "Engenheiro de software com atuação em backend, arquitetura de sistemas, AWS e uso de inteligência artificial no desenvolvimento.",
+    "profileUrl": "https://www.linkedin.com/in/maxswell-araujo",
+    "profileLabel": "LinkedIn"
   },
   {
     "name": "Gleice Beatriz Mourão Araújo",
@@ -366,13 +410,21 @@ export const guests = [
     "name": "Clécio Elias Silva e Silva",
     "role": "Convidado",
     "activity": "Solenidade Comemorativa de 30 Anos",
-    "photo": "./assets/inviteds/Clécio Elias.jpeg"
+    "photo": "./assets/inviteds/Clécio Elias.jpeg",
+    "affiliation": "UFAC · PAVIC",
+    "bio": "Professor substituto e mestrando em Ciência da Computação na UFAC. Pesquisa visão computacional e reconstrução 3D baseada em aprendizado profundo.",
+    "profileUrl": "https://lattes.cnpq.br/4595049657680778",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Guilherme Félix Cavalcante",
     "role": "Ministrante",
     "activity": "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
-    "photo": "./assets/inviteds/Guilherme Félix Cavalcante.jpg"
+    "photo": "./assets/inviteds/Guilherme Félix Cavalcante.jpg",
+    "affiliation": "UFAC · Sistemas de Informação",
+    "bio": "Graduando e pesquisador de iniciação científica em IA, ciência de dados e jogos digitais aplicados à saúde.",
+    "profileUrl": "http://lattes.cnpq.br/3416104383970740",
+    "profileLabel": "Currículo Lattes"
   },
   {
     "name": "Daricélio",

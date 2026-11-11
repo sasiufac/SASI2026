@@ -317,3 +317,38 @@
 @media (prefers-reduced-motion: reduce) {
   .partner-card { transition: none; }
 }
+
+/* Informações profissionais curtas e verificadas dos convidados. */
+.guest-details {
+  flex: 1;
+}
+.guest-affiliation {
+  margin: 0 0 7px;
+  color: #006b12;
+  font: 700 12px/1.35 "DM Sans", sans-serif;
+}
+.guest-bio {
+  margin: 12px 0 0;
+  padding-top: 12px;
+  border-top: 1px solid #e2e7ed;
+  color: #34435c;
+  font: 400 13px/1.5 "DM Sans", sans-serif;
+}
+.guest-profile {
+  display: inline-flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 5px 0;
+  color: #006b12;
+  font: 800 12px/1.35 "DM Sans", sans-serif;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.guest-profile:hover {
+  color: #004a0d;
+}
+.guest-profile:focus-visible {
+  outline: 3px solid #FF8E17;
+  outline-offset: 3px;
+  border-radius: 2px;
+}

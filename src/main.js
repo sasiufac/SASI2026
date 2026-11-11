@@ -26,8 +26,13 @@ guestGrid.innerHTML = guests.map(guest =>
   '</div>' +
   '<div class="guest-details">' +
   '<h3>' + esc(guest.name) + '</h3>' +
+  (guest.affiliation ? '<p class="guest-affiliation">' + esc(guest.affiliation) + '</p>' : '') +
   '<p class="guest-role">' + esc(guest.role) + '</p>' +
   '<p class="guest-activity">' + esc(guest.activity) + '</p>' +
+  (guest.bio ? '<p class="guest-bio">' + esc(guest.bio) + '</p>' : '') +
+  (guest.profileUrl && /^https?:\/\//i.test(guest.profileUrl)
+    ? '<a class="guest-profile" href="' + esc(guest.profileUrl) + '" target="_blank" rel="noopener noreferrer" aria-label="' + esc(guest.profileLabel || "Perfil profissional") + ' de ' + esc(guest.name) + ' (abre em nova aba)">' + esc(guest.profileLabel || "Perfil profissional") + ' ↗</a>'
+    : '') +
   '</div></article>'
 ).join("");
 guestGrid.querySelectorAll(".guest-avatar img").forEach(img => {
