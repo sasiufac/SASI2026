@@ -233,7 +233,8 @@ export const guests = [
     "name": "Laura Costa Sarkis",
     "role": "Mesa-redonda",
     "activity": "Conversando com quem começou essa jornada",
-    "photo": "./assets/inviteds/Laura Costa.png"
+    "photo": "./assets/inviteds/Laura Costa.png",
+    "photoPosition": "center 32%"
   },
   {
     "name": "Valmir Saraiva de Oliveira",
@@ -311,7 +312,8 @@ export const guests = [
     "name": "Amanda Lemos de Souza",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": "./assets/inviteds/Amanda Lemos de Souza.jpg"
+    "photo": "./assets/inviteds/Amanda Lemos de Souza.jpg",
+    "photoPosition": "center 28%"
   },
   {
     "name": "Bruna Soares Silva",
@@ -323,7 +325,8 @@ export const guests = [
     "name": "Maxswell Emanoell Araújo de Melo",
     "role": "Ministrante",
     "activity": "Amazon Rekognition · AWS Lambda e S3",
-    "photo": "./assets/inviteds/Maxwell Emanoell Araújo.jpg"
+    "photo": "./assets/inviteds/Maxwell Emanoell Araújo.jpg",
+    "photoPosition": "center 26%"
   },
   {
     "name": "Gleice Beatriz Mourão Araújo",
