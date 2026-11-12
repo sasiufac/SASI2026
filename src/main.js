@@ -95,4 +95,53 @@ const menu=document.querySelector(".menu-toggle"),nav=document.querySelector(".n
 menu.addEventListener("click",()=>{const opened=menu.getAttribute("aria-expanded")==="true";menu.setAttribute("aria-expanded",String(!opened));nav.classList.toggle("open",!opened);});
 nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menu.setAttribute("aria-expanded","false");nav.classList.remove("open");}));
 
-
+// Detalhes de navegação: calendário no fuso do Acre e leitura progressiva da página.
+const countdownText = document.querySelector("#countdown-text");
+if (countdownText) {
+  // formatToParts evita depender do fuso configurado no aparelho do visitante.
+  const acreParts = Object.fromEntries(
+    new Intl.DateTimeFormat("en-US", {
+      timeZone: "America/Rio_Branco",
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit"
+    }).formatToParts(new Date()).map(({ type, value }) => [type, value])
+  );
+  const todayUTC = Date.UTC(Number(acreParts.year), Number(acreParts.month) - 1, Number(acreParts.day));
+  const startUTC = Date.UTC(2026, 10, 23);
+  const endUTC = Date.UTC(2026, 10, 27);
+  const remainingDays = Math.round((startUTC - todayUTC) / 86400000);
+  countdownText.textContent = todayUTC > endUTC
+    ? "OBRIGADO POR FAZER PARTE DA SASI 2026!"
+    : remainingDays <= 0
+      ? "A SASI 2026 ESTÁ ACONTECENDO!"
+      : remainingDays === 1
+        ? "FALTA 1 DIA PARA A SASI 2026"
+        : "FALTAM " + remainingDays + " DIAS PARA A SASI 2026";
+}
+const progressBar = document.querySelector("#page-progress");
+const backToTop = document.querySelector("#back-to-top");
+if (progressBar && backToTop) {
+  let scrollTicking = false;
+  function updateScrollControls() {
+    const maxScroll = Math.max(0, document.documentElement.scrollHeight - window.innerHeight);
+    const progress = maxScroll ? Math.min(1, Math.max(0, window.scrollY / maxScroll)) : 0;
+    progressBar.style.transform = "scaleX(" + progress.toFixed(4) + ")";
+    backToTop.hidden = window.scrollY < 650;
+    scrollTicking = false;
+  }
+  function requestScrollUpdate() {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    window.requestAnimationFrame(updateScrollControls);
+  }
+  backToTop.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth"
+    });
+  });
+  window.addEventListener("scroll", requestScrollUpdate, { passive: true });
+  window.addEventListener("resize", requestScrollUpdate, { passive: true });
+  updateScrollControls();
+}
