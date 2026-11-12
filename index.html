@@ -36,7 +36,86 @@
       <div class="hero-actions"><a class="btn btn-primary" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Quero participar ↗</a><a class="btn btn-secondary" href="#programacao">Ver programação ↓</a></div>
       <div class="meta"><div><span class="meta-icon">◫</span><span><strong>23 a 27 de Novembro</strong><small>Segunda a Sexta • 2026</small></span></div><div><span class="meta-icon">⌖</span><span><strong>CENTRO DE CONVIVÊNCIA</strong><small>UFAC • Rio Branco, AC</small></span></div></div>
     </div>
-    <div class="hero-visual"><img class="hero-official-logo" src="./assets/logosasi.svg" alt="SASI UFAC 2026 — 3ª edição" width="897" height="309"></div>
+    <div class="hero-visual">
+      <button class="hero-logo-stage" id="hero-logo-stage" type="button" aria-label="Logo SASI UFAC 2026. Clique para ativar o efeito arcade." title="Ativar efeito arcade">
+        <svg class="hero-animated-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 224.25 77.25" role="img" aria-label="Logo oficial SASI UFAC 2026 com barra de experiência animada">
+          <defs>
+            <!-- Preserva a logo oficial e substitui somente a área interna da barra de XP. -->
+            <mask id="hero-original-without-xp" maskUnits="userSpaceOnUse" x="0" y="0" width="224.25" height="77.25">
+              <rect width="224.25" height="77.25" fill="white"/>
+              <rect x="5.219" y="57.441" width="147.231" height="11.447" fill="black"/>
+            </mask>
+            <clipPath id="hero-xp-clip" clipPathUnits="userSpaceOnUse">
+              <rect class="hero-xp-reveal" x="6.3008" y="58.5234" width="145.0694" height="9.2813"/>
+            </clipPath>
+            <clipPath id="hero-capsule-clip" clipPathUnits="userSpaceOnUse">
+              <rect x="82.289" y="11.867" width="118.496" height="41.313" rx="20.656"/>
+            </clipPath>
+            <linearGradient id="hero-led-gradient" x1="0" x2="1" y1="0" y2="0">
+              <stop offset="0%" stop-color="#85ff9a" stop-opacity="0"/>
+              <stop offset="46%" stop-color="#85ff9a" stop-opacity="0.05"/>
+              <stop offset="53%" stop-color="#afffbd" stop-opacity="0.36"/>
+              <stop offset="60%" stop-color="#85ff9a" stop-opacity="0.05"/>
+              <stop offset="100%" stop-color="#85ff9a" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- A arte é referenciada diretamente, sem converter ou recriar letras da marca. -->
+          <image href="./assets/logosasi.svg" x="0" y="0" width="224.25" height="77.25" mask="url(#hero-original-without-xp)"/>
+          <g clip-path="url(#hero-capsule-clip)" class="hero-led-layer" aria-hidden="true">
+            <rect class="hero-led-sweep" x="18" y="10" width="170" height="45" fill="url(#hero-led-gradient)"/>
+          </g>
+          <!-- Moldura original preservada; slots vazios e preenchimento progressivo. -->
+          <g class="hero-xp-track" fill="#00B100" fill-opacity="0.14">
+              <rect x="6.3008" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="14.4375" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="22.5742" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="30.7109" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="38.8477" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="46.9844" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="55.1211" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="63.2578" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="71.3945" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="79.5313" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="87.6680" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="95.8047" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="103.9414" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="112.0781" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="120.2148" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="128.3516" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="136.4883" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="144.6250" y="58.5234" width="6.75" height="9.2813"/>
+          </g>
+          <g class="hero-xp-active" fill="#00B100" clip-path="url(#hero-xp-clip)">
+              <rect x="6.3008" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="14.4375" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="22.5742" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="30.7109" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="38.8477" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="46.9844" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="55.1211" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="63.2578" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="71.3945" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="79.5313" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="87.6680" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="95.8047" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="103.9414" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="112.0781" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="120.2148" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="128.3516" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="136.4883" y="58.5234" width="6.75" height="9.2813"/>
+              <rect x="144.6250" y="58.5234" width="6.75" height="9.2813"/>
+          </g>
+          <g class="hero-logo-particles" fill="#77ff8f" aria-hidden="true">
+            <rect class="hero-pixel hero-pixel-a" x="25" y="29" width="1.75" height="1.75"/>
+            <rect class="hero-pixel hero-pixel-b" x="94" y="4" width="2" height="2"/>
+            <rect class="hero-pixel hero-pixel-c" x="210" y="19" width="1.9" height="1.9"/>
+            <rect class="hero-pixel hero-pixel-d" x="183" y="69" width="1.8" height="1.8"/>
+            <rect class="hero-pixel hero-pixel-e" x="28" y="73" width="1.9" height="1.9"/>
+            <rect class="hero-pixel hero-pixel-f" x="206" y="58" width="1.6" height="1.6"/>
+          </g>
+        </svg>
+      </button>
+    </div>
   </section>
   <div class="ticker" aria-label="Conhecimento, inovação, comunidade e jogos"><div>CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span> CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span></div></div>
   <section class="section container" id="sobre">

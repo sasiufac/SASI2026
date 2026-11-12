@@ -93,3 +93,24 @@ partnerDialog.addEventListener("click", event => {
 const menu=document.querySelector(".menu-toggle"),nav=document.querySelector(".nav-links");
 menu.addEventListener("click",()=>{const opened=menu.getAttribute("aria-expanded")==="true";menu.setAttribute("aria-expanded",String(!opened));nav.classList.toggle("open",!opened);});
 nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menu.setAttribute("aria-expanded","false");nav.classList.remove("open");}));
+
+
+// Pequeno boost visual para a logo principal, sem áudio nem canvas em loop.
+const heroLogo = document.querySelector("#hero-logo-stage");
+if (heroLogo) {
+  let heroBoostTimeout;
+  heroLogo.addEventListener("click", () => {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    heroLogo.classList.remove("is-boosted");
+    void heroLogo.offsetWidth; // Reinicia as partículas em cliques consecutivos.
+    heroLogo.classList.add("is-boosted");
+    clearTimeout(heroBoostTimeout);
+    heroBoostTimeout = setTimeout(() => heroLogo.classList.remove("is-boosted"), 1200);
+  });
+  if ("IntersectionObserver" in window) {
+    const heroObserver = new IntersectionObserver(entries => {
+      heroLogo.classList.toggle("is-offscreen", !entries[0].isIntersecting);
+    }, { threshold: 0.05 });
+    heroObserver.observe(heroLogo);
+  }
+}
