@@ -43,7 +43,7 @@
             <!-- Preserva a logo oficial e substitui somente a área interna da barra de XP. -->
             <mask id="hero-original-without-xp" maskUnits="userSpaceOnUse" x="0" y="0" width="224.25" height="77.25">
               <rect width="224.25" height="77.25" fill="white"/>
-              <rect x="5.219" y="57.441" width="147.231" height="11.447" fill="black"/>
+              <rect x="6.219" y="72.441" width="147.231" height="11.447" fill="black"/>
             </mask>
             <clipPath id="hero-xp-clip" clipPathUnits="userSpaceOnUse">
               <rect class="hero-xp-reveal" x="6.3008" y="58.5234" width="145.0694" height="9.2813"/>
@@ -65,7 +65,7 @@
             <rect class="hero-led-sweep" x="18" y="10" width="170" height="45" fill="url(#hero-led-gradient)"/>
           </g>
           <!-- Moldura original preservada; slots vazios e preenchimento progressivo. -->
-          <g class="hero-xp-track" fill="#00B100" fill-opacity="0.14">
+          <g class="hero-xp-track" transform="translate(1 15)" fill="#00B100" fill-opacity="0.14">
               <rect x="6.3008" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="14.4375" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="22.5742" y="58.5234" width="6.75" height="9.2813"/>
@@ -85,7 +85,7 @@
               <rect x="136.4883" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="144.6250" y="58.5234" width="6.75" height="9.2813"/>
           </g>
-          <g class="hero-xp-active" fill="#00B100" clip-path="url(#hero-xp-clip)">
+          <g class="hero-xp-active" transform="translate(1 15)" fill="#00B100"><g clip-path="url(#hero-xp-clip)">
               <rect x="6.3008" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="14.4375" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="22.5742" y="58.5234" width="6.75" height="9.2813"/>
@@ -104,7 +104,7 @@
               <rect x="128.3516" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="136.4883" y="58.5234" width="6.75" height="9.2813"/>
               <rect x="144.6250" y="58.5234" width="6.75" height="9.2813"/>
-          </g>
+          </g></g>
           <g class="hero-logo-particles" fill="#77ff8f" aria-hidden="true">
             <rect class="hero-pixel hero-pixel-a" x="25" y="29" width="1.75" height="1.75"/>
             <rect class="hero-pixel hero-pixel-b" x="94" y="4" width="2" height="2"/>
