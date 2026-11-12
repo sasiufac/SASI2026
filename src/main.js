@@ -11,7 +11,7 @@ function showDay(day,focus=false){
   panel.innerHTML=items.map(item=>'<article class="event-row"><time datetime="2026-11-'+esc(day)+'T'+esc(item.time)+'">'+esc(item.time)+(item.endTime?'–'+esc(item.endTime):'')+'</time><div class="event-info"><span class="type">'+esc(item.type)+'</span><h3>'+esc(item.title)+'</h3>'+(item.speaker?'<p>'+esc(item.speaker)+'</p>':'')+(item.place?'<small>⌖ '+esc(item.place)+'</small>':'')+'</div><span class="event-arrow" aria-hidden="true">↗</span></article>').join("");
   if(focus)tabs.querySelector('[data-day="'+day+'"]').focus();
 }
-days.forEach((day,index)=>{const button=document.createElement("button");button.type="button";button.id="day-"+day.id;button.dataset.day=day.id;button.setAttribute("role","tab");button.setAttribute("aria-controls","schedule-panel");button.innerHTML='<small>'+esc(day.weekday)+'</small><strong>'+day.id+'</strong><span>NOV</span>';button.addEventListener("click",()=>showDay(day.id));button.addEventListener("keydown",e=>{if(!["ArrowRight","ArrowLeft","Home","End"].includes(e.key))return;e.preventDefault();const idx=days.findIndex(d=>d.id===button.dataset.day);const target=e.key==="Home"?0:e.key==="End"?days.length-1:e.key==="ArrowRight"?(idx+1)%days.length:(idx-1+days.length)%days.length;showDay(days[target].id,true);});tabs.append(button);});
+days.forEach((day,index)=>{const button=document.createElement("button");button.type="button";button.id="day-"+day.id;button.dataset.day=day.id;button.setAttribute("role","tab");button.setAttribute("aria-controls","schedule-panel");button.setAttribute("aria-label",day.name+", "+day.id+" de novembro");button.innerHTML='<span class="day-level" aria-hidden="true">LEVEL '+String(index+1).padStart(2,"0")+'</span><small>'+esc(day.weekday)+'</small><strong>'+day.id+'</strong><span>NOV</span>';button.addEventListener("click",()=>showDay(day.id));button.addEventListener("keydown",e=>{if(!["ArrowRight","ArrowLeft","Home","End"].includes(e.key))return;e.preventDefault();const idx=days.findIndex(d=>d.id===button.dataset.day);const target=e.key==="Home"?0:e.key==="End"?days.length-1:e.key==="ArrowRight"?(idx+1)%days.length:(idx-1+days.length)%days.length;showDay(days[target].id,true);});tabs.append(button);});
 showDay("23");
 
 // Cards de convidados: fotos podem ser cadastradas depois via data.js.
@@ -96,22 +96,3 @@ menu.addEventListener("click",()=>{const opened=menu.getAttribute("aria-expanded
 nav.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{menu.setAttribute("aria-expanded","false");nav.classList.remove("open");}));
 
 
-// Pequeno boost visual para a logo principal, sem áudio nem canvas em loop.
-const heroLogo = document.querySelector("#hero-logo-stage");
-if (heroLogo) {
-  let heroBoostTimeout;
-  heroLogo.addEventListener("click", () => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    heroLogo.classList.remove("is-boosted");
-    void heroLogo.offsetWidth; // Reinicia as partículas em cliques consecutivos.
-    heroLogo.classList.add("is-boosted");
-    clearTimeout(heroBoostTimeout);
-    heroBoostTimeout = setTimeout(() => heroLogo.classList.remove("is-boosted"), 1200);
-  });
-  if ("IntersectionObserver" in window) {
-    const heroObserver = new IntersectionObserver(entries => {
-      heroLogo.classList.toggle("is-offscreen", !entries[0].isIntersecting);
-    }, { threshold: 0.05 });
-    heroObserver.observe(heroLogo);
-  }
-}

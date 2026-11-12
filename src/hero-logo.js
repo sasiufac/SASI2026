@@ -30,7 +30,7 @@ const arcadeParticles = [];
 const pixelGlyphCache = new Map();
 // A animação pública não reproduz efeitos sonoros nem depende dos controles do estúdio.
 const play8BitSound = () => {};
-function spawnParticle() {
+function spawnParticle(asText = false) {
   if (arcadeParticles.length >= 35) return;
   arcadeParticles.push({
     x: 30 + Math.random() * 835,
@@ -39,7 +39,8 @@ function spawnParticle() {
     vy: -.65 - Math.random() * 1.3,
     size: 3 + Math.random() * 3,
     alpha: 1,
-    isText: false,
+    isText: asText,
+    label: "+1 UP",
     color: Math.random() > .3 ? "#00ff33" : "#7dff8e"
   });
 }
@@ -432,8 +433,9 @@ function renderLogoFrame(ctx, width, height, normalizedTime, isExportingGif = fa
             let glitchShiftX = 0;
             let isGlitching = false;
             if (state.glitch) {
-                const glitchWindow = (normalizedTime * 2) % 1;
-                if (glitchWindow > 0.92 && glitchWindow < 0.97) {
+                // Breve efeito ao interagir; a marca não sofre distorção contínua.
+                const glitchWindow = (normalizedTime * 14) % 1;
+                if (glitchWindow > 0.18 && glitchWindow < 0.34) {
                     isGlitching = true;
                     glitchShiftX = Math.sin(normalizedTime * 120) * 4;
                 }
@@ -743,6 +745,7 @@ let lastTimestamp = 0;
 let lastDraw = 0;
 let clock = 0;
 let boostUntil = 0;
+let glitchResetTimeout = null;
 function renderStatic() {
   const staticState = { ...state };
   state.floatIdle = false;
@@ -777,7 +780,10 @@ function start() {
 function boost() {
   if (reducedMotion.matches) return;
   boostUntil = performance.now() + 1100;
-  for (let i = 0; i < 10; i++) spawnParticle();
+  state.glitch = true;
+  clearTimeout(glitchResetTimeout);
+  glitchResetTimeout = setTimeout(() => { state.glitch = false; }, 480);
+  for (let i = 0; i < 8; i++) spawnParticle(i === 0);
 }
 const trigger = document.getElementById("hero-logo-stage");
 trigger?.addEventListener("mouseenter", boost);

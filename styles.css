@@ -385,3 +385,200 @@
 @media (prefers-reduced-motion: reduce) {
   #hero-logo-canvas { filter: none; }
 }
+
+/* Identidade arcade: detalhes leves, sem alterar a composição institucional. */
+.hero-arcade-tag,
+.day-tabs button .day-level,
+.jam-wrap .jam-label,
+.jam-window .window-title,
+.jam-xp-pop {
+  font-family: "Press Start 2P", "Space Grotesk", monospace;
+}
+.hero-arcade-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 0 0 6px;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,177,0,.38);
+  border-radius: 8px;
+  color: #a0ffab;
+  background: rgba(0,177,0,.07);
+  font-size: clamp(8px, 1.1vw, 10px);
+  line-height: 1.7;
+  letter-spacing: 0;
+}
+.hero-tag-dot {
+  display: inline-block;
+  flex: 0 0 7px;
+  width: 7px;
+  height: 7px;
+  background: #00B100;
+  box-shadow: 0 0 10px rgba(0,255,42,.6);
+}
+.hero-copy .lead { max-width: 535px; }
+.hero-actions .btn-primary,
+.nav-links .nav-button,
+.last-call .btn-primary {
+  animation: arcade-cta-glow 4.8s ease-in-out infinite;
+}
+.hero-actions .btn-primary:hover,
+.nav-links .nav-button:hover,
+.last-call .btn-primary:hover {
+  box-shadow: 0 0 0 2px rgba(255,142,23,.65), 0 0 22px rgba(0,177,0,.45);
+}
+@keyframes arcade-cta-glow {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(0,177,0,.1); }
+  50% { box-shadow: 0 0 0 3px rgba(0,177,0,.16), 0 0 17px rgba(0,177,0,.28); }
+}
+.day-tabs button {
+  gap: 3px;
+  min-height: 127px;
+  transition: transform .2s ease, border-color .2s ease, box-shadow .2s ease;
+}
+.day-tabs button:hover { transform: translateY(-2px); }
+.day-tabs button.active { box-shadow: 0 0 0 2px rgba(0,177,0,.22); }
+.day-tabs button .day-level {
+  display: inline-block;
+  margin-bottom: 7px;
+  color: #89ff9c;
+  font-size: clamp(7px, .82vw, 9px);
+  line-height: 1.45;
+  letter-spacing: -.02em;
+  white-space: nowrap;
+}
+.day-tabs button.active .day-level { color: #003f0d; }
+.jam-wrap .jam-label {
+  display: inline-flex;
+  gap: 9px;
+  align-items: center;
+  font-size: clamp(8px, 1vw, 10px);
+  line-height: 1.8;
+  letter-spacing: 0;
+}
+.jam-label-indicator { color: #000431; font-size: 13px; }
+.jam-glitch { position: relative; display: inline-block; isolation: isolate; }
+.jam-glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  inset: 0;
+  color: #000431;
+  opacity: 0;
+  pointer-events: none;
+}
+.jam-copy h2:hover .jam-glitch::after,
+.jam-wrap:focus-within .jam-glitch::after {
+  animation: jam-glitch-once .46s steps(2, end) 1 both;
+}
+@keyframes jam-glitch-once {
+  0%, 100% { opacity: 0; transform: translateX(0); }
+  20% { opacity: .8; transform: translateX(-2px); text-shadow: 2px 0 #FF8E17; clip-path: inset(10% 0 65% 0); }
+  42% { opacity: .9; transform: translateX(3px); text-shadow: -2px 0 #FF8E17; clip-path: inset(64% 0 12% 0); }
+  65% { opacity: .8; transform: translateX(-1px); clip-path: inset(35% 0 40% 0); }
+}
+.jam-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px;
+  margin-top: 27px;
+}
+.jam-cta, .jam-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 48px;
+  padding: 12px 17px;
+  border-radius: 9px;
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  transition: transform .2s ease, background .2s ease;
+}
+.jam-cta { background: #000431; color: #fff; border: 1px solid #000431; }
+.jam-secondary { color: #000431; border: 1px solid rgba(0,4,49,.67); }
+.jam-cta:hover { background: #14235b; transform: translateY(-2px); }
+.jam-secondary:hover { background: rgba(255,255,255,.26); transform: translateY(-2px); }
+.jam-wrap .jam-window {
+  position: relative;
+  isolation: isolate;
+  animation: jam-frame-pulse 4.5s ease-in-out infinite;
+}
+@keyframes jam-frame-pulse {
+  0%, 100% { border-color: #000431; box-shadow: 18px 20px 0 #000431, 0 0 0 0 rgba(255,142,23,0); }
+  50% { border-color: #1b306a; box-shadow: 18px 20px 0 #000431, 0 0 0 5px rgba(255,142,23,.26); }
+}
+.jam-particles { position: absolute; z-index: 4; inset: 0; pointer-events: none; overflow: hidden; }
+.jam-pixel {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: #FF8E17;
+  opacity: 0;
+}
+.jam-pixel-1 { left: 13%; top: 45%; }
+.jam-pixel-2 { left: 75%; top: 21%; width: 5px; height: 5px; }
+.jam-pixel-3 { left: 82%; top: 70%; width: 9px; height: 9px; }
+.jam-pixel-4 { left: 23%; top: 75%; width: 5px; height: 5px; }
+.jam-xp-pop {
+  position: absolute;
+  top: 39%;
+  right: 9%;
+  padding: 7px 9px;
+  background: #000431;
+  color: #a0ffab;
+  border-radius: 5px;
+  font-size: 9px;
+  white-space: nowrap;
+  opacity: 0;
+}
+.jam-wrap:hover .jam-pixel,
+.jam-wrap:focus-within .jam-pixel {
+  animation: jam-pixel-burst 1s ease-out 1 both;
+}
+.jam-wrap:hover .jam-xp-pop,
+.jam-wrap:focus-within .jam-xp-pop {
+  animation: jam-xp-pop 1.2s ease-out 1 both;
+}
+.jam-pixel-2 { animation-delay: .1s !important; }
+.jam-pixel-3 { animation-delay: .19s !important; }
+.jam-pixel-4 { animation-delay: .28s !important; }
+@keyframes jam-pixel-burst {
+  0% { opacity: 0; transform: translateY(6px) scale(.5); }
+  30% { opacity: 1; transform: translateY(-5px) scale(1); }
+  100% { opacity: 0; transform: translateY(-25px) scale(.3); }
+}
+@keyframes jam-xp-pop {
+  0%, 100% { opacity: 0; transform: translateY(8px); }
+  25%, 60% { opacity: 1; transform: translateY(-2px); }
+}
+@media (max-width: 700px) {
+  .hero-arcade-tag { font-size: 8px; }
+  .day-tabs button { min-height: 110px; padding: 11px 6px; }
+  .day-tabs button .day-level { font-size: 7px; }
+  .jam-actions { align-items: stretch; }
+  .jam-cta, .jam-secondary { flex: 1 1 190px; }
+}
+@media (max-width: 370px) {
+  .day-tabs button .day-level { font-size: 6px; }
+  .jam-wrap .jam-label { font-size: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-actions .btn-primary,
+  .nav-links .nav-button,
+  .last-call .btn-primary,
+  .jam-wrap .jam-window,
+  .jam-copy h2:hover .jam-glitch::after,
+  .jam-wrap:focus-within .jam-glitch::after,
+  .jam-wrap:hover .jam-pixel,
+  .jam-wrap:focus-within .jam-pixel,
+  .jam-wrap:hover .jam-xp-pop,
+  .jam-wrap:focus-within .jam-xp-pop {
+    animation: none !important;
+  }
+  .jam-pixel, .jam-xp-pop, .jam-glitch::after { opacity: 0 !important; }
+  .day-tabs button, .jam-cta, .jam-secondary { transition: none; }
+  .day-tabs button:hover { transform: none; }
+}
