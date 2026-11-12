@@ -582,3 +582,82 @@
   .day-tabs button, .jam-cta, .jam-secondary { transition: none; }
   .day-tabs button:hover { transform: none; }
 }
+
+
+/* Local confirmado: mapa interativo e link direto do Centro de Convivência da UFAC. */
+.location-with-map {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  align-items: center;
+  gap: clamp(22px, 4vw, 52px);
+  padding: clamp(26px, 4.8vw, 58px);
+  background: linear-gradient(125deg, #081a35, #050c3f);
+}
+.location-copy { min-width: 0; }
+.location-kicker {
+  margin: 0 0 18px;
+  color: #a1ffac !important;
+  font: 700 11px/1.6 "Press Start 2P", "Space Grotesk", monospace !important;
+  letter-spacing: 0;
+}
+.location-copy h2 { font-size: clamp(36px, 4.5vw, 58px); }
+.location-copy h2 span { color: #00B100; }
+.location-copy > p:not(.location-kicker):not(.location-hint) { font-size: 17px; line-height: 1.65; }
+.location-copy > p strong { color: #fff; }
+.location-copy address {
+  font-style: normal;
+  color: #f0f3fb;
+  font-size: 14px;
+  line-height: 1.65;
+  padding-left: 14px;
+  border-left: 3px solid #00B100;
+  margin-top: 18px;
+}
+.location-with-map .location-btn { margin-top: 25px; }
+.location-hint {
+  font-size: 12px !important;
+  line-height: 1.5 !important;
+  color: #aab8d7 !important;
+  margin-top: 12px;
+}
+.location-map {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid rgba(180,255,189,.28);
+  border-radius: 18px;
+  background: #dfe8e4;
+  box-shadow: 0 15px 45px rgba(0,0,0,.24);
+}
+.location-map iframe {
+  display: block;
+  width: 100%;
+  height: clamp(295px, 33vw, 420px);
+  border: 0;
+  background: #e8edea;
+}
+.location-map-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  padding: 14px 16px;
+  background: #fff;
+  color: #000431;
+  font-size: 12px;
+  line-height: 1.4;
+  font-weight: 700;
+}
+.location-map-footer > span { display: inline-flex; align-items: center; gap: 8px; }
+.location-map-footer a { color: #006d15; text-decoration: underline; text-underline-offset: 3px; }
+.location-map-footer a:hover { color: #00420d; }
+.location-map-dot { width: 8px; height: 8px; border-radius: 50%; background: #00B100; }
+@media (max-width: 920px) {
+  .location-with-map { grid-template-columns: 1fr; }
+  .location-map iframe { height: 360px; }
+}
+@media (max-width: 560px) {
+  .location-with-map { padding: 26px 19px; border-radius: 19px; }
+  .location-copy h2 { font-size: clamp(32px, 8.5vw, 46px); }
+  .location-map iframe { height: 315px; }
+  .location-map-footer { padding: 12px; }
+}
