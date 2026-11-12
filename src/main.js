@@ -1,4 +1,5 @@
 import {days,schedule,workshops,partners,guests} from "./data.js";
+import "./hero-logo.js";
 
 const tabs=document.querySelector("#day-tabs");
 const panel=document.querySelector("#schedule-panel");

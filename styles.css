@@ -353,11 +353,9 @@
   border-radius: 2px;
 }
 
-
-/* A marca original é reutilizada; somente a barra interna e os efeitos são sobrepostos. */
+/* Logo arcade: uma única barra de XP desenhada no Canvas da página inicial. */
 .hero-logo-stage {
   display: block;
-  position: relative;
   width: min(100%, 550px);
   padding: 0;
   border: 0;
@@ -367,71 +365,16 @@
   -webkit-tap-highlight-color: transparent;
 }
 .hero-logo-stage:focus-visible {
-  outline: 2px solid #FF8E17;
-  outline-offset: 10px;
+  outline: 3px solid #FF8E17;
+  outline-offset: 8px;
   border-radius: 8px;
 }
-.hero-animated-logo {
+#hero-logo-canvas {
   display: block;
   width: 100%;
   height: auto;
-  overflow: visible;
-  animation: hero-logo-idle 6.2s ease-in-out infinite,
-             hero-logo-level 5.6s ease-in-out infinite;
-  will-change: transform;
-}
-.hero-logo-stage .hero-xp-reveal {
-  transform-origin: 6.3008px 63.164px;
-  transform-box: view-box;
-  animation: hero-xp-fill 5.6s steps(18, end) infinite;
-}
-.hero-logo-stage .hero-led-sweep {
-  opacity: .38;
-  animation: hero-led-drift 9s ease-in-out infinite;
-}
-.hero-logo-stage .hero-pixel {
-  opacity: 0;
-  transform-box: fill-box;
-  transform-origin: center;
-}
-.hero-logo-stage:hover .hero-pixel,
-.hero-logo-stage:focus-visible .hero-pixel,
-.hero-logo-stage.is-boosted .hero-pixel {
-  animation: hero-pixel-pop .95s ease-out both;
-}
-.hero-logo-stage .hero-pixel-b { animation-delay: .08s !important; }
-.hero-logo-stage .hero-pixel-c { animation-delay: .13s !important; }
-.hero-logo-stage .hero-pixel-d { animation-delay: .2s !important; }
-.hero-logo-stage .hero-pixel-e { animation-delay: .26s !important; }
-.hero-logo-stage .hero-pixel-f { animation-delay: .1s !important; }
-.hero-logo-stage.is-boosted .hero-xp-reveal { animation-duration: 2s; }
-.hero-logo-stage.is-offscreen .hero-animated-logo,
-.hero-logo-stage.is-offscreen .hero-xp-reveal,
-.hero-logo-stage.is-offscreen .hero-led-sweep,
-.hero-logo-stage.is-offscreen .hero-pixel {
-  animation-play-state: paused;
-}
-@keyframes hero-xp-fill {
-  0%, 5% { transform: scaleX(0); }
-  73%, 88% { transform: scaleX(1); }
-  99%, 100% { transform: scaleX(0); }
-}
-@keyframes hero-logo-idle {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-3px); }
-}
-@keyframes hero-logo-level {
-  0%, 69%, 87%, 100% { filter: drop-shadow(0 12px 20px rgba(0,177,0,.1)); }
-  75%, 80% { filter: drop-shadow(0 8px 18px rgba(0,177,0,.38)); }
-}
-@keyframes hero-led-drift {
-  0%, 8%, 100% { transform: translateX(-120px); opacity: .1; }
-  50% { transform: translateX(138px); opacity: .42; }
-}
-@keyframes hero-pixel-pop {
-  0% { opacity: 0; transform: translate(0, 1px) scale(.5); }
-  25% { opacity: .85; transform: translate(0, -2px) scale(1); }
-  100% { opacity: 0; transform: translate(1px, -7px) scale(.35); }
+  aspect-ratio: 920 / 330;
+  filter: drop-shadow(0 12px 22px rgba(0, 177, 0, .12));
 }
 @media (max-width: 920px) {
   .hero-logo-stage { width: min(100%, 470px); }
@@ -440,13 +383,5 @@
   .hero-logo-stage { width: min(100%, 380px); }
 }
 @media (prefers-reduced-motion: reduce) {
-  .hero-logo-stage .hero-animated-logo,
-  .hero-logo-stage .hero-led-sweep,
-  .hero-logo-stage .hero-pixel,
-  .hero-logo-stage .hero-xp-reveal {
-    animation: none !important;
-  }
-  .hero-logo-stage .hero-xp-reveal { transform: scaleX(1); }
-  .hero-logo-stage .hero-pixel { opacity: 0; }
-  .hero-logo-stage .hero-led-sweep { opacity: 0; }
+  #hero-logo-canvas { filter: none; }
 }
