@@ -85,7 +85,7 @@ export const places = {
     thanks: {
       theme: "web", icon: "terminal", badge: "200 OK",
       title: "<ValeuWebAcademy />",
-      text: "Agradecemos pelo espaço no 2º andar! Pelo menos 6 convidados desta SASI passaram pelas turmas de vocês, e isso diz muito sobre quem vocês formam. Resposta da nossa gratidão: 200 OK, com carinho em loop infinito."
+      text: "Agradecemos pelo espaço no 2º andar! Pelo menos 7 convidados desta SASI passaram pelas turmas de vocês, e isso diz muito sobre quem vocês formam. Resposta da nossa gratidão: 200 OK, com carinho em loop infinito."
     },
     photos: [
       { src: lab("webacademy/webacademy-lab.webp"), alt: "Laboratório do Web Academy com fileiras de bancadas e a marca na parede" },
@@ -125,6 +125,7 @@ export const places = {
 const AWS_TEAM = "Amanda Lemos de Souza, Bruna Soares Silva e Maxswell Emanoell Araújo de Melo";
 const SAUDE_TEAM = "Gleice Beatriz Mourão Araújo, Isaque Costa Santarém, Kelvin do Nascimento Moreira, Mayara Silva de Sousa e Mirelle Campos Góis";
 const PAVIC_TEAM = "Clécio Elias Silva e Silva, Cristopher Alexander Ochoa Villanueva, Gustavo de Souza Ferreti, Ian Oliveira Teixeira, Julio Sousa Martins e Lucas Hildelbrano Costa Carvalho";
+const LASI_TESTES_TEAM = "Luís Antônio Lima Santiago, Marcos Vinícius Moraes Costa, Mychelle Ketlen Falk Rocha e Elias da Cruz de Souza Junior";
 
 // "time" e "endTime" usam HH:mm (alimentam <time datetime>). "extra" aceita
 // "note" (aviso curto) e "seats" (capacidade prevista no plano de atividade).
@@ -228,7 +229,8 @@ export const schedule = [
   activity("27", "11:00", "12:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
   activity("27", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "20 a 30" }),
-  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação" })
+  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação" }),
+  activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "", { seats: "40" })
 ];
 
 export const workshops = [
@@ -297,6 +299,12 @@ export const workshops = [
     day: "Sexta, 27/11", time: "16h–18h", icon: "cloud", requirement: "Para estudantes de ensino superior em computação",
     description: "Computação serverless na prática: criar uma função Lambda, ler os logs no CloudWatch e disparar automações a partir de uploads no S3.",
     speaker: AWS_TEAM
+  },
+  {
+    title: "Testes automatizados como guardrails no desenvolvimento assistido por IA",
+    day: "Sexta, 27/11", time: "16h–18h", icon: "lock", seats: "40",
+    description: "A IA escreve código em segundos, e os testes mostram se ele funciona. No Citei, um projeto real, a turma pratica testes unitários, de propriedade, de integração, de carga, de interface e de ponta a ponta, e vê o teste pegar o erro da IA.",
+    speaker: LASI_TESTES_TEAM
   }
 ];
 
@@ -402,8 +410,10 @@ export const guests = [
   },
   {
     name: "Felipe de Pádua Silva", role: "Ministrante",
-    affiliation: "Minicurso de Pixel Art · LASI",
-    photo: ""
+    affiliation: "UFAC · Graduando em Sistemas de Informação",
+    bio: "Estudante de Sistemas de Informação na UFAC desde 2024 e técnico em Telecomunicações pelo SENAI Acre. Na SASI, ministra pela LASI o minicurso de introdução à Pixel Art, junto com Clara Serena.",
+    photo: photo("felipe-de-padua-silva"),
+    links: [lattes("2949695695236748")]
   },
   {
     name: "Clara Serena Farias Simione", role: "Ministrante",
@@ -561,5 +571,33 @@ export const guests = [
     bio: "Bacharel em Sistemas de Informação pela UFAC. Pesquisa processamento de imagens HDR e tem experiência com Flutter, análise de dados e aprendizado de máquina.",
     photo: photo("lucas-hildelbrano-costa-carvalho"), photoPosition: "50% 50%", photoTranslate: "-6%, 6%", photoScale: 1.08,
     links: [lattes("1318813280093180")]
+  },
+  {
+    name: "Luís Antônio Lima Santiago", role: "Ministrante",
+    affiliation: "TechBiz Forense Digital · Desenvolvedor React",
+    bio: "Mestrando em Ciência da Computação na UFAC e desenvolvedor front-end especialista em React, apaixonado por qualidade de software e testes automatizados. Reduziu em 70% os novos relatos de bugs de um sistema com testes end-to-end e já disputou as finais brasileiras da Maratona de Programação (ICPC).",
+    photo: photo("luis-antonio-lima-santiago"),
+    links: [linkedin("tonhao-dev"), { type: "site", url: "https://tonhao.dev", label: "Portfólio" }]
+  },
+  {
+    name: "Marcos Vinícius Moraes Costa", role: "Ministrante",
+    affiliation: "UFAC · Graduando em Sistemas de Informação",
+    bio: "Técnico em Informática pelo IFAC, desenvolve backend e APIs com Java, Python e C/C++ e foi monitor de Lógica de Programação. Na Maratona de Programação da SBC (ICPC), ficou em 3º lugar na Maratona do Norte de 2025 e recebeu menções honrosas nas finais brasileiras.",
+    photo: photo("marcos-vinicius-moraes-costa"),
+    links: [lattes("0275011532965660"), linkedin("marcosvini753")]
+  },
+  {
+    name: "Mychelle Ketlen Falk Rocha", role: "Ministrante",
+    affiliation: "Globo · Desenvolvedora de software",
+    bio: "Desenvolvedora backend com Go, Kubernetes, gRPC e Google Cloud, formada pela Academia Globotech (Ada Tech) e estudante de Sistemas para Internet no IFAC. Em 2024, representou o IFAC na final da Maratona Feminina de Programação da SBC e ficou em 3º lugar na região Norte.",
+    photo: photo("mychelle-ketlen-falk-rocha"),
+    links: [linkedin("falk-dev")]
+  },
+  {
+    name: "Elias da Cruz de Souza Junior", role: "Ministrante",
+    affiliation: "UFAC · Graduando em Sistemas de Informação",
+    bio: "Estudante de Sistemas de Informação na UFAC desde 2023, com formação técnica integrada em Informática para Internet pelo IFAC (campus Rio Branco). Tem interesse em banco de dados, linguagens de programação e teoria da computação.",
+    photo: photo("elias-da-cruz-de-souza-junior"),
+    links: [lattes("8978521834519752")]
   }
 ];
