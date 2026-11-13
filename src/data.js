@@ -85,7 +85,7 @@ export const places = {
     thanks: {
       theme: "web", icon: "terminal", badge: "200 OK",
       title: "<ValeuWebAcademy />",
-      text: "Agradecemos pelo espaço no 2º andar! Pelo menos 5 convidados desta SASI passaram pelas turmas de vocês, e isso diz muito sobre quem vocês formam. Resposta da nossa gratidão: 200 OK, com carinho em loop infinito."
+      text: "Agradecemos pelo espaço no 2º andar! Pelo menos 6 convidados desta SASI passaram pelas turmas de vocês, e isso diz muito sobre quem vocês formam. Resposta da nossa gratidão: 200 OK, com carinho em loop infinito."
     },
     photos: [
       { src: lab("webacademy/webacademy-lab.webp"), alt: "Laboratório do Web Academy com fileiras de bancadas e a marca na parede" },
@@ -407,8 +407,10 @@ export const guests = [
   },
   {
     name: "Clara Serena Farias Simione", role: "Ministrante",
-    affiliation: "Minicurso de Pixel Art · LASI",
-    photo: ""
+    affiliation: "UFAC · Graduanda em Sistemas de Informação",
+    bio: "Estudante do 5º período de Sistemas de Informação na UFAC, fez a capacitação full stack do Web Academy. Tem foco em desenvolvimento web, com front-end em Angular e design UX/UI.",
+    photo: photo("clara-serena-farias-simione"),
+    links: [lattes("2804249202889262")]
   },
   {
     name: "Sabrina Cassol", title: "Prof.ª Dr.ª", role: "Palestrante",
@@ -454,7 +456,7 @@ export const guests = [
     name: "Amanda Lemos de Souza", role: "Ministrante",
     affiliation: "Poder Judiciário do Acre · Desenvolvedora front-end",
     bio: "Desenvolvedora front-end (JavaScript, TypeScript, Angular e React) e tecnóloga em Redes de Computadores pelo IFAC. Estagia com desenvolvimento e BI no Judiciário acreano e já atuou como monitora de robótica.",
-    photo: photo("amanda-lemos-de-souza"), photoPosition: "50% 27%", photoTranslate: "-6%, 1%", photoScale: 1.15,
+    photo: photo("amanda-lemos-de-souza"),
     links: [linkedin("amanda-lemos-dev-frontend"), lattes("8200344597088589")]
   },
   {
