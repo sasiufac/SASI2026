@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113m";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113r";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1756,7 +1756,11 @@ function mountUfacMap() {
 }
 loadMapBtn?.addEventListener("click", mountUfacMap);
 
-const animatedZones = [logoStage, $("#site-ticker"), $(".location-pin-pulse"), $(".press-start"), $(".insert-coin"), $(".jam-prize-panel")].filter(Boolean);
+// Tela PLAYER SELECT da Game Jam: a folha de sprites (58 KB) só baixa perto da tela.
+const playerSelect = $("#player-select");
+const loadPlayerSelect = () => playerSelect?.classList.add("is-loaded");
+
+const animatedZones = [logoStage, $("#site-ticker"), $(".location-pin-pulse"), $(".press-start"), $(".insert-coin"), $(".jam-prize-panel"), playerSelect].filter(Boolean);
 const stageSections = ["#inicio", "#sobre", "#programacao", "#convidados", "#minicursos", "#gamejam", "#parceiros", "#local"]
   .map(sel => $(sel))
   .filter(Boolean);
@@ -1771,6 +1775,16 @@ if ("IntersectionObserver" in window) {
       }
     }, { rootMargin: "650px 0px" });
     mapObserver.observe(mapWrap);
+  }
+
+  if (playerSelect) {
+    const psObserver = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) {
+        loadPlayerSelect();
+        psObserver.disconnect();
+      }
+    }, { rootMargin: "600px 0px" });
+    psObserver.observe(playerSelect);
   }
 
   const animObserver = new IntersectionObserver(entries => {
@@ -1824,6 +1838,7 @@ if ("IntersectionObserver" in window) {
   }
 } else {
   document.querySelectorAll("[data-reveal]").forEach(el => el.classList.add("is-revealed"));
+  loadPlayerSelect();
 }
 
 document.addEventListener("visibilitychange", () => {

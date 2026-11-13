@@ -6899,3 +6899,352 @@ main {
     animation: none;
   }
 }
+
+/* =========================================================
+   PLAYER SELECT na Game Jam: arte de 2 quadros em camadas.
+   Os dragões alternam os quadros e "respiram"; o cursor passa
+   por Alex e Valkyria e confirma Safira. Só transform/opacity,
+   para o compositor fazer o trabalho. A folha de sprites só
+   baixa quando a seção chega perto da tela (classe .is-loaded).
+   ========================================================= */
+.player-select {
+  max-width: 420px;
+  margin-top: 28px;
+}
+
+.ps-screen {
+  position: relative;
+  overflow: hidden;
+  padding: 18px 16px 12px;
+  border-radius: 14px;
+  background:
+    radial-gradient(ellipse at 50% 38%, rgba(66, 99, 235, 0.24), transparent 66%),
+    #000431;
+  box-shadow: 10px 12px 0 rgba(0, 4, 49, 0.35);
+}
+
+/* Linhas de varredura de monitor CRT (estáticas) */
+.ps-screen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px);
+}
+
+.ps-art {
+  position: relative;
+  width: min(100%, 362px);
+  aspect-ratio: 362 / 406;
+  margin: 0 auto;
+}
+
+.ps-art span {
+  position: absolute;
+  display: block;
+}
+
+.ps-base,
+.ps-breath,
+.ps-fa,
+.ps-fb,
+.ps-shine {
+  inset: 0;
+}
+
+.ps-sprite {
+  background-repeat: no-repeat;
+}
+
+.player-select.is-loaded .ps-sprite {
+  background-image: url("./assets/player-select/ps-sheet.webp?v=1");
+}
+
+.ps-win {
+  overflow: hidden;
+}
+
+.ps-fb,
+.ps-hl,
+.ps-lit,
+.ps-flash {
+  opacity: 0;
+}
+
+.ps-flash {
+  background: #ffffff;
+}
+
+.ps-glow {
+  opacity: 0.45;
+  box-shadow: 0 0 16px 4px rgba(255, 106, 0, 0.75);
+}
+
+.ps-hl {
+  border: 2px solid #ffffff;
+  box-shadow: 0 0 0 2px #000431, 0 0 14px 2px rgba(255, 255, 255, 0.55);
+}
+
+/* Brilho que atravessa o "PLAYER SELECT": a máscara é o próprio letreiro */
+.ps-shine {
+  overflow: hidden;
+}
+
+.player-select.is-loaded .ps-shine {
+  -webkit-mask-image: url("./assets/player-select/ps-sheet.webp?v=1");
+  mask-image: url("./assets/player-select/ps-sheet.webp?v=1");
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
+.ps-shine-band {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 34%;
+  background: linear-gradient(100deg, transparent 0%, rgba(255, 255, 255, 0.9) 50%, transparent 100%);
+  transform: translateX(-110%);
+}
+
+.ps-hud {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 10px 2px 0;
+  color: #a9b4d6;
+  font: 400 9px/1.4 var(--pixel);
+  letter-spacing: 0.06em;
+}
+
+.ps-hud-free {
+  color: #a9ffb5;
+}
+
+/* Animações (rodam depois que a folha foi pedida) */
+.player-select.is-loaded .ps-fb {
+  animation: psFlip 1s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-win--valk .ps-fb {
+  animation-delay: -0.35s;
+}
+
+.player-select.is-loaded .ps-win--safira .ps-fb {
+  animation-delay: -0.7s;
+}
+
+/* Respiração: a escala nunca fica abaixo de 1, então o recorte do painel não abre fresta. */
+.ps-win--alex .ps-breath {
+  transform-origin: 100% 100%;
+}
+
+.ps-win--valk .ps-breath {
+  transform-origin: 60% 100%;
+}
+
+/* Safira ancora no alto, onde os chifres saem da moldura */
+.ps-win--safira .ps-breath {
+  transform-origin: 32.5% 0;
+}
+
+.player-select.is-loaded .ps-breath {
+  animation: psBreath 3.2s ease-in-out infinite;
+}
+
+.player-select.is-loaded .ps-win--valk .ps-breath {
+  animation-duration: 3.6s;
+  animation-delay: -1.2s;
+}
+
+/* Safira respira devagar enquanto o cursor passeia; ao ser escolhida, avança num pulo e
+   respira mais forte. Chifres e focinho que saem da moldura acompanham o painel. */
+.player-select.is-loaded .ps-win--safira .ps-breath,
+.player-select.is-loaded .ps-over .ps-breath {
+  animation: psSafira 7.2s infinite;
+}
+
+.player-select.is-loaded .ps-over .ps-fb {
+  animation-delay: -0.7s;
+}
+
+.player-select.is-loaded .ps-1p {
+  animation: psBob 0.9s steps(1, end) infinite, ps1pShow 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-cursor {
+  animation: psDrop 0.7s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-shine-band {
+  animation: psShine 4.8s ease-in-out infinite;
+}
+
+.player-select.is-loaded .ps-hud-free {
+  animation: pixelBlink 1.4s steps(1, end) infinite;
+}
+
+/* Ciclo de 7,2 s: cursor em Alex, depois em Valkyria, e Safira é confirmada */
+.player-select.is-loaded .ps-hl--alex {
+  animation: psHlAlex 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-hl--valk {
+  animation: psHlValk 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-lit--alex {
+  animation: psLitAlex 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-lit--valk {
+  animation: psLitValk 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-flash {
+  animation: psFlash 7.2s steps(1, end) infinite;
+}
+
+.player-select.is-loaded .ps-glow {
+  animation: psGlow 7.2s ease-out infinite;
+}
+
+.player-select.is-loaded .ps-lit--name {
+  animation: psLitName 7.2s steps(1, end) infinite;
+}
+
+@keyframes psFlip {
+  0% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@keyframes psBreath {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.035); }
+}
+
+@keyframes psSafira {
+  0% { transform: scale(1); animation-timing-function: ease-in-out; }
+  22% { transform: scale(1.022); animation-timing-function: ease-in-out; }
+  44% { transform: scale(1); animation-timing-function: cubic-bezier(0.2, 0.9, 0.3, 1.2); }
+  46.5% { transform: scale(1.075); animation-timing-function: ease-in-out; }
+  50% { transform: scale(1.03); animation-timing-function: ease-in-out; }
+  60% { transform: scale(1.065); animation-timing-function: ease-in-out; }
+  70% { transform: scale(1.03); animation-timing-function: ease-in-out; }
+  80% { transform: scale(1.065); animation-timing-function: ease-in-out; }
+  90% { transform: scale(1.035); animation-timing-function: ease-in-out; }
+  100% { transform: scale(1); }
+}
+
+@keyframes ps1pShow {
+  0% { opacity: 0; }
+  44% { opacity: 1; }
+  45.5% { opacity: 0; }
+  47% { opacity: 1; }
+}
+
+@keyframes psBob {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-2px); }
+}
+
+@keyframes psDrop {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(2px); }
+}
+
+@keyframes psShine {
+  0% { transform: translateX(-110%); }
+  22%, 100% { transform: translateX(300%); }
+}
+
+@keyframes psHlAlex {
+  0%, 8%, 16% { opacity: 1; }
+  4%, 12%, 20% { opacity: 0.3; }
+  22%, 100% { opacity: 0; }
+}
+
+@keyframes psHlValk {
+  0% { opacity: 0; }
+  22%, 30%, 38% { opacity: 1; }
+  26%, 34%, 42% { opacity: 0.3; }
+  44%, 100% { opacity: 0; }
+}
+
+@keyframes psLitAlex {
+  0% { opacity: 1; }
+  22%, 100% { opacity: 0; }
+}
+
+@keyframes psLitValk {
+  0% { opacity: 0; }
+  22% { opacity: 1; }
+  44%, 100% { opacity: 0; }
+}
+
+@keyframes psFlash {
+  0% { opacity: 0; }
+  44% { opacity: 0.6; }
+  45.5% { opacity: 0; }
+  47% { opacity: 0.35; }
+  48.5%, 100% { opacity: 0; }
+}
+
+@keyframes psGlow {
+  0%, 43.9% { opacity: 0.3; }
+  44% { opacity: 1; }
+  100% { opacity: 0.45; }
+}
+
+@keyframes psLitName {
+  0% { opacity: 0; }
+  44% { opacity: 1; }
+  45.5% { opacity: 0; }
+  47% { opacity: 1; }
+  48.5% { opacity: 0; }
+  50% { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .player-select * {
+    animation: none !important;
+  }
+}
+
+@media (max-width: 920px) {
+  .player-select {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Gerado por build_player_select.py: folha 1952x944 em escala 2x; arte de 362x406. */
+.ps-base { background-size: 269.6133% 116.2562%; background-position: 0% 0%; }
+.ps-win--alex { left: 10.221%; top: 26.601%; width: 34.8066%; height: 27.0936%; }
+.ps-win--alex .ps-fa { background-size: 774.6032% 429.0909%; background-position: 42.8235% 0%; }
+.ps-win--alex .ps-fb { background-size: 774.6032% 429.0909%; background-position: 42.8235% 30.9392%; }
+.ps-win--valk { left: 10.4972%; top: 57.3892%; width: 34.8066%; height: 27.0936%; }
+.ps-win--valk .ps-fa { background-size: 774.6032% 429.0909%; background-position: 42.8235% 61.8785%; }
+.ps-win--valk .ps-fb { background-size: 774.6032% 429.0909%; background-position: 42.8235% 92.8177%; }
+.ps-win--safira { left: 50.5525%; top: 26.601%; width: 33.1492%; height: 57.6355%; }
+.ps-win--safira .ps-fa { background-size: 813.3333% 201.7094%; background-position: 57.4766% 0%; }
+.ps-win--safira .ps-fb { background-size: 813.3333% 201.7094%; background-position: 57.4766% 99.1597%; }
+.ps-title { left: 27.3481%; top: 3.202%; width: 36.1878%; height: 11.33%; background-size: 745.0382% 1026.087%; background-position: 91.2426% 0%; }
+.ps-1p { left: 63.8122%; top: 17.2414%; width: 6.0773%; height: 5.1724%; background-size: 4436.3636% 2247.619%; background-position: 80.8176% 10.643%; }
+.ps-cursor { left: 63.8122%; top: 87.4384%; width: 7.1823%; height: 3.9409%; background-size: 3753.8462% 2950%; background-position: 81.1579% 15.5702%; }
+.ps-name { left: 55.5249%; top: 93.1034%; width: 23.7569%; height: 3.9409%; background-size: 1134.8837% 2950%; background-position: 86.6292% 19.5175%; }
+.ps-lit--name { left: 55.5249%; top: 93.1034%; width: 23.7569%; height: 3.9409%; background-size: 1134.8837% 2950%; background-position: 86.6292% 23.4649%; }
+.ps-lbl--alex { left: 3.0387%; top: 32.7586%; width: 4.4199%; height: 15.0246%; background-size: 6100% 773.7705%; background-position: 94.1667% 0%; }
+.ps-lit--alex { left: 3.0387%; top: 32.7586%; width: 4.4199%; height: 15.0246%; background-size: 6100% 773.7705%; background-position: 96.0417% 0%; }
+.ps-lbl--valk { left: 3.0387%; top: 56.6502%; width: 4.4199%; height: 28.8177%; background-size: 6100% 403.4188%; background-position: 97.9167% 0%; }
+.ps-lit--valk { left: 3.0387%; top: 56.6502%; width: 4.4199%; height: 28.8177%; background-size: 6100% 403.4188%; background-position: 99.7917% 0%; }
+.ps-over { left: 44.1989%; top: 20.936%; width: 42.8177%; height: 31.5271%; }
+.ps-over .ps-breath { transform-origin: 40% 17.9688%; }
+.ps-over .ps-fa { background-size: 629.6774% 368.75%; background-position: 74.7868% 0%; }
+.ps-over .ps-fb { background-size: 629.6774% 368.75%; background-position: 74.7868% 37.7907%; }
+.ps-shine { -webkit-mask-size: 745.0382% 1026.087%; mask-size: 745.0382% 1026.087%; -webkit-mask-position: 91.2426% 0%; mask-position: 91.2426% 0%; }
+.ps-hl--alex { left: 8.2873%; top: 24.6305%; width: 38.674%; height: 31.0345%; }
+.ps-hl--valk { left: 8.2873%; top: 55.665%; width: 38.674%; height: 30.7882%; }
+.ps-glow { left: 48.3425%; top: 24.6305%; width: 37.5691%; height: 61.8227%; }
+.ps-flash { left: 50.5525%; top: 26.601%; width: 33.1492%; height: 57.6355%; }
