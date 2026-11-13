@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places } from "./data.js?v=20261113i";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113k";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -59,15 +59,26 @@ const panel = $("#schedule-panel");
 let activeDay = "23";
 let activeScheduleFilter = "all";
 
+// VI WPPGCC: as atividades do workshop (e os intervalos entre elas) aparecem
+// juntas num "cartucho" dentro do dia, com as pesquisas numeradas em sequência.
+const isWp = item => item.track === "wppgcc";
+const isBreakItem = item => item.type === "Intervalo";
+const wpTalkNo = new Map();
+schedule.filter(isWp).forEach(it => (it.talks || []).forEach(t => wpTalkNo.set(t, wpTalkNo.size + 1)));
+const wpDays = [...new Set(schedule.filter(isWp).map(it => it.day))];
+const wpKeynotes = schedule.filter(it => isWp(it) && !it.talks).length;
+
 const scheduleFilterDefs = [
   { id: "all", label: "Tudo" },
   { id: "palestras", label: "Palestras & Mesas" },
   { id: "minicursos", label: "Minicursos & Oficinas" },
-  { id: "gamejam", label: "Game Jam" }
+  { id: "gamejam", label: "Game Jam" },
+  { id: "wppgcc", label: wppgcc.short }
 ];
 
 const matchesScheduleFilter = (item, filterId) => {
   if (filterId === "all") return true;
+  if (filterId === "wppgcc") return isWp(item);
   if (filterId === "minicursos") return isWorkshop(item.type);
   if (filterId === "gamejam") return item.type.toLowerCase().includes("game jam");
   return isTalk(item.type);
@@ -75,8 +86,30 @@ const matchesScheduleFilter = (item, filterId) => {
 
 function renderScheduleFilters() {
   scheduleFilters.innerHTML = scheduleFilterDefs
-    .map(f => `<button type="button" class="filter-chip${f.id === activeScheduleFilter ? " is-active" : ""}" data-filter="${f.id}" aria-pressed="${f.id === activeScheduleFilter}">${esc(f.label)}</button>`)
+    .map(f => `<button type="button" class="filter-chip${f.id === "wppgcc" ? " filter-chip--wppgcc" : ""}${f.id === activeScheduleFilter ? " is-active" : ""}" data-filter="${f.id}" aria-pressed="${f.id === activeScheduleFilter}">${esc(f.label)}</button>`)
     .join("");
+}
+
+// O "cartucho extra": cabeçalho com o logo do PPGCC, as linhas do workshop e um
+// rodapé com os números do evento.
+function wpCartridge(rows, day, rowHtml) {
+  const part = wpDays.indexOf(day) + 1;
+  const [lw, lh] = wppgcc.logoSize || [180, 74];
+  return (
+    `<section class="wp-cart" aria-label="${esc(wppgcc.name)}">` +
+    `<header class="wp-cart-head">` +
+    `<div class="wp-cart-label"><img src="${esc(wppgcc.logo)}" alt="" width="${lw}" height="${lh}" loading="lazy" decoding="async"></div>` +
+    `<div class="wp-cart-titles">` +
+    `<p class="wp-cart-kicker">${pxIcon("star")}SASI × PPGCC · EVENTO DENTRO DO EVENTO</p>` +
+    `<h3>${esc(wppgcc.name)}</h3>` +
+    `<p class="wp-cart-sub">${esc(wppgcc.org)} · dia ${part} de ${wpDays.length}</p>` +
+    `</div>` +
+    `<button type="button" class="wp-cart-more" data-wppgcc-open aria-haspopup="dialog">Sobre o PPGCC <span aria-hidden="true">▶</span></button>` +
+    `</header>` +
+    `<div class="wp-cart-body">${rows.map(rowHtml).join("")}</div>` +
+    `<footer class="wp-cart-foot" aria-hidden="true"><span>${wpTalkNo.size} pesquisas de mestrado</span><span>${wpKeynotes} palestra${wpKeynotes === 1 ? "" : "s"}</span><span>${wpDays.length} dias de workshop</span></footer>` +
+    `</section>`
+  );
 }
 
 function showDay(day, focus = false) {
@@ -103,9 +136,7 @@ function showDay(day, focus = false) {
   const liveMinutes = today && today.day === day ? today.minutes : null;
   const nextItem = liveMinutes === null ? null : items.find(it => it.type !== "Intervalo" && toMinutes(it.time) > liveMinutes);
 
-  const rowsHtml = items.length
-    ? items
-        .map(item => {
+  const rowHtml = item => {
           const lowerType = item.type.toLowerCase();
           const isBreak = lowerType === "intervalo";
           const isJam = lowerType.includes("game jam");
@@ -125,7 +156,15 @@ function showDay(day, focus = false) {
             // "Institucional" (credenciamento, solenidade, despedida) não leva etiqueta.
             (lowerType === "institucional" ? "" : `<span class="${typeClass}">${esc(item.type)}</span>`) +
             `<h3>${esc(item.title)}</h3>` +
-            (item.speaker ? `<p>${esc(withTitles(item.speaker))}</p>` : "") +
+            (item.talks
+              ? `<ol class="wp-talks">` +
+                item.talks
+                  .map(t => `<li><span class="wp-talk-no">PESQUISA ${String(wpTalkNo.get(t)).padStart(2, "0")}</span><strong>${esc(t.title)}</strong><small>${pxIcon("player")}${esc(t.by)}</small></li>`)
+                  .join("") +
+                `</ol>`
+              : item.speaker
+                ? `<p>${esc(withTitles(item.speaker))}</p>`
+                : "") +
             (item.note ? `<p class="event-note">${esc(item.note)}</p>` : "") +
             (place || item.seats
               ? `<div class="event-meta">` +
@@ -137,9 +176,29 @@ function showDay(day, focus = false) {
             `<span class="event-arrow" aria-hidden="true">${isBreak ? "·" : "↗"}</span>` +
             `</article>`
           );
-        })
-        .join("")
-    : `<p class="schedule-empty">Nenhuma atividade desta categoria neste dia. Escolha outro dia ou clique em <strong>Tudo</strong>.</p>`;
+  };
+
+  // Um intervalo só entra no cartucho quando fica entre duas atividades do workshop.
+  const inWp = items.map((it, k) => {
+    if (isWp(it)) return true;
+    if (!isBreakItem(it)) return false;
+    const prev = items.slice(0, k).reverse().find(x => !isBreakItem(x));
+    const next = items.slice(k + 1).find(x => !isBreakItem(x));
+    return Boolean(prev && next && isWp(prev) && isWp(next));
+  });
+  let rowsHtml = "";
+  for (let k = 0; k < items.length; ) {
+    if (!inWp[k]) {
+      rowsHtml += rowHtml(items[k]);
+      k += 1;
+      continue;
+    }
+    let end = k;
+    while (end + 1 < items.length && inWp[end + 1]) end += 1;
+    rowsHtml += wpCartridge(items.slice(k, end + 1), day, rowHtml);
+    k = end + 1;
+  }
+  if (!items.length) rowsHtml = `<p class="schedule-empty">Nenhuma atividade desta categoria neste dia. Escolha outro dia ou clique em <strong>Tudo</strong>.</p>`;
 
   panel.innerHTML = headHtml + rowsHtml;
   if (focus) tabs.querySelector('[data-day="' + day + '"]')?.focus();
@@ -153,10 +212,13 @@ days.forEach((day, index) => {
   button.dataset.day = day.id;
   button.setAttribute("role", "tab");
   button.setAttribute("aria-controls", "schedule-panel");
-  button.setAttribute("aria-label", `${day.name}, ${day.id} de novembro (level ${level})`);
+  const hasWp = wpDays.includes(day.id);
+  if (hasWp) button.classList.add("has-wppgcc");
+  button.setAttribute("aria-label", `${day.name}, ${day.id} de novembro (level ${level})${hasWp ? ", com o " + wppgcc.name : ""}`);
   button.innerHTML =
     `<span class="day-level" aria-hidden="true"><span class="lv-long">LEVEL&nbsp;</span><span class="lv-short">LV.</span>${level}</span>` +
-    `<small>${esc(day.weekday)}</small><strong>${esc(day.id)}</strong><span class="day-month">NOV</span>`;
+    `<small>${esc(day.weekday)}</small><strong>${esc(day.id)}</strong><span class="day-month">NOV</span>` +
+    (hasWp ? `<span class="day-bonus" aria-hidden="true">WPPGCC</span>` : "");
   button.addEventListener("click", () => showDay(day.id));
   button.addEventListener("keydown", e => {
     if (!["ArrowRight", "ArrowLeft", "Home", "End"].includes(e.key)) return;
@@ -167,6 +229,10 @@ days.forEach((day, index) => {
     showDay(days[target].id, true);
   });
   tabs.append(button);
+});
+
+panel.addEventListener("click", e => {
+  if (e.target.closest("[data-wppgcc-open]")) openWppgcc();
 });
 
 renderScheduleFilters();
@@ -260,10 +326,14 @@ function buildActs(guest, compact = false) {
         const d = days.find(x => x.id === a.day);
         const time = a.time + (a.endTime ? "–" + a.endTime : "");
         const place = placeOf(a);
+        // No workshop, o card mostra a tag WPPGCC e o título da pesquisa da própria pessoa.
+        const talk = a.talks?.find(t => t.by === guest.name);
+        const actTitle = talk ? talk.title : a.title;
+        const wpTag = isWp(a) ? ` <span class="guest-act-wp" title="${esc(wppgcc.name)}">WPPGCC</span>` : "";
         return (
           `<li><span class="guest-act-lv" aria-hidden="true">${levelLabel(a.day)}</span><div>` +
-          `<strong>${esc(d.weekday)} ${esc(a.day)}/11 · ${esc(time)}</strong>` +
-          (compact ? "" : `<span class="guest-act-title">${esc(a.title)}</span>`) +
+          `<strong>${esc(d.weekday)} ${esc(a.day)}/11 · ${esc(time)}${wpTag}</strong>` +
+          (compact ? "" : `<span class="guest-act-title">${esc(actTitle)}</span>`) +
           (place ? placeHtml(place, "place-link--small") : "") +
           `</div></li>`
         );
@@ -461,6 +531,7 @@ const partnerDialogLink = $("#partner-dialog-link");
 const partnerDialogNoIg = $("#partner-dialog-noig");
 const partnerDialogLogo = $("#partner-dialog-logo");
 const partnerDialogLogoWrap = $("#partner-dialog-logo-wrap");
+const partnerDialogSite = $("#partner-dialog-site");
 const partnerThanksBox = makeThanksBox($("#partner-thanks"));
 const IG_ICON = `<img class="ig-icon" src="./assets/icons/instagram.svg" alt="" width="18" height="18" decoding="async">`;
 
@@ -521,8 +592,13 @@ partnerContainer.addEventListener("click", event => {
   const item = group?.items[Number(card.dataset.item)];
   if (!item) return;
   const meta = tierMeta[group.tier] || { slug: group.tier.toLowerCase(), icon: "star" };
-  partnerDialog.dataset.tier = meta.slug;
-  partnerDialogTier.innerHTML = pxIcon(meta.icon) + "PARCEIRO " + esc(group.tier.toUpperCase());
+  openPartnerDialog(item, meta.slug, pxIcon(meta.icon) + "PARCEIRO " + esc(group.tier.toUpperCase()));
+});
+
+// Mesma janela para parceiros e para o PPGCC (que também tem link de site).
+function openPartnerDialog(item, slug, eyebrowHtml) {
+  partnerDialog.dataset.tier = slug;
+  partnerDialogTier.innerHTML = eyebrowHtml;
   partnerDialogLogo.src = item.logo;
   partnerDialogLogoWrap.classList.toggle("is-dark", Boolean(item.logoDark));
   partnerDialogTitle.textContent = item.name;
@@ -535,10 +611,27 @@ partnerContainer.addEventListener("click", event => {
     partnerDialogLink.href = item.url;
     partnerDialogLink.setAttribute("aria-label", "Ver Instagram de " + item.name + " (abre em nova aba)");
   }
+  const hasSite = /^https?:\/\//i.test(item.site || "");
+  if (partnerDialogSite) {
+    partnerDialogSite.hidden = !hasSite;
+    if (hasSite) {
+      partnerDialogSite.href = item.site;
+      partnerDialogSite.setAttribute("aria-label", "Ver site de " + item.name + " (abre em nova aba)");
+    }
+  }
   partnerDialog.showModal();
   if (hasThanks) partnerThanksBox.type();
-});
+}
 if (partnerDialog) partnerDialog.addEventListener("close", partnerThanksBox.stop);
+
+function openWppgcc() {
+  if (!partnerDialog) return;
+  openPartnerDialog(
+    { name: "PPGCC/UFAC", logo: wppgcc.logo, description: wppgcc.description, url: wppgcc.instagram, site: wppgcc.site, thanks: wppgcc.thanks },
+    "ppgcc",
+    pxIcon("book") + esc(wppgcc.short) + " · EVENTO DENTRO DA SASI"
+  );
+}
 
 /* =========================================================
    4b. LOCAIS: LOGO, FRASE, CARROSSEL DE FOTOS E MAPA EXATO

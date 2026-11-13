@@ -132,6 +132,43 @@ const activity = (day, time, endTime, title, type, speaker = "", place = "Centro
   day, time, endTime, title, type, speaker, place, ...extra
 });
 
+// VI Workshop de Pesquisa do PPGCC: um evento dentro da SASI. As atividades com
+// track: "wppgcc" aparecem juntas num "cartucho" especial na programação, e as
+// apresentações de cada sessão ficam em "talks" (conferido com a planilha
+// WPPGCC.xlsx). A sessão extra das 12h, "se houver demanda", não entra.
+export const wppgcc = {
+  name: "VI Workshop de Pesquisa do PPGCC",
+  short: "VI WPPGCC",
+  org: "Mestrado em Ciência da Computação da UFAC",
+  logo: "./assets/ppgcc-logo.webp",
+  logoSize: [360, 147],
+  instagram: "https://www.instagram.com/ppgcc_ufac/",
+  site: "http://www2.ufac.br/ppgcc",
+  description: "O programa de mestrado em Ciência da Computação (PPGCC/UFAC) é o terceiro na região norte do Brasil e o único no Estado do Acre. Criado para atender às demandas tecnológicas da região, oferece vagas nas áreas de Engenharia de Sistemas e Informação e Sistemas Computacionais Inteligentes. O programa desempenha um papel estratégico na formação de mão de obra qualificada, alcançando a região Sul da Amazônia Ocidental, incluindo Rondônia, sul do Amazonas, Bolívia e Peru. Além de promover pesquisas em tecnologia da informação e cooperação entre universidades e instituições, busca atrair investimentos em TI para a região, gerando empregos e negócios baseados em tecnologia. Os objetivos do programa são formar profissionais capacitados, promover intercâmbios e desenvolver habilidades de pesquisa científica e tecnológica nos graduados.",
+  thanks: {
+    theme: "ppgcc", icon: "flask", badge: "NÍVEL MESTRE", title: "VALEU, PPGCC!",
+    text: "Obrigado por trazer a pesquisa para dentro da SASI! No único mestrado em Ciência da Computação do Acre, cada dissertação é uma nova fase desbloqueada para a tecnologia da região."
+  }
+};
+
+const WP = { track: "wppgcc" };
+const wpTalk = (title, by) => ({ title, by });
+const WP_TALKS = [
+  wpTalk("Análise de Conflitos de Merge em Sistemas Feitos com Agentes de Inteligência Artificial", "Álvaro Lopes Rios"),
+  wpTalk("Feedback Semântico Localizado como Estratégia Pedagógica para Elicitação e Revisão de Requisitos Funcionais", "Christopher Ric Coelho Saar"),
+  wpTalk("Reconstrução 3D de Ambientes Internos Baseada em Signed Distance Functions", "Clécio Elias Silva e Silva"),
+  wpTalk("Abordagem baseada em aprendizado profundo para a reconstrução de vídeos HDR a partir de sequências de múltiplas exposições alternadas", "Cristopher Alexander Ochoa Villanueva"),
+  wpTalk("Desenvolvimento de Abordagens de Baixo Custo Computacional Baseado em Redes Neurais Convolucionais para a Reconstrução de Imagens High Dynamic Range a partir de Múltiplas Exposições", "Gustavo de Souza Ferreti"),
+  wpTalk("Ensino de Testes Exploratórios com SBTM: Estudo Empírico sobre o impacto do uso com Inteligência Artificial", "Jayra Nascimento Bandeira Bezerra"),
+  wpTalk("Modelo Baseado em Aprendizado Profundo para Reconstrução HDR a partir de uma Única Exposição LDR com Recuperação de Detalhes em Regiões com Perda de Informação", "Lucas Hildelbrano Costa Carvalho"),
+  wpTalk("Adaptação de Hiper-heurísticas Mono-objetivo para Otimização Multi-objetivo", "Victor Alexandre Lima Ribeiro"),
+  wpTalk("Hiper-heurística Multiobjetivo Guiada por Modelos de Linguagem para a Geração de Estratégias de Redução de Mutantes", "Dayan Freitas Alves")
+];
+const joinNames = names => (names.length > 1 ? names.slice(0, -1).join(", ") + " e " + names[names.length - 1] : names[0] || "");
+// O "speaker" com os nomes liga cada apresentação ao card do convidado.
+const wpSession = (day, time, endTime, n, talks) =>
+  activity(day, time, endTime, `Apresentações de pesquisas de mestrado · Sessão ${n}`, "Apresentação", joinNames(talks.map(t => t.by)), "Centro de Convivência", { ...WP, talks });
+
 export const schedule = [
   // Segunda-feira, 23/11
   activity("23", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -160,11 +197,11 @@ export const schedule = [
 
   // Quarta-feira, 25/11
   activity("25", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("25", "08:00", "09:30", "Workshop de Pesquisa do PPGCC — Palestra", "Palestra", "Elcio Hideiti Shiguemori"),
+  activity("25", "08:00", "09:30", "Aplicações e Desafios da Inteligência Artificial e dos Sistemas Inteligentes em Tecnologias Aeroespaciais", "Palestra", "Elcio Hideiti Shiguemori", "Centro de Convivência", WP),
   activity("25", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("25", "09:45", "10:45", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação"),
+  wpSession("25", "09:45", "10:45", 1, WP_TALKS.slice(0, 3)),
   activity("25", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("25", "11:00", "12:00", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação"),
+  wpSession("25", "11:00", "12:00", 2, WP_TALKS.slice(3, 6)),
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de cursos de computação" }),
   activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "", { seats: "15 a 25" }),
@@ -175,7 +212,7 @@ export const schedule = [
   activity("26", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("26", "09:45", "10:45", "Do sonho ao negócio: Seja protagonista da sua história", "Palestra", "SEBRAE"),
   activity("26", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("26", "11:00", "12:00", "Workshop de Pesquisa do PPGCC — Apresentação de Pesquisas de Mestrado", "Apresentação"),
+  wpSession("26", "11:00", "12:00", 3, WP_TALKS.slice(6, 9)),
   activity("26", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, ""),
   activity("26", "15:00", "", "Término SASI: Game Jam", "Game Jam", "", "On-line · itch.io", { note: "Prazo final de envio dos jogos" }),

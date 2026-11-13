@@ -6548,3 +6548,354 @@ main {
     transition: none !important;
   }
 }
+
+/* ===== VI WPPGCC: um "cartucho extra" encaixado na programação ===== */
+.wp-cart {
+  position: relative;
+  margin: 16px 16px 20px;
+  border: 3px solid #f5b700;
+  border-radius: 16px 16px 10px 10px;
+  background: linear-gradient(180deg, #0d2f6e, #071a45);
+  box-shadow: 0 0 0 3px #020739, 0 0 0 6px rgba(245, 183, 0, 0.35), 0 16px 34px rgba(0, 0, 0, 0.35);
+  overflow: hidden;
+  animation: wpInsert 0.55s steps(5, end) both;
+}
+
+/* Ranhuras de cartucho no topo */
+.wp-cart::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  z-index: 1;
+  width: 132px;
+  height: 9px;
+  margin-left: -66px;
+  background: repeating-linear-gradient(90deg, #f5b700 0 6px, transparent 6px 11px);
+}
+
+.wp-cart-head {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  padding: 24px 24px 18px;
+  border-bottom: 2px dashed rgba(245, 183, 0, 0.6);
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 3px),
+    radial-gradient(circle at 92% 20%, rgba(245, 183, 0, 0.22), transparent 40%),
+    linear-gradient(135deg, #0c4ea2, #082f6b);
+}
+
+.wp-cart-label {
+  display: grid;
+  place-items: center;
+  width: 140px;
+  height: 68px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: 4px 4px 0 #f5b700;
+  animation: wpLabel 1.2s steps(2, jump-none) 0.55s 2 both;
+}
+
+.wp-cart-label img {
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  max-height: 56px;
+}
+
+.wp-cart-kicker {
+  margin: 0 0 6px;
+  color: #ffd75a;
+  font: 400 8px/1.6 var(--pixel);
+}
+
+.wp-cart-kicker .px-icon {
+  width: 12px;
+  height: 12px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  color: #ffd75a;
+  --px-accent: #ffffff;
+}
+
+.wp-cart-head h3 {
+  margin: 0;
+  color: #ffffff;
+  font: 700 clamp(19px, 2.4vw, 24px)/1.2 "Space Grotesk", sans-serif;
+}
+
+.wp-cart-sub {
+  margin: 5px 0 0;
+  color: #cfe0ff;
+  font-size: 13.5px;
+}
+
+.wp-cart-more {
+  padding: 10px 14px;
+  border: 0;
+  border-radius: 999px;
+  background: #f5b700;
+  color: #082f6b;
+  font: 700 13px/1 "Space Grotesk", sans-serif;
+  white-space: nowrap;
+  box-shadow: 3px 3px 0 #020739;
+  transition: transform 0.16s ease, box-shadow 0.16s ease;
+}
+
+.wp-cart-more:hover {
+  transform: translate(-1px, -1px);
+  box-shadow: 4px 4px 0 #020739;
+}
+
+.wp-cart-more:focus-visible {
+  outline: 3px solid #ffffff;
+  outline-offset: 3px;
+}
+
+.wp-cart .event-row {
+  border-top-color: rgba(245, 183, 0, 0.16);
+}
+
+.wp-cart .event-row:first-child {
+  border-top: 0;
+}
+
+.wp-cart .event-row time {
+  color: #ffd75a;
+}
+
+.wp-cart .type {
+  color: #9cc4ff;
+}
+
+.wp-cart .event-arrow {
+  color: #f5b700;
+}
+
+.wp-talks {
+  display: grid;
+  gap: 8px;
+  margin: 12px 0 4px;
+  padding: 0;
+  list-style: none;
+}
+
+.wp-talks li {
+  display: grid;
+  gap: 4px;
+  padding: 10px 14px;
+  border-left: 3px solid #f5b700;
+  border-radius: 0 10px 10px 0;
+  background: rgba(12, 78, 162, 0.3);
+}
+
+.wp-talk-no {
+  color: #ffd75a;
+  font: 400 8px/1.6 var(--pixel);
+}
+
+.wp-talks strong {
+  color: #ffffff;
+  font: 600 15px/1.4 "Space Grotesk", sans-serif;
+}
+
+.wp-talks small {
+  color: #cfe0ff;
+  font-size: 13px;
+}
+
+.wp-talks small .px-icon {
+  width: 13px;
+  height: 13px;
+  margin-right: 6px;
+  vertical-align: -2px;
+  color: #cfe0ff;
+  --px-accent: #f5b700;
+}
+
+.wp-cart-foot {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 22px;
+  padding: 11px 16px;
+  border-top: 2px dashed rgba(245, 183, 0, 0.5);
+  background: #061638;
+  color: #ffd75a;
+  font: 400 8px/1.6 var(--pixel);
+  text-transform: uppercase;
+}
+
+.wp-cart-foot span::before {
+  content: "◆ ";
+  color: #9cc4ff;
+}
+
+/* Tag WPPGCC nas atividades dos cards de convidados, no mesmo estilo da tag LV */
+.guest-act-wp {
+  display: inline-block;
+  margin-left: 6px;
+  padding: 4px 5px 3px;
+  background: #f5b700;
+  color: #082f6b;
+  font: 400 8px/1 var(--pixel);
+  vertical-align: 1px;
+  box-shadow: 2px 2px 0 #0c4ea2;
+}
+
+.guest-mini-card .guest-act-wp {
+  box-shadow: none;
+}
+/* Chip do filtro e selo nas abas dos dias com workshop */
+.filter-chip--wppgcc {
+  border-color: rgba(245, 183, 0, 0.6);
+  color: #ffd75a;
+}
+
+.filter-chip--wppgcc.is-active {
+  border-color: #f5b700;
+  background: #f5b700;
+  color: #082f6b;
+}
+
+.day-tabs button.has-wppgcc {
+  position: relative;
+}
+
+.day-bonus {
+  display: inline-block;
+  margin-top: 6px;
+  padding: 3px 6px 2px;
+  border-radius: 4px;
+  background: #f5b700;
+  color: #082f6b;
+  font: 400 8px/1.3 var(--pixel);
+}
+
+/* Janela do PPGCC: cor da "cota" e botão de site */
+.partner-dialog[data-tier="ppgcc"] {
+  --tier-color: #f5b700;
+}
+
+.partner-dialog .partner-dialog-link--site {
+  margin-left: 8px;
+  background: #ffffff;
+  color: #000431;
+}
+
+.partner-dialog .partner-dialog-link--site:hover {
+  background: #e8edff;
+}
+
+/* Agradecimento do PPGCC: papel quadriculado e uma lupa examinando a pesquisa */
+.thanks-box--ppgcc {
+  --th-line: #f5b700;
+  --th-glow: rgba(245, 183, 0, 0.3);
+  --th-bg: radial-gradient(circle, rgba(156, 196, 255, 0.2) 1px, transparent 1.6px) 0 0 / 12px 12px, linear-gradient(160deg, #0c4ea2, #072a62);
+  --th-title: #ffe28a;
+  --th-icon: #ffe28a;
+  --th-accent: #9cc4ff;
+  --th-badge-bg: #f5b700;
+  --th-badge-fg: #082f6b;
+}
+
+.thanks-box--ppgcc::after {
+  content: "";
+  position: absolute;
+  right: -14px;
+  bottom: -14px;
+  width: 38px;
+  height: 38px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' shape-rendering='crispEdges'%3E%3Cpath fill='%239cc4ff' fill-opacity='0.4' d='M2 1h4v1h-4zM1 2h1v1h-1zM4 2h3v1h-3zM1 3h1v1h-1zM3 3h4v1h-4zM1 4h6v1h-6zM1 5h6v1h-6zM2 6h4v1h-4z'/%3E%3Cpath fill='%23f5b700' d='M2 0h4v1h-4zM1 1h1v1h-1zM6 1h1v1h-1zM0 2h1v1h-1zM7 2h1v1h-1zM0 3h1v1h-1zM7 3h1v1h-1zM0 4h1v1h-1zM7 4h1v1h-1zM0 5h1v1h-1zM7 5h1v1h-1zM1 6h1v1h-1zM6 6h1v1h-1zM2 7h4v1h-4zM7 7h1v1h-1zM7 8h2v1h-2zM8 9h2v1h-2zM9 10h2v1h-2zM10 11h2v1h-2z'/%3E%3Cpath fill='%23ffffff' d='M2 2h2v1h-2zM2 3h1v1h-1z'/%3E%3C/svg%3E") center / contain no-repeat;
+  transform-origin: 70% 70%;
+  animation: wpLupa 2.4s ease-in-out infinite;
+}
+
+.thanks-box--ppgcc .thanks-box-next {
+  display: none;
+}
+
+@keyframes wpInsert {
+  from {
+    transform: translateY(-16px);
+    opacity: 0;
+  }
+  to {
+    transform: none;
+    opacity: 1;
+  }
+}
+
+@keyframes wpLabel {
+  50% {
+    box-shadow: 4px 4px 0 #f5b700, 0 0 0 4px rgba(255, 255, 255, 0.55);
+  }
+}
+
+@keyframes wpLupa {
+  0%,
+  100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  50% {
+    transform: translate(-8px, -3px) rotate(-10deg);
+  }
+}
+
+@media (max-width: 620px) {
+  .wp-cart {
+    margin: 12px 8px 16px;
+  }
+
+  .wp-cart-head {
+    grid-template-columns: 1fr;
+    gap: 12px;
+    padding: 22px 16px 16px;
+  }
+
+  .wp-cart-label {
+    width: 128px;
+    height: 60px;
+  }
+
+  .wp-cart-more {
+    justify-self: start;
+  }
+
+  .wp-talks li {
+    padding: 9px 11px;
+  }
+
+  .wp-talks strong {
+    font-size: 14px;
+  }
+
+  .day-bonus {
+    display: none;
+  }
+
+  .day-tabs button.has-wppgcc::after {
+    content: "";
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 8px;
+    height: 8px;
+    background: #f5b700;
+    box-shadow: 0 0 0 2px #082f6b;
+  }
+
+  .partner-dialog .partner-dialog-link--site {
+    margin-left: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wp-cart,
+  .wp-cart-label {
+    animation: none;
+  }
+}
