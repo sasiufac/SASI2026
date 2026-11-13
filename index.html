@@ -8,140 +8,466 @@
   <meta property="og:title" content="SASI 2026 | Semana Acadêmica de Sistemas de Informação">
   <meta property="og:description" content="Uma semana de tecnologia, conhecimento e jogos na Universidade Federal do Acre.">
   <title>SASI 2026 — Semana Acadêmica de Sistemas de Informação</title>
-  <link rel="icon" href="./assets/favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="./assets/favicon-comissao-32.png" sizes="32x32" type="image/png">
+  <link rel="icon" href="./assets/favicon-comissao-192.png" sizes="192x192" type="image/png">
+  <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./styles.css">
-  <script type="module" src="./src/main.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Press+Start+2P&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./styles.css?v=20261113i">
+  <script type="module" src="./src/main.js?v=20261113i"></script>
 </head>
 <body>
+<svg class="px-sprite" aria-hidden="true" focusable="false" shape-rendering="crispEdges"><symbol id="px-mic" viewBox="0 0 12 12"><path fill="currentColor" d="M4 0h4v1h-4zM3 1h1v1h-1zM8 1h1v1h-1zM3 2h1v1h-1zM8 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM3 4h1v1h-1zM8 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM1 6h1v1h-1zM4 6h4v1h-4zM10 6h1v1h-1zM1 7h2v1h-2zM9 7h2v1h-2zM2 8h2v1h-2zM8 8h2v1h-2zM4 9h4v1h-4zM5 10h2v1h-2zM3 11h6v1h-6z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 1h4v1h-4zM4 2h4v1h-4zM4 3h4v1h-4zM4 4h4v1h-4zM4 5h4v1h-4z"/></symbol><symbol id="px-terminal" viewBox="0 0 12 12"><path fill="currentColor" d="M0 0h12v1h-12zM0 1h1v1h-1zM11 1h1v1h-1zM0 2h1v1h-1zM2 2h1v1h-1zM11 2h1v1h-1zM0 3h1v1h-1zM3 3h1v1h-1zM11 3h1v1h-1zM0 4h1v1h-1zM4 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM3 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM2 6h1v1h-1zM11 6h1v1h-1zM0 7h1v1h-1zM11 7h1v1h-1zM0 8h12v1h-12zM5 9h2v1h-2zM3 10h6v1h-6z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 6h4v1h-4z"/></symbol><symbol id="px-gamepad" viewBox="0 0 12 12"><path fill="currentColor" d="M2 2h8v1h-8zM1 3h10v1h-10zM0 4h4v1h-4zM5 4h4v1h-4zM10 4h2v1h-2zM0 5h3v1h-3zM6 5h2v1h-2zM9 5h1v1h-1zM11 5h1v1h-1zM0 6h4v1h-4zM5 6h4v1h-4zM10 6h2v1h-2zM0 7h12v1h-12zM0 8h4v1h-4zM8 8h4v1h-4zM1 9h2v1h-2zM9 9h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M9 4h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM9 6h1v1h-1z"/></symbol><symbol id="px-calendar" viewBox="0 0 12 12"><path fill="currentColor" d="M2 0h1v1h-1zM9 0h1v1h-1zM0 1h12v1h-12zM0 2h1v1h-1zM11 2h1v1h-1zM0 3h12v1h-12zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM5 5h2v1h-2zM8 5h2v1h-2zM11 5h1v1h-1zM0 6h1v1h-1zM11 6h1v1h-1zM0 7h1v1h-1zM2 7h2v1h-2zM5 7h2v1h-2zM11 7h1v1h-1zM0 8h1v1h-1zM11 8h1v1h-1zM0 9h1v1h-1zM2 9h2v1h-2zM5 9h2v1h-2zM8 9h2v1h-2zM11 9h1v1h-1zM0 10h1v1h-1zM11 10h1v1h-1zM0 11h12v1h-12z"/><path style="fill:var(--px-accent,#FF8E17)" d="M1 2h10v1h-10zM8 7h2v1h-2z"/></symbol><symbol id="px-pin" viewBox="0 0 12 12"><path fill="currentColor" d="M4 0h4v1h-4zM3 1h6v1h-6zM2 2h3v1h-3zM7 2h3v1h-3zM2 3h2v1h-2zM8 3h2v1h-2zM2 4h2v1h-2zM8 4h2v1h-2zM2 5h3v1h-3zM7 5h3v1h-3zM3 6h6v1h-6zM3 7h6v1h-6zM4 8h4v1h-4zM5 9h2v1h-2zM5 10h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 2h2v1h-2zM4 3h4v1h-4zM4 4h4v1h-4zM5 5h2v1h-2z"/></symbol><symbol id="px-trophy" viewBox="0 0 12 12"><path fill="currentColor" d="M2 0h8v1h-8zM0 1h3v1h-3zM9 1h3v1h-3zM0 2h1v1h-1zM2 2h1v1h-1zM9 2h1v1h-1zM11 2h1v1h-1zM0 3h1v1h-1zM2 3h1v1h-1zM9 3h1v1h-1zM11 3h1v1h-1zM0 4h2v1h-2zM3 4h1v1h-1zM8 4h1v1h-1zM10 4h2v1h-2zM3 5h1v1h-1zM8 5h1v1h-1zM4 6h1v1h-1zM7 6h1v1h-1zM5 7h2v1h-2zM5 8h2v1h-2zM3 9h6v1h-6zM3 10h1v1h-1zM8 10h1v1h-1zM2 11h8v1h-8z"/><path style="fill:var(--px-accent,#FF8E17)" d="M3 1h6v1h-6zM3 2h6v1h-6zM3 3h6v1h-6zM4 4h4v1h-4zM4 5h4v1h-4zM5 6h2v1h-2zM4 10h4v1h-4z"/></symbol><symbol id="px-diamond" viewBox="0 0 12 12"><path fill="currentColor" d="M3 1h6v1h-6zM2 2h1v1h-1zM5 2h2v1h-2zM9 2h1v1h-1zM1 3h1v1h-1zM10 3h1v1h-1zM0 4h12v1h-12zM1 5h1v1h-1zM10 5h1v1h-1zM2 6h1v1h-1zM9 6h1v1h-1zM3 7h1v1h-1zM8 7h1v1h-1zM4 8h1v1h-1zM7 8h1v1h-1zM5 9h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M3 2h2v1h-2zM7 2h2v1h-2zM2 3h8v1h-8zM2 5h8v1h-8zM3 6h6v1h-6zM4 7h4v1h-4zM5 8h2v1h-2z"/></symbol><symbol id="px-star" viewBox="0 0 12 12"><path fill="currentColor" d="M5 0h2v1h-2zM5 1h2v1h-2zM4 2h1v1h-1zM7 2h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM0 4h4v1h-4zM8 4h4v1h-4zM1 5h2v1h-2zM9 5h2v1h-2zM2 6h1v1h-1zM9 6h1v1h-1zM3 7h1v1h-1zM8 7h1v1h-1zM2 8h1v1h-1zM5 8h2v1h-2zM9 8h1v1h-1zM2 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM9 9h1v1h-1zM1 10h2v1h-2zM8 10h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 2h2v1h-2zM5 3h2v1h-2zM4 4h4v1h-4zM3 5h6v1h-6zM3 6h6v1h-6zM4 7h4v1h-4zM3 8h2v1h-2zM7 8h2v1h-2zM3 9h1v1h-1zM8 9h1v1h-1z"/></symbol><symbol id="px-gem" viewBox="0 0 12 12"><path fill="currentColor" d="M3 1h6v1h-6zM2 2h1v1h-1zM9 2h1v1h-1zM1 3h1v1h-1zM4 3h4v1h-4zM10 3h1v1h-1zM1 4h1v1h-1zM3 4h1v1h-1zM8 4h1v1h-1zM10 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1zM10 5h1v1h-1zM1 6h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM4 7h4v1h-4zM10 7h1v1h-1zM2 8h1v1h-1zM9 8h1v1h-1zM3 9h6v1h-6z"/><path style="fill:var(--px-accent,#FF8E17)" d="M3 2h6v1h-6zM2 3h2v1h-2zM8 3h2v1h-2zM2 4h1v1h-1zM4 4h4v1h-4zM9 4h1v1h-1zM2 5h1v1h-1zM4 5h4v1h-4zM9 5h1v1h-1zM2 6h1v1h-1zM4 6h4v1h-4zM9 6h1v1h-1zM2 7h2v1h-2zM8 7h2v1h-2zM3 8h6v1h-6z"/></symbol><symbol id="px-coin" viewBox="0 0 12 12"><path fill="currentColor" d="M4 1h4v1h-4zM2 2h2v1h-2zM8 2h2v1h-2zM1 3h1v1h-1zM10 3h1v1h-1zM1 4h1v1h-1zM6 4h1v1h-1zM10 4h1v1h-1zM0 5h1v1h-1zM6 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM6 6h1v1h-1zM11 6h1v1h-1zM1 7h1v1h-1zM6 7h1v1h-1zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h2v1h-2zM8 9h2v1h-2zM4 10h4v1h-4z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 2h4v1h-4zM2 3h8v1h-8zM2 4h4v1h-4zM7 4h3v1h-3zM1 5h5v1h-5zM7 5h4v1h-4zM1 6h5v1h-5zM7 6h4v1h-4zM2 7h4v1h-4zM7 7h3v1h-3zM2 8h8v1h-8zM4 9h4v1h-4z"/></symbol><symbol id="px-medal" viewBox="0 0 12 12"><path fill="currentColor" d="M1 0h2v1h-2zM9 0h2v1h-2zM2 1h2v1h-2zM8 1h2v1h-2zM3 2h2v1h-2zM7 2h2v1h-2zM4 3h4v1h-4zM3 4h6v1h-6zM2 5h2v1h-2zM8 5h2v1h-2zM1 6h1v1h-1zM10 6h1v1h-1zM1 7h1v1h-1zM5 7h2v1h-2zM10 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM2 9h2v1h-2zM8 9h2v1h-2zM4 10h4v1h-4z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 5h4v1h-4zM2 6h8v1h-8zM2 7h3v1h-3zM7 7h3v1h-3zM2 8h8v1h-8zM4 9h4v1h-4z"/></symbol><symbol id="px-pencil" viewBox="0 0 12 12"><path fill="currentColor" d="M9 0h2v1h-2zM8 1h1v1h-1zM11 1h1v1h-1zM7 2h1v1h-1zM10 2h1v1h-1zM6 3h1v1h-1zM9 3h1v1h-1zM5 4h1v1h-1zM8 4h1v1h-1zM4 5h1v1h-1zM7 5h1v1h-1zM3 6h1v1h-1zM6 6h1v1h-1zM2 7h4v1h-4zM2 8h3v1h-3zM1 9h2v1h-2zM0 10h1v1h-1z"/><path style="fill:var(--px-accent,#FF8E17)" d="M9 1h2v1h-2zM8 2h2v1h-2zM7 3h2v1h-2zM6 4h2v1h-2zM5 5h2v1h-2zM4 6h2v1h-2zM8 9h2v1h-2zM8 10h2v1h-2z"/></symbol><symbol id="px-network" viewBox="0 0 12 12"><path fill="currentColor" d="M0 0h2v1h-2zM10 0h2v1h-2zM0 1h2v1h-2zM10 1h2v1h-2zM2 2h1v1h-1zM9 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM4 4h1v1h-1zM7 4h1v1h-1zM4 7h1v1h-1zM7 7h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM2 9h1v1h-1zM9 9h1v1h-1zM0 10h2v1h-2zM10 10h2v1h-2zM0 11h2v1h-2zM10 11h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 4h2v1h-2zM4 5h4v1h-4zM4 6h4v1h-4zM5 7h2v1h-2z"/></symbol><symbol id="px-rocket" viewBox="0 0 12 12"><path fill="currentColor" d="M5 0h2v1h-2zM4 1h4v1h-4zM4 2h1v1h-1zM7 2h1v1h-1zM3 3h2v1h-2zM7 3h2v1h-2zM3 4h1v1h-1zM5 4h2v1h-2zM8 4h1v1h-1zM3 5h6v1h-6zM3 6h6v1h-6zM2 7h8v1h-8zM1 8h3v1h-3zM5 8h2v1h-2zM8 8h3v1h-3zM1 9h2v1h-2zM9 9h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 2h2v1h-2zM5 3h2v1h-2zM5 9h2v1h-2zM5 10h2v1h-2zM6 11h1v1h-1z"/></symbol><symbol id="px-eye" viewBox="0 0 12 12"><path fill="currentColor" d="M4 2h4v1h-4zM2 3h2v1h-2zM8 3h2v1h-2zM1 4h1v1h-1zM5 4h2v1h-2zM10 4h1v1h-1zM0 5h1v1h-1zM4 5h1v1h-1zM7 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM4 6h1v1h-1zM7 6h1v1h-1zM11 6h1v1h-1zM1 7h1v1h-1zM5 7h2v1h-2zM10 7h1v1h-1zM2 8h2v1h-2zM8 8h2v1h-2zM4 9h4v1h-4z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 5h2v1h-2zM5 6h2v1h-2z"/></symbol><symbol id="px-health" viewBox="0 0 12 12"><path fill="currentColor" d="M1 1h3v1h-3zM8 1h3v1h-3zM0 2h1v1h-1zM4 2h1v1h-1zM7 2h1v1h-1zM11 2h1v1h-1zM0 3h1v1h-1zM5 3h2v1h-2zM11 3h1v1h-1zM0 4h1v1h-1zM5 4h2v1h-2zM11 4h1v1h-1zM0 5h1v1h-1zM3 5h6v1h-6zM11 5h1v1h-1zM1 6h1v1h-1zM5 6h2v1h-2zM10 6h1v1h-1zM2 7h1v1h-1zM5 7h2v1h-2zM9 7h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM5 10h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M1 2h3v1h-3zM8 2h3v1h-3zM1 3h4v1h-4zM7 3h4v1h-4zM1 4h4v1h-4zM7 4h4v1h-4zM1 5h2v1h-2zM9 5h2v1h-2zM2 6h3v1h-3zM7 6h3v1h-3zM3 7h2v1h-2zM7 7h2v1h-2zM4 8h4v1h-4zM5 9h2v1h-2z"/></symbol><symbol id="px-book" viewBox="0 0 12 12"><path fill="currentColor" d="M1 1h4v1h-4zM7 1h4v1h-4zM0 2h1v1h-1zM5 2h2v1h-2zM11 2h1v1h-1zM0 3h1v1h-1zM2 3h2v1h-2zM5 3h2v1h-2zM8 3h2v1h-2zM11 3h1v1h-1zM0 4h1v1h-1zM5 4h2v1h-2zM11 4h1v1h-1zM0 5h1v1h-1zM2 5h2v1h-2zM5 5h2v1h-2zM8 5h2v1h-2zM11 5h1v1h-1zM0 6h1v1h-1zM5 6h2v1h-2zM11 6h1v1h-1zM0 7h1v1h-1zM2 7h2v1h-2zM5 7h2v1h-2zM8 7h2v1h-2zM11 7h1v1h-1zM0 8h1v1h-1zM5 8h2v1h-2zM11 8h1v1h-1zM1 9h4v1h-4zM7 9h4v1h-4zM5 10h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M1 2h4v1h-4zM7 2h4v1h-4zM1 3h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM10 3h1v1h-1zM1 4h4v1h-4zM7 4h4v1h-4zM1 5h1v1h-1zM4 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM1 6h4v1h-4zM7 6h4v1h-4zM1 7h1v1h-1zM4 7h1v1h-1zM7 7h1v1h-1zM10 7h1v1h-1zM1 8h4v1h-4zM7 8h4v1h-4z"/></symbol><symbol id="px-flask" viewBox="0 0 12 12"><path fill="currentColor" d="M3 0h6v1h-6zM4 1h1v1h-1zM7 1h1v1h-1zM4 2h1v1h-1zM7 2h1v1h-1zM4 3h1v1h-1zM7 3h1v1h-1zM3 4h1v1h-1zM8 4h1v1h-1zM2 5h1v1h-1zM9 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM0 7h1v1h-1zM5 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM11 8h1v1h-1zM0 9h1v1h-1zM7 9h1v1h-1zM11 9h1v1h-1zM1 10h1v1h-1zM10 10h1v1h-1zM2 11h8v1h-8z"/><path style="fill:var(--px-accent,#FF8E17)" d="M2 6h8v1h-8zM1 7h4v1h-4zM6 7h5v1h-5zM1 8h2v1h-2zM4 8h7v1h-7zM1 9h6v1h-6zM8 9h3v1h-3zM2 10h8v1h-8z"/></symbol><symbol id="px-cloud" viewBox="0 0 12 12"><path fill="currentColor" d="M4 2h4v1h-4zM3 3h1v1h-1zM8 3h1v1h-1zM1 4h3v1h-3zM8 4h3v1h-3zM0 5h1v1h-1zM5 5h1v1h-1zM11 5h1v1h-1zM0 6h1v1h-1zM6 6h1v1h-1zM11 6h1v1h-1zM0 7h1v1h-1zM5 7h1v1h-1zM7 7h1v1h-1zM11 7h1v1h-1zM0 8h1v1h-1zM4 8h1v1h-1zM8 8h1v1h-1zM11 8h1v1h-1zM1 9h10v1h-10z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 3h4v1h-4zM4 4h4v1h-4zM1 5h4v1h-4zM6 5h5v1h-5zM1 6h5v1h-5zM7 6h4v1h-4zM1 7h4v1h-4zM6 7h1v1h-1zM8 7h3v1h-3zM1 8h3v1h-3zM5 8h3v1h-3zM9 8h2v1h-2z"/></symbol><symbol id="px-chip" viewBox="0 0 12 12"><path fill="currentColor" d="M2 0h1v1h-1zM5 0h2v1h-2zM9 0h1v1h-1zM1 1h10v1h-10zM0 2h2v1h-2zM10 2h2v1h-2zM1 3h1v1h-1zM10 3h1v1h-1zM0 4h2v1h-2zM4 4h4v1h-4zM10 4h2v1h-2zM1 5h1v1h-1zM4 5h1v1h-1zM7 5h1v1h-1zM10 5h1v1h-1zM0 6h2v1h-2zM4 6h1v1h-1zM7 6h1v1h-1zM10 6h2v1h-2zM1 7h1v1h-1zM4 7h4v1h-4zM10 7h1v1h-1zM0 8h2v1h-2zM10 8h2v1h-2zM1 9h10v1h-10zM2 10h1v1h-1zM5 10h2v1h-2zM9 10h1v1h-1z"/><path style="fill:var(--px-accent,#FF8E17)" d="M2 2h8v1h-8zM2 3h8v1h-8zM2 4h2v1h-2zM8 4h2v1h-2zM2 5h2v1h-2zM8 5h2v1h-2zM2 6h2v1h-2zM8 6h2v1h-2zM2 7h2v1h-2zM8 7h2v1h-2zM2 8h8v1h-8z"/></symbol><symbol id="px-alien" viewBox="0 0 12 12"><path fill="currentColor" d="M5 0h2v1h-2zM6 1h1v1h-1zM3 2h6v1h-6zM2 3h8v1h-8zM1 4h3v1h-3zM5 4h2v1h-2zM8 4h3v1h-3zM0 5h12v1h-12zM2 6h8v1h-8zM1 7h1v1h-1zM3 7h1v1h-1zM5 7h2v1h-2zM8 7h1v1h-1zM10 7h1v1h-1zM0 8h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM11 8h1v1h-1z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 4h1v1h-1zM7 4h1v1h-1z"/></symbol><symbol id="px-heart" viewBox="0 0 12 12"><path fill="currentColor" d="M1 1h3v1h-3zM8 1h3v1h-3zM0 2h1v1h-1zM4 2h1v1h-1zM7 2h1v1h-1zM11 2h1v1h-1zM0 3h1v1h-1zM5 3h2v1h-2zM11 3h1v1h-1zM0 4h1v1h-1zM11 4h1v1h-1zM0 5h1v1h-1zM11 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM2 7h1v1h-1zM9 7h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM5 10h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M1 2h3v1h-3zM8 2h3v1h-3zM1 3h4v1h-4zM7 3h4v1h-4zM1 4h10v1h-10zM1 5h10v1h-10zM2 6h8v1h-8zM3 7h6v1h-6zM4 8h4v1h-4zM5 9h2v1h-2z"/></symbol><symbol id="px-player" viewBox="0 0 12 12"><path fill="currentColor" d="M4 0h4v1h-4zM3 1h1v1h-1zM8 1h1v1h-1zM3 2h1v1h-1zM8 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM4 4h4v1h-4zM3 6h6v1h-6zM2 7h1v1h-1zM9 7h1v1h-1zM1 8h1v1h-1zM10 8h1v1h-1zM1 9h1v1h-1zM10 9h1v1h-1zM1 10h10v1h-10z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 1h4v1h-4zM4 2h4v1h-4zM4 3h4v1h-4zM3 7h6v1h-6zM2 8h8v1h-8zM2 9h8v1h-8z"/></symbol><symbol id="px-cup" viewBox="0 0 16 16"><path style="fill:var(--cup-d,#8a5a00)" d="M3 0h10v1h-10zM0 1h4v1h-4zM12 1h4v1h-4zM0 2h1v1h-1zM3 2h1v1h-1zM12 2h1v1h-1zM15 2h1v1h-1zM0 3h1v1h-1zM3 3h1v1h-1zM12 3h1v1h-1zM15 3h1v1h-1zM0 4h1v1h-1zM3 4h1v1h-1zM12 4h1v1h-1zM15 4h1v1h-1zM1 5h1v1h-1zM3 5h1v1h-1zM12 5h1v1h-1zM14 5h1v1h-1zM2 6h3v1h-3zM11 6h3v1h-3zM4 7h2v1h-2zM10 7h2v1h-2zM6 8h1v1h-1zM9 8h1v1h-1zM6 9h1v1h-1zM9 9h1v1h-1zM5 10h2v1h-2zM9 10h2v1h-2zM4 11h1v1h-1zM11 11h1v1h-1zM3 12h10v1h-10zM3 13h1v1h-1zM12 13h1v1h-1zM3 14h1v1h-1zM12 14h1v1h-1zM3 15h10v1h-10z"/><path style="fill:var(--cup-m,#ffc93c)" d="M6 1h6v1h-6zM6 2h6v1h-6zM5 3h7v1h-7zM5 4h7v1h-7zM5 5h7v1h-7zM6 6h5v1h-5zM7 7h3v1h-3zM7 8h2v1h-2zM8 9h1v1h-1zM7 10h2v1h-2zM6 11h5v1h-5zM6 13h6v1h-6zM4 14h8v1h-8z"/><path style="fill:var(--cup-l,#fff1b8)" d="M4 1h2v1h-2zM4 2h2v1h-2zM4 3h1v1h-1zM4 4h1v1h-1zM4 5h1v1h-1zM5 6h1v1h-1zM6 7h1v1h-1zM7 9h1v1h-1zM5 11h1v1h-1zM4 13h2v1h-2z"/></symbol><symbol id="px-lock" viewBox="0 0 12 12"><path fill="currentColor" d="M4 1h4v1h-4zM3 2h1v1h-1zM8 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM2 4h8v1h-8zM2 5h1v1h-1zM9 5h1v1h-1zM2 6h1v1h-1zM5 6h2v1h-2zM9 6h1v1h-1zM2 7h1v1h-1zM5 7h2v1h-2zM9 7h1v1h-1zM2 8h1v1h-1zM9 8h1v1h-1zM2 9h8v1h-8z"/><path style="fill:var(--px-accent,#FF8E17)" d="M3 5h6v1h-6zM3 6h2v1h-2zM7 6h2v1h-2zM3 7h2v1h-2zM7 7h2v1h-2zM3 8h6v1h-6z"/></symbol><symbol id="px-phone" viewBox="0 0 12 12"><path fill="currentColor" d="M3 0h6v1h-6zM3 1h1v1h-1zM5 1h2v1h-2zM8 1h1v1h-1zM3 2h1v1h-1zM8 2h1v1h-1zM3 3h1v1h-1zM8 3h1v1h-1zM3 4h1v1h-1zM8 4h1v1h-1zM3 5h1v1h-1zM8 5h1v1h-1zM3 6h1v1h-1zM8 6h1v1h-1zM3 7h1v1h-1zM8 7h1v1h-1zM3 8h1v1h-1zM8 8h1v1h-1zM3 9h1v1h-1zM8 9h1v1h-1zM3 10h1v1h-1zM5 10h2v1h-2zM8 10h1v1h-1zM3 11h6v1h-6z"/><path style="fill:var(--px-accent,#FF8E17)" d="M4 2h4v1h-4zM4 3h4v1h-4zM4 4h4v1h-4zM4 5h4v1h-4zM4 6h4v1h-4zM4 7h4v1h-4zM4 8h4v1h-4z"/></symbol><symbol id="px-wifi" viewBox="0 0 12 12"><path fill="currentColor" d="M2 1h8v1h-8zM1 2h1v1h-1zM10 2h1v1h-1zM0 3h1v1h-1zM11 3h1v1h-1zM3 4h6v1h-6zM2 5h1v1h-1zM9 5h1v1h-1zM1 6h1v1h-1zM10 6h1v1h-1zM4 7h4v1h-4zM3 8h1v1h-1zM8 8h1v1h-1z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 9h2v1h-2zM5 10h2v1h-2z"/></symbol><symbol id="px-scissors" viewBox="0 0 12 12"><path fill="currentColor" d="M0 0h1v1h-1zM11 0h1v1h-1zM0 1h2v1h-2zM10 1h2v1h-2zM1 2h2v1h-2zM9 2h2v1h-2zM2 3h2v1h-2zM8 3h2v1h-2zM3 4h2v1h-2zM7 4h2v1h-2zM4 5h1v1h-1zM7 5h1v1h-1zM4 6h1v1h-1zM7 6h1v1h-1zM3 7h2v1h-2zM7 7h2v1h-2z"/><path style="fill:var(--px-accent,#FF8E17)" d="M5 5h2v1h-2zM5 6h2v1h-2zM1 8h4v1h-4zM7 8h4v1h-4zM0 9h1v1h-1zM4 9h1v1h-1zM7 9h1v1h-1zM11 9h1v1h-1zM0 10h1v1h-1zM4 10h1v1h-1zM7 10h1v1h-1zM11 10h1v1h-1zM1 11h3v1h-3zM8 11h3v1h-3z"/></symbol><symbol id="px-leaf" viewBox="0 0 12 12"><path fill="currentColor" d="M8 0h4v1h-4zM6 1h2v1h-2zM11 1h1v1h-1zM5 2h1v1h-1zM10 2h2v1h-2zM4 3h1v1h-1zM9 3h1v1h-1zM11 3h1v1h-1zM3 4h1v1h-1zM7 4h1v1h-1zM10 4h1v1h-1zM2 5h1v1h-1zM6 5h1v1h-1zM10 5h1v1h-1zM2 6h1v1h-1zM5 6h1v1h-1zM9 6h1v1h-1zM2 7h1v1h-1zM4 7h1v1h-1zM8 7h1v1h-1zM2 8h2v1h-2zM7 8h1v1h-1zM1 9h1v1h-1zM3 9h4v1h-4zM1 10h1v1h-1zM0 11h1v1h-1z"/><path style="fill:var(--px-accent,#FF8E17)" d="M8 1h3v1h-3zM6 2h4v1h-4zM5 3h4v1h-4zM10 3h1v1h-1zM4 4h3v1h-3zM8 4h2v1h-2zM3 5h3v1h-3zM7 5h3v1h-3zM3 6h2v1h-2zM6 6h3v1h-3zM3 7h1v1h-1zM5 7h3v1h-3zM4 8h3v1h-3z"/></symbol></svg>
 <a class="skip-link" href="#principal">Pular para conteúdo</a>
-<div class="page-progress" id="page-progress" aria-hidden="true"></div>
-<header class="header">
+<header class="header" id="site-header">
   <nav class="container nav" aria-label="Navegação principal">
-    <a class="logo header-logo" href="#inicio" aria-label="SASI 2026 — voltar ao início"><img src="./assets/logosasi.svg" alt="SASI UFAC 2026" width="190" height="66"></a>
+    <a class="logo header-logo" href="#inicio" aria-label="SASI 2026 — voltar ao início"><img src="./assets/logosasi-compact.svg" alt="SASI UFAC 2026" width="190" height="66" decoding="async"></a>
+    <div class="hud-score" aria-hidden="true"><span>1UP</span><strong id="hud-score">000000</strong><span class="hud-hi">HI 030000</span></div>
     <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" type="button">Menu <span aria-hidden="true">☰</span></button>
     <div class="nav-links" id="nav-links">
       <a href="#sobre">O evento</a><a href="#programacao">Programação</a><a href="#convidados">Convidados</a><a href="#minicursos">Minicursos</a><a href="#gamejam">Game Jam</a><a href="#parceiros">Parceiros</a>
       <a class="nav-button" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Inscreva-se ↗</a>
     </div>
   </nav>
+  <div class="scroll-xp-track" aria-hidden="true"><div class="scroll-xp-fill" id="scroll-xp-fill"></div></div>
 </header>
 <main id="principal">
   <section class="hero container" id="inicio">
     <div class="hero-copy">
-      <p class="hero-arcade-tag"><span class="hero-tag-dot" aria-hidden="true"></span> PRONTO PARA UMA NOVA FASE?</p>
-      <h1>III SEMANA ACADÊMICA DE SISTEMAS DE INFORMAÇÃO</h1>
-      <p class="lead">Uma semana para trocar ideias, conhecer gente e colocar a tecnologia em prática. De 23 a 27 de novembro, sua próxima missão é na UFAC.</p>
-      <div class="hero-actions"><a class="btn btn-primary" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Começar minha jornada ↗</a><a class="btn btn-secondary" href="#programacao">Explorar programação ↓</a></div>
-      <div class="event-countdown" id="event-countdown" aria-label="Tempo até a SASI 2026">
-        <span class="countdown-pixel" aria-hidden="true">▰▰▰</span>
-        <span class="countdown-copy"><small>PRÓXIMA FASE</small><strong id="countdown-text">23 DE NOVEMBRO · RIO BRANCO</strong></span>
+      <div class="hero-badges">
+        <p class="eyebrow"><span class="pulse" aria-hidden="true"></span>3ª EDIÇÃO • TEMA: JOGOS &amp; TECNOLOGIA</p>
+        <p class="quest-timer" id="quest-countdown" aria-live="off">⏳ 23 NOV · 07H30</p>
       </div>
-      <div class="meta"><div><span class="meta-icon">◫</span><span><strong>23 a 27 de Novembro</strong><small>Segunda a Sexta • 2026</small></span></div><div><span class="meta-icon">⌖</span><span><strong>CENTRO DE CONVIVÊNCIA</strong><small>UFAC • Rio Branco, AC</small></span></div></div>
+      <h1>III SEMANA ACADÊMICA DE SISTEMAS DE INFORMAÇÃO</h1>
+      <p class="lead">Tecnologia, criatividade e comunidade se encontram na Semana Acadêmica de Sistemas de Informação.</p>
+      <p class="press-start" aria-hidden="true"><span>▶</span> PRESS START</p>
+      <div class="hero-actions"><a class="btn btn-primary" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Quero participar ↗</a><a class="btn btn-secondary" href="#programacao">Ver programação ↓</a></div>
+      <div class="meta">
+        <div><span class="meta-icon" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-calendar"></use></svg></span><span><strong>23 a 27 de Novembro</strong><small>Segunda a Sexta • 2026</small></span></div>
+        <button type="button" class="meta-place" data-place-open data-place="Centro de Convivência" aria-haspopup="dialog" aria-label="Centro de Convivência, UFAC, Rio Branco: ver no mapa">
+          <span class="meta-icon" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-pin"></use></svg></span>
+          <span><strong>CENTRO DE CONVIVÊNCIA</strong><small>UFAC • Rio Branco, AC</small></span>
+          <span class="meta-cta" aria-hidden="true">VER NO MAPA ▶</span>
+        </button>
+      </div>
     </div>
     <div class="hero-visual">
-      <button class="hero-logo-stage" id="hero-logo-stage" type="button" aria-label="Ativar efeito arcade na logo SASI 2026" title="Ativar efeito arcade">
-        <canvas id="hero-logo-canvas" width="920" height="330" role="img" aria-label="SASI UFAC 2026 — 3ª edição, logo arcade com barra de experiência animada">
-          <img src="./assets/logosasi.svg" alt="SASI UFAC 2026 — 3ª edição">
-        </canvas>
-      </button>
+      <div class="hero-logo-stage" id="hero-logo-stage">
+        <div class="hero-logo-glow" aria-hidden="true"></div>
+        <button type="button" class="hero-logo-trigger" id="hero-logo-trigger" aria-label="Logo animada SASI UFAC 2026 — 3ª edição. Clique para dar boost de XP">
+          <svg class="sasi-animated-svg" id="sasi-animated-svg" viewBox="20 4 872 308" width="872" height="308" role="img" aria-labelledby="sasi-logo-title">
+            <title id="sasi-logo-title">SASI UFAC 2026 — 3ª edição</title>
+            <defs>
+              <linearGradient id="sasiCapGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00b800"/>
+                <stop offset="55%" stop-color="#007a00"/>
+                <stop offset="100%" stop-color="#002600"/>
+              </linearGradient>
+              <linearGradient id="sasiLedSweepGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset="38%" stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset="50%" stop-color="#ffffff" stop-opacity="1"/>
+                <stop offset="62%" stop-color="#ffffff" stop-opacity="0"/>
+                <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+              </linearGradient>
+              <linearGradient id="sasiScanGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                <stop offset="0%" stop-color="#00ff33" stop-opacity="0"/>
+                <stop offset="50%" stop-color="#00ff33" stop-opacity="0.22"/>
+                <stop offset="100%" stop-color="#00ff33" stop-opacity="0"/>
+              </linearGradient>
+              <pattern id="sasiHalftoneBase" width="12" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="5" r="3.4" fill="#003800" opacity="0.88"/>
+                <circle cx="9" cy="15" r="3.4" fill="#003800" opacity="0.88"/>
+              </pattern>
+              <pattern id="sasiHalftoneNeon" width="12" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="5" r="2.3" fill="#00ff2a"/>
+                <circle cx="9" cy="15" r="2.3" fill="#00ff2a"/>
+              </pattern>
+              <pattern id="sasiGreyDots" width="12" height="20" patternUnits="userSpaceOnUse">
+                <circle cx="3" cy="5" r="3" fill="#4f5678" opacity="0.65"/>
+                <circle cx="9" cy="15" r="3" fill="#4f5678" opacity="0.65"/>
+              </pattern>
+              <clipPath id="sasiCapClip">
+                <rect x="386" y="58" width="496" height="172" rx="86"/>
+              </clipPath>
+              <mask id="sasiLedWaveMask">
+                <rect class="sasi-led-sweep-rect" x="86" y="58" width="1096" height="172" fill="url(#sasiLedSweepGrad)"/>
+              </mask>
+            </defs>
+
+            <!-- 1. "3ª EDIÇÃO" Pixel Art Hollow Outline + Level-Up Interior -->
+            <g class="sasi-edicao-group">
+              <path class="sasi-pixel-inner" d="M212,12h9v4h-9ZM225,12h5v4h-5ZM208,16h22v1h-22ZM208,17h5v4h-5ZM216,17h10v4h-10ZM66,21h10v4h-10ZM32,24h26v5h-26ZM96,24h26v5h-26ZM127,24h22v4h-22ZM158,24h14v30h-14ZM181,24h22v4h-22ZM243,24h18v4h-18ZM72,25h4v2h-4ZM212,25h18v4h-18ZM66,27h10v3h-10ZM127,28h26v1h-26ZM177,28h26v1h-26ZM239,28h26v1h-26ZM49,29h9v8h-9ZM96,29h9v8h-9ZM127,29h9v20h-9ZM144,29h9v20h-9ZM177,29h9v20h-9ZM208,29h26v1h-26ZM239,29h9v20h-9ZM256,29h9v20h-9ZM63,30h13v1h-13ZM208,30h9v7h-9ZM225,30h9v7h-9ZM63,31h4v2h-4ZM72,31h4v2h-4ZM63,33h13v1h-13ZM66,34h10v3h-10ZM36,37h22v5h-22ZM96,37h22v5h-22ZM208,37h26v5h-26ZM63,39h13v4h-13ZM49,42h9v7h-9ZM96,42h9v7h-9ZM208,42h9v13h-9ZM225,42h9v13h-9ZM32,49h26v5h-26ZM96,49h26v5h-26ZM127,49h26v1h-26ZM177,49h26v1h-26ZM239,49h26v1h-26ZM127,50h22v4h-22ZM181,50h22v4h-22ZM243,50h18v4h-18ZM185,54h9v4h-9ZM181,58h9v5h-9Z"/>
+              <path class="sasi-pixel-outline" d="M212,10h9v2h-9ZM225,10h5v2h-5ZM210,12h2v2h-2ZM221,12h4v4h-4ZM230,12h2v5h-2ZM208,14h4v2h-4ZM206,16h2v5h-2ZM213,17h3v4h-3ZM226,17h4v2h-4ZM66,19h10v2h-10ZM226,19h2v2h-2ZM64,21h2v4h-2ZM76,21h2v16h-2ZM208,21h5v2h-5ZM216,21h10v2h-10ZM32,22h26v2h-26ZM96,22h26v2h-26ZM127,22h22v2h-22ZM158,22h14v2h-14ZM181,22h22v2h-22ZM243,22h18v2h-18ZM212,23h18v2h-18ZM30,24h2v5h-2ZM58,24h2v30h-2ZM94,24h2v30h-2ZM122,24h2v5h-2ZM125,24h2v30h-2ZM149,24h2v2h-2ZM156,24h2v30h-2ZM172,24h2v30h-2ZM179,24h2v2h-2ZM203,24h2v5h-2ZM241,24h2v2h-2ZM261,24h2v2h-2ZM66,25h6v2h-6ZM210,25h2v2h-2ZM230,25h2v2h-2ZM149,26h4v2h-4ZM177,26h4v2h-4ZM239,26h4v2h-4ZM261,26h4v2h-4ZM64,27h2v1h-2ZM208,27h4v2h-4ZM230,27h4v2h-4ZM63,28h3v2h-3ZM153,28h2v22h-2ZM175,28h2v22h-2ZM237,28h2v22h-2ZM265,28h2v22h-2ZM32,29h17v2h-17ZM105,29h17v2h-17ZM136,29h8v2h-8ZM186,29h17v2h-17ZM206,29h2v26h-2ZM234,29h2v26h-2ZM248,29h8v2h-8ZM61,30h2v4h-2ZM217,30h8v2h-8ZM47,31h2v4h-2ZM67,31h5v2h-5ZM105,31h2v4h-2ZM136,31h2v16h-2ZM142,31h2v16h-2ZM186,31h2v16h-2ZM248,31h2v16h-2ZM254,31h2v16h-2ZM217,32h2v3h-2ZM223,32h2v3h-2ZM63,34h3v2h-3ZM36,35h13v2h-13ZM105,35h13v2h-13ZM217,35h8v2h-8ZM64,36h2v1h-2ZM34,37h2v5h-2ZM63,37h13v2h-13ZM118,37h2v5h-2ZM61,39h2v4h-2ZM76,39h2v4h-2ZM36,42h13v2h-13ZM105,42h13v2h-13ZM217,42h8v2h-8ZM63,43h13v2h-13ZM47,44h2v3h-2ZM105,44h2v3h-2ZM217,44h2v11h-2ZM223,44h2v11h-2ZM32,47h17v2h-17ZM105,47h17v2h-17ZM136,47h8v2h-8ZM186,47h17v2h-17ZM248,47h8v2h-8ZM30,49h2v5h-2ZM122,49h2v5h-2ZM203,49h2v5h-2ZM149,50h4v2h-4ZM177,50h4v2h-4ZM239,50h4v2h-4ZM261,50h4v2h-4ZM149,52h2v2h-2ZM179,52h2v2h-2ZM241,52h2v2h-2ZM261,52h2v2h-2ZM32,54h26v2h-26ZM96,54h26v2h-26ZM127,54h22v2h-22ZM158,54h14v2h-14ZM181,54h4v4h-4ZM194,54h9v2h-9ZM243,54h18v2h-18ZM208,55h9v2h-9ZM225,55h9v2h-9ZM194,56h2v2h-2ZM179,58h2v5h-2ZM190,58h4v2h-4ZM190,60h2v3h-2ZM181,63h9v2h-9Z"/>
+            </g>
+
+            <!-- 2. "SASI" Chromatic Glitch Echo + Main Letters -->
+            <g class="sasi-letters-glitch" aria-hidden="true">
+              <path d="M52,88h68v25H57v24h43q20,0 20,20v33q0,20-20,20H32v-25h63v-23H32v-54q0-20 20-20Z"/>
+              <path d="M134,88h68q20,0 20,20v9h-25v-4h-63ZM134,126h88v84h-25v-57h-38v57h-25Z"/>
+              <path d="M256,88h68v25h-63v24h43q20,0 20,20v33q0,20-20,20h-68v-25h63v-23h-63v-54q0-20 20-20Z"/>
+              <rect x="338" y="88" width="25" height="122"/>
+            </g>
+            <g class="sasi-letters-main">
+              <path d="M52,88h68v25H57v24h43q20,0 20,20v33q0,20-20,20H32v-25h63v-23H32v-54q0-20 20-20Z"/>
+              <path d="M134,88h68q20,0 20,20v9h-25v-4h-63ZM134,126h88v84h-25v-57h-38v57h-25Z"/>
+              <path d="M256,88h68v25h-63v24h43q20,0 20,20v33q0,20-20,20h-68v-25h63v-23h-63v-54q0-20 20-20Z"/>
+              <rect x="338" y="88" width="25" height="122"/>
+            </g>
+
+            <!-- 3. Corner Halftone Dots + "UFAC" Arcade LED Capsule -->
+            <g fill="url(#sasiGreyDots)">
+              <rect x="390" y="60" width="76" height="54"/>
+              <rect x="390" y="174" width="90" height="56"/>
+              <rect x="802" y="60" width="78" height="54"/>
+              <rect x="794" y="174" width="86" height="56"/>
+            </g>
+
+            <g clip-path="url(#sasiCapClip)">
+              <rect x="386" y="58" width="496" height="172" fill="url(#sasiCapGrad)"/>
+              <rect x="386" y="58" width="496" height="172" fill="url(#sasiHalftoneBase)"/>
+              <!-- Animated Arcade Neon LED Wave -->
+              <rect x="386" y="58" width="496" height="172" fill="url(#sasiHalftoneNeon)" mask="url(#sasiLedWaveMask)" class="sasi-led-neon-layer"/>
+              <!-- Arcade CRT Scanline -->
+              <rect x="386" y="58" width="496" height="28" fill="url(#sasiScanGrad)" class="sasi-scanline"/>
+              <!-- Letras UFAC -->
+              <g fill="#ffffff">
+                <rect x="444" y="88" width="25" height="90"/>
+                <path d="M444,185h63V88h25v104q0,18-18,18h-63q-7,0-7-7Z"/>
+                <path d="M548,88h82v25h-57v23h53v25h-53v49h-25Z"/>
+                <path d="M644,88h68q20,0 20,20v9h-25v-4h-63ZM644,126h88v84h-25v-57h-38v57h-25Z"/>
+                <path d="M768,88h66v33h-25v-8h-36v72h36v-8h25v33h-66q-20,0-20-20v-82q0-20 20-20Z"/>
+              </g>
+            </g>
+
+            <!-- 4. Barra de Loading / XP Gamer (19 Slots) -->
+            <rect class="sasi-bar-frame" x="32" y="248" width="656" height="54" rx="11" fill="none" stroke-width="4.5"/>
+            <g class="sasi-xp-slots" aria-hidden="true">
+              <rect x="42" y="256.5" width="27.8" height="37"/>
+              <rect x="75.8" y="256.5" width="27.8" height="37"/>
+              <rect x="109.6" y="256.5" width="27.8" height="37"/>
+              <rect x="143.4" y="256.5" width="27.8" height="37"/>
+              <rect x="177.2" y="256.5" width="27.8" height="37"/>
+              <rect x="211" y="256.5" width="27.8" height="37"/>
+              <rect x="244.8" y="256.5" width="27.8" height="37"/>
+              <rect x="278.6" y="256.5" width="27.8" height="37"/>
+              <rect x="312.4" y="256.5" width="27.8" height="37"/>
+              <rect x="346.2" y="256.5" width="27.8" height="37"/>
+              <rect x="380" y="256.5" width="27.8" height="37"/>
+              <rect x="413.8" y="256.5" width="27.8" height="37"/>
+              <rect x="447.6" y="256.5" width="27.8" height="37"/>
+              <rect x="481.4" y="256.5" width="27.8" height="37"/>
+              <rect x="515.2" y="256.5" width="27.8" height="37"/>
+              <rect x="549" y="256.5" width="27.8" height="37"/>
+              <rect x="582.8" y="256.5" width="27.8" height="37"/>
+              <rect x="616.6" y="256.5" width="27.8" height="37"/>
+              <rect x="650.4" y="256.5" width="27.8" height="37"/>
+            </g>
+            <g class="sasi-xp-segs" id="sasi-xp-segs">
+              <rect class="is-on" x="42" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="75.8" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="109.6" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="143.4" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="177.2" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="211" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="244.8" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="278.6" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="312.4" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="346.2" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="380" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on" x="413.8" y="256.5" width="27.8" height="37"/>
+              <rect class="is-on is-tip" x="447.6" y="256.5" width="27.8" height="37"/>
+              <rect x="481.4" y="256.5" width="27.8" height="37"/>
+              <rect x="515.2" y="256.5" width="27.8" height="37"/>
+              <rect x="549" y="256.5" width="27.8" height="37"/>
+              <rect x="582.8" y="256.5" width="27.8" height="37"/>
+              <rect x="616.6" y="256.5" width="27.8" height="37"/>
+              <rect x="650.4" y="256.5" width="27.8" height="37"/>
+            </g>
+
+            <!-- 5. "2026" Pixel Art Hollow Outline + Level-Up Bounce -->
+            <g class="sasi-2026-group">
+              <path class="sasi-pixel-inner" d="M708,254h33v6h-33ZM751,254h33v6h-33ZM795,254h33v6h-33ZM838,254h33v6h-33ZM730,260h11v10h-11ZM751,260h12v26h-12ZM773,260h11v26h-11ZM816,260h12v10h-12ZM838,260h12v10h-12ZM708,270h33v6h-33ZM795,270h33v6h-33ZM838,270h33v6h-33ZM708,276h11v10h-11ZM795,276h11v10h-11ZM838,276h12v10h-12ZM860,276h11v10h-11ZM708,286h33v6h-33ZM751,286h33v6h-33ZM795,286h33v6h-33ZM838,286h33v6h-33Z"/>
+              <path class="sasi-pixel-outline" d="M708,251.8h33v2.2h-33ZM751,251.8h33v2.2h-33ZM795,251.8h33v2.2h-33ZM838,251.8h33v2.2h-33ZM705.8,254h2.2v6h-2.2ZM741,254h2.2v22h-2.2ZM748.8,254h2.2v38h-2.2ZM784,254h2.2v38h-2.2ZM792.8,254h2.2v6h-2.2ZM828,254h2.2v22h-2.2ZM835.8,254h2.2v38h-2.2ZM871,254h2.2v6h-2.2ZM708,260h22v2.2h-22ZM763,260h10v2.2h-10ZM795,260h21v2.2h-21ZM850,260h21v2.2h-21ZM727.8,262.2h2.2v5.6h-2.2ZM763,262.2h2.2v21.6h-2.2ZM770.8,262.2h2.2v21.6h-2.2ZM813.8,262.2h2.2v5.6h-2.2ZM850,262.2h2.2v5.6h-2.2ZM708,267.8h22v2.2h-22ZM795,267.8h21v2.2h-21ZM850,267.8h21v2.2h-21ZM705.8,270h2.2v22h-2.2ZM792.8,270h2.2v22h-2.2ZM871,270h2.2v22h-2.2ZM719,276h22v2.2h-22ZM806,276h22v2.2h-22ZM850,276h10v2.2h-10ZM719,278.2h2.2v5.6h-2.2ZM806,278.2h2.2v5.6h-2.2ZM850,278.2h2.2v5.6h-2.2ZM857.8,278.2h2.2v5.6h-2.2ZM719,283.8h22v2.2h-22ZM763,283.8h10v2.2h-10ZM806,283.8h22v2.2h-22ZM850,283.8h10v2.2h-10ZM741,286h2.2v6h-2.2ZM828,286h2.2v6h-2.2ZM708,292h33v2.2h-33ZM751,292h33v2.2h-33ZM795,292h33v2.2h-33ZM838,292h33v2.2h-33Z"/>
+            </g>
+          </svg>
+        </button>
+        <div class="hero-particle-layer" id="hero-particle-layer" aria-hidden="true"></div>
+        <div class="hero-logo-hud">
+          <span class="hud-xp-pill"><span class="hud-dot" aria-hidden="true"></span><span id="hero-xp-status">XP 13/19 • 68%</span></span>
+          <span class="hud-hint">Clique na logo (+1 UP)</span>
+          <button type="button" class="hud-sfx-btn" id="hero-sfx-toggle" aria-pressed="false" title="Ativar ou desativar efeitos sonoros 8-bit">
+            <span aria-hidden="true" id="hero-sfx-icon">🔇</span>
+            <span>SFX 8-bit</span>
+          </button>
+        </div>
+      </div>
     </div>
   </section>
-  <div class="ticker" aria-label="Conhecimento, inovação, comunidade e jogos"><div>CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span> CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span></div></div>
-  <section class="section container" id="sobre">
-    <div class="section-heading"><h2>Uma semana.<br><span>Novas possibilidades.</span></h2></div>
+  <div class="ticker" id="site-ticker"><span class="sr-only">Conhecimento, inovação, comunidade, jogos, Game Jam, inteligência artificial, pixel art, nuvem, pesquisa e empreendedorismo.</span><div class="ticker-track" id="ticker-track" aria-hidden="true">CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span> GAME JAM <span>✦</span> INTELIGÊNCIA ARTIFICIAL <span>✦</span> PIXEL ART <span>✦</span> PESQUISA <span>✦</span> CONHECIMENTO <span>✦</span> INOVAÇÃO <span>✦</span> COMUNIDADE <span>✦</span> JOGOS <span>✦</span> GAME JAM <span>✦</span> INTELIGÊNCIA ARTIFICIAL <span>✦</span> PIXEL ART <span>✦</span> PESQUISA <span>✦</span></div></div>
+  <section class="section container" id="sobre" data-reveal>
+    <div class="section-heading"><p class="index"><span class="stage-tag">STAGE 01</span> SI UFAC • 30 ANOS</p><h2>Uma semana.<br><span>Novas possibilidades.</span></h2></div>
     <div class="about"><div><p class="intro">A <strong>Semana Acadêmica de Sistemas de Informação</strong> reúne estudantes, professores e profissionais para explorar ideias, compartilhar experiências e descobrir caminhos para o futuro da tecnologia.</p></div></div>
-    <div class="features"><article><span>⌘</span><h3>Palestras</h3><p>Perspectivas de quem pesquisa, ensina e transforma a tecnologia.</p></article><article><span>▣</span><h3>Minicursos</h3><p>Aprenda com atividades práticas e novas ferramentas.</p></article><article><span>✦</span><h3>Game Jam</h3><p>Crie, experimente e colabore no universo dos jogos.</p></article></div>
+    <div class="stats-ribbon" aria-label="Destaques da SASI 2026">
+      <div class="stat-pill"><strong>30 Anos</strong><span>História de SI na UFAC</span></div>
+      <div class="stat-pill"><strong>5 Dias</strong><span>23 a 27 de Novembro</span></div>
+      <div class="stat-pill"><strong>10 Quests</strong><span>Minicursos e oficinas: IA, cloud, jogos e saúde</span></div>
+      <div class="stat-pill"><strong>Game Jam</strong><span>Do conceito ao protótipo</span></div>
+    </div>
+    <div class="features"><article><span class="feature-icon" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-mic"></use></svg></span><h3>Palestras</h3><p>Perspectivas de quem pesquisa, ensina e transforma a tecnologia.</p></article><article><span class="feature-icon" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-terminal"></use></svg></span><h3>Minicursos</h3><p>Aprenda com atividades práticas e novas ferramentas.</p></article><article><span class="feature-icon" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-gamepad"></use></svg></span><h3>Game Jam</h3><p>Crie, experimente e colabore no universo dos jogos.</p></article></div>
   </section>
-  <section class="section schedule-wrap" id="programacao"><div class="container">
-    <div class="section-heading"><h2>Sua próxima <span>missão.</span></h2></div>
+  <section class="section schedule-wrap" id="programacao" data-reveal><div class="container">
+    <div class="section-heading"><p class="index"><span class="stage-tag">STAGE 02</span> CRONOGRAMA OFICIAL</p><h2>Sua próxima <span>missão.</span></h2><p>Cinco levels, um por dia. Escolha o dia e filtre por tipo de atividade.</p></div>
     <div class="day-tabs" role="tablist" aria-label="Dias do evento" id="day-tabs"></div>
+    <div class="schedule-filters" id="schedule-filters" role="group" aria-label="Filtrar atividades por categoria"></div>
     <div class="schedule" id="schedule-panel" role="tabpanel" tabindex="0" aria-live="polite"></div>
   </div></section>
-  <section class="section guests-section" id="convidados" aria-labelledby="convidados-titulo">
+  <section class="section guests-section" id="convidados" aria-labelledby="convidados-titulo" data-reveal>
     <div class="container">
       <div class="section-heading">
+        <p class="index"><span class="stage-tag">STAGE 03</span> PLAYER SELECT</p>
         <h2 id="convidados-titulo">Nossos <span>convidados.</span></h2>
-        <p>Conheça quem compartilha experiências, pesquisas e conhecimentos na SASI 2026.</p>
+        <p>Quem compartilha experiências, pesquisas e conhecimentos na SASI 2026, com o dia, o horário e o local de cada atividade.</p>
       </div>
+      <div class="guest-filters" id="guest-filters"></div>
       <div class="guests-grid" id="guests-grid"></div>
+      <button type="button" class="guests-more" id="guests-more" hidden><span class="pixel-label">CONTINUE?</span> Ver todos os convidados <strong data-more-count>+0</strong></button>
+      <div class="guests-extra" id="guests-extra" hidden>
+        <h3 class="guests-subhead"><span>✦</span> Ministrantes e equipes</h3>
+        <div class="guests-mini-grid" id="guests-mini-grid"></div>
+      </div>
     </div>
   </section>
-  <section class="section container" id="minicursos"><div class="section-heading"><h2>Aprenda <span>fazendo.</span></h2></div><div class="workshop-grid" id="workshop-grid"></div></section>
-  <section class="section jam-wrap" id="gamejam" aria-labelledby="gamejam-titulo">
+  <section class="section container" id="minicursos" data-reveal><div class="section-heading"><p class="index"><span class="stage-tag">STAGE 04</span> MÃO NA MASSA</p><h2>Aprenda <span>fazendo.</span></h2><p>Minicursos e oficinas práticas. As vagas indicadas vêm dos planos de atividade e podem mudar.</p></div><div class="workshop-grid" id="workshop-grid"></div></section>
+  <section class="section jam-wrap" id="gamejam" aria-labelledby="gamejam-titulo" data-reveal>
     <div class="container jam-layout">
       <div class="jam-copy">
-        <p class="jam-label"><span class="jam-label-indicator" aria-hidden="true">✦</span> MODO CRIATIVO · GAME JAM</p>
-        <h2 id="gamejam-titulo">Tem uma ideia?<br><span class="jam-glitch" data-text="Faça virar jogo.">Faça virar jogo.</span></h2>
-        <p>Traga suas ideias, reúna a equipe e transforme criatividade em um protótipo. Na Game Jam da SASI, você experimenta, aprende e compartilha o que criou.</p>
-        <div class="jam-dates" aria-label="Datas da Game Jam">
-          <div><strong>23 NOV · 17H</strong><span>Abertura da Game Jam</span></div>
-          <div><strong>26 NOV · 15H</strong><span>Término da Game Jam</span></div>
-          <div><strong>27 NOV · 11H</strong><span>Avaliação e premiação</span></div>
-        </div>
-        <div class="jam-pills"><span>GAME DESIGN</span><span>COLABORAÇÃO</span><span>PROTOTIPAGEM</span></div>
+        <p class="jam-label"><span class="stage-tag stage-tag--dark">STAGE 05</span> GAME JAM · SASI 2026</p>
+        <h2 id="gamejam-titulo">Tem uma ideia?<br><span>Faça virar jogo.</span></h2>
+        <p>Da primeira ideia ao protótipo: a Game Jam reúne criatividade, tecnologia e trabalho em equipe. O formato é híbrido: o desenvolvimento e o envio do jogo são on-line, pelo itch.io, e a apresentação para a comissão avaliadora é presencial.</p>
+        <a class="jam-prize-strip" href="#jam-prize-title" aria-label="Premiação em dinheiro, R$ 900 no total: 1º lugar R$ 400, 2º lugar R$ 300 e 3º lugar R$ 200"><span class="jps-total"><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-coin"></use></svg>R$ 900 <small>EM DINHEIRO</small></span><span class="jps-list" aria-hidden="true"><b class="jps-1">1º R$ 400</b><b class="jps-2">2º R$ 300</b><b class="jps-3">3º R$ 200</b></span></a>
+        <ol class="jam-dates" aria-label="Cronograma da Game Jam">
+          <li><strong>ATÉ 23 NOV · 15H</strong><span>Inscrições gratuitas</span></li>
+          <li><strong>23 NOV · 17H</strong><span>Abertura e tema</span></li>
+          <li><strong>26 NOV · 15H</strong><span>Envio no itch.io</span></li>
+          <li><strong>27 NOV · 11H</strong><span>Apresentação e premiação</span></li>
+        </ol>
+        <ul class="jam-pills" aria-label="Regras principais">
+          <li>A PARTIR DE 18 ANOS</li><li>SEM EXPERIÊNCIA PRÉVIA</li><li>SOLO OU EM EQUIPE (IDEAL: 5)</li><li>HORÁRIO DO ACRE</li>
+        </ul>
         <div class="jam-actions">
-          <a class="jam-cta" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Participar da SASI ↗</a>
-          <a class="jam-secondary" href="#programacao">Ver programação ↓</a>
+          <a class="jam-cta" href="https://chat.whatsapp.com/JQC0wT7ehjCKnuaHpHtOOi" target="_blank" rel="noopener noreferrer">Grupo da Game Jam no WhatsApp ↗</a>
+          <a class="jam-secondary" href="https://www.instagram.com/sasiufac/" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/instagram.svg" alt="" width="18" height="18" loading="lazy" decoding="async"> Avisos no @sasiufac</a>
         </div>
       </div>
-      <div class="jam-window" aria-hidden="true">
-        <div class="window-title">GAME_JAM.exe <span>□ ×</span></div>
-        <div class="window-body"><small>IDEIA 01 / PRONTA</small><strong>BORA<br>CRIAR?</strong><span class="window-star">✦</span></div>
-        <div class="jam-particles">
-          <span class="jam-pixel jam-pixel-1"></span>
-          <span class="jam-pixel jam-pixel-2"></span>
-          <span class="jam-pixel jam-pixel-3"></span>
-          <span class="jam-pixel jam-pixel-4"></span>
-          <span class="jam-xp-pop">+1 IDEIA</span>
+      <div class="jam-side">
+        <button type="button" class="jam-window" id="jam-window" aria-label="Console interativo GAME_JAM.exe">
+          <div class="window-title">GAME_JAM.exe <span>□ ×</span></div>
+          <div class="window-body"><small id="jam-window-status">PLAYER 01 / READY</small><strong id="jam-window-main">PRESS<br>START</strong><span class="window-star" aria-hidden="true">✦</span></div>
+          <div class="window-bottom">SASI 2026 <span id="jam-window-meter">▰▰▰▱▱</span></div>
+        </button>
+        <div class="jam-prize-panel" aria-labelledby="jam-prize-title">
+          <div class="trophy-stage" aria-hidden="true">
+            <span class="trophy-ray"></span>
+            <span class="trophy-shadow"></span>
+            <div class="trophy3d"><div class="trophy3d-spin"><svg class="trophy3d-layer" style="--z:0" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:1" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:2" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:3" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:4" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:5" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:6" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:7" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:8" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:9" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:10" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:11" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:12" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer" style="--z:13" focusable="false"><use href="#px-cup"></use></svg></div></div>
+            <span class="trophy-spark trophy-spark--1">✦</span><span class="trophy-spark trophy-spark--2">✦</span><span class="trophy-spark trophy-spark--3">✦</span>
+          </div>
+          <p class="jam-prize-kicker">HIGH SCORES · GAME JAM</p>
+          <p class="jam-prize-total" id="jam-prize-title"><span>R$ 900</span> EM DINHEIRO PARA OS 3 PRIMEIROS</p>
+          <ol class="jam-podium">
+            <li class="podium podium--2"><span class="podium-rank">2ND</span><strong><span class="podium-cur">R$</span> 300</strong><small>2º lugar</small></li>
+            <li class="podium podium--1"><span class="jumper" aria-hidden="true"><span class="jumper-body"><svg class="jumper-sprite" viewBox="0 0 14 18" shape-rendering="crispEdges" aria-hidden="true" focusable="false"><path fill="#c98a00" d="M4 0h1v1h-1zM9 0h1v1h-1zM4 1h1v1h-1zM9 1h1v1h-1zM5 2h1v1h-1zM8 2h1v1h-1zM6 3h2v1h-2zM4 4h6v1h-6z"/><path fill="#ffd166" d="M5 0h4v1h-4zM5 1h4v1h-4zM6 2h2v1h-2z"/><path fill="#f4c095" d="M3 4h1v1h-1zM10 4h1v1h-1zM2 5h1v1h-1zM11 5h1v1h-1zM2 6h1v1h-1zM11 6h1v1h-1zM2 7h1v1h-1zM5 7h4v1h-4zM11 7h1v1h-1zM4 8h1v1h-1zM6 8h2v1h-2zM9 8h1v1h-1zM4 9h6v1h-6zM5 10h1v1h-1zM8 10h1v1h-1z"/><path fill="#7a4420" d="M5 5h4v1h-4zM4 6h6v1h-6zM4 7h1v1h-1zM9 7h1v1h-1z"/><path fill="#0b0f2e" d="M5 8h1v1h-1zM8 8h1v1h-1zM6 10h2v1h-2z"/><path fill="#19d63a" d="M2 8h1v1h-1zM11 8h1v1h-1zM2 9h1v1h-1zM11 9h1v1h-1zM2 10h1v1h-1zM11 10h1v1h-1zM2 11h10v1h-10zM3 12h8v1h-8zM4 13h6v1h-6zM3 14h8v1h-8z"/><path fill="#0b8f24" d="M3 13h1v1h-1zM10 13h1v1h-1z"/><path fill="#4263eb" d="M4 15h2v1h-2zM8 15h2v1h-2zM4 16h2v1h-2zM8 16h2v1h-2z"/><path fill="#ffffff" d="M3 17h3v1h-3zM8 17h3v1h-3z"/></svg></span><span class="jumper-shadow"></span></span><span class="podium-rank">1ST</span><strong><span class="podium-cur">R$</span> 400</strong><small>1º lugar</small></li>
+            <li class="podium podium--3"><span class="podium-rank">3RD</span><strong><span class="podium-cur">R$</span> 200</strong><small>3º lugar</small></li>
+          </ol>
         </div>
-        <div class="window-bottom">SASI 2026 <span>▰▰▰▱▱</span></div>
+        <div class="jam-board">
+          <div class="jam-board-block">
+            <p class="jam-board-title">CRITÉRIOS · 100 PTS</p>
+            <ul class="jam-criteria">
+              <li><span>Criatividade e conceito</span><b>25</b></li>
+              <li><span>Aderência ao tema</span><b>25</b></li>
+              <li><span>Jogabilidade e experiência</span><b>25</b></li>
+              <li><span>Execução técnica e apresentação</span><b>25</b></li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
   </section>
-  <section class="section container" id="parceiros"><div class="section-heading"><h2>Quem impulsiona <span>essa jornada.</span></h2></div><div class="partner-groups" id="partner-groups"></div></section>
+  <section class="section container" id="parceiros" data-reveal>
+    <div class="section-heading">
+      <p class="index"><span class="stage-tag">STAGE 06</span> HALL DA FAMA</p>
+      <h2>Quem impulsiona <span>essa jornada.</span></h2>
+      <p>Instituições, empresas e comunidades estudantis que tornam a 3ª SASI UFAC 2026 possível.</p>
+    </div>
+    <div class="partner-groups" id="partner-groups"></div>
+  </section>
   <dialog class="partner-dialog" id="partner-dialog" aria-labelledby="partner-dialog-title" aria-describedby="partner-dialog-description">
     <div class="partner-dialog-inner">
       <button type="button" class="partner-dialog-close" aria-label="Fechar informações">×</button>
-      <p class="partner-dialog-eyebrow" id="partner-dialog-tier"></p>
-      <h3 id="partner-dialog-title"></h3>
+      <header class="partner-dialog-head">
+        <div class="partner-dialog-logo" id="partner-dialog-logo-wrap"><img id="partner-dialog-logo" src="./assets/partners/ufac.webp" alt="" loading="lazy" decoding="async"></div>
+        <div>
+          <p class="partner-dialog-eyebrow" id="partner-dialog-tier"></p>
+          <h3 id="partner-dialog-title"></h3>
+        </div>
+      </header>
       <p id="partner-dialog-description"></p>
-      <a class="partner-dialog-link" id="partner-dialog-link" href="#" target="_blank" rel="noopener noreferrer">Ver Instagram <span aria-hidden="true">↗</span></a>
+      <div class="thanks-box" id="partner-thanks" hidden>
+        <span class="thanks-box-deco" aria-hidden="true"></span>
+        <span class="thanks-box-badge" aria-hidden="true">+1 UP</span>
+        <p class="thanks-box-title"><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-heart"></use></svg><span class="thanks-box-name">OBRIGADO!</span><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-heart"></use></svg></p>
+        <p class="thanks-box-text"><span class="sr-only thanks-box-sr"></span><span aria-hidden="true"><span class="thanks-box-typed"></span><span class="thanks-box-rest"></span></span></p>
+        <span class="thanks-box-next" aria-hidden="true">▼</span>
+      </div>
+      <a class="partner-dialog-link" id="partner-dialog-link" href="#" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/instagram.svg" alt="" width="22" height="22" decoding="async"> Ver Instagram <span aria-hidden="true">↗</span></a>
+      <p class="partner-dialog-noig" id="partner-dialog-noig" hidden>Instagram oficial em breve.</p>
     </div>
   </dialog>
-  <section class="section container" id="local" aria-labelledby="local-titulo">
-    <div class="location location-with-map">
-      <div class="location-copy">
-        <p class="location-kicker">ONDE A GENTE SE ENCONTRA</p>
-        <h2 id="local-titulo">A gente se vê <span>no Centro de Convivência.</span></h2>
-        <p>O ponto de encontro da SASI 2026 é o <strong>Centro de Convivência da Universidade Federal do Acre</strong>, no campus de Rio Branco.</p>
-        <address>Universidade Federal do Acre · BR-364, km 4<br>Distrito Industrial · Rio Branco, AC</address>
-        <a class="btn btn-primary location-btn" href="https://maps.app.goo.gl/vh1PXfoVqWrhr7e2A?g_st=ac" target="_blank" rel="noopener noreferrer">Abrir no Google Maps ↗</a>
-        <p class="location-hint">Use o link para conferir o ponto indicado e iniciar sua rota até o evento.</p>
+  <dialog class="place-dialog" id="place-dialog" aria-labelledby="place-title">
+    <div class="place-inner">
+      <button type="button" class="partner-dialog-close" data-close-dialog aria-label="Fechar local">×</button>
+      <header class="place-head">
+        <div class="place-logo-wrap" id="place-logo-wrap"><img class="place-logo" id="place-logo" src="./assets/labs/centro/sebraelab-logo.webp" alt="" width="145" height="56" loading="lazy" decoding="async"></div>
+        <div>
+          <p class="place-kicker" id="place-kicker"><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-pin"></use></svg>LOCAL DA SASI</p>
+          <h3 id="place-title">Centro de Convivência</h3>
+          <p class="place-sub" id="place-sub"></p>
+        </div>
+      </header>
+      <p class="place-about" id="place-about" hidden></p>
+      <div class="place-links" id="place-links" hidden></div>
+      <div class="thanks-box" id="place-thanks" hidden>
+        <span class="thanks-box-deco" aria-hidden="true"></span>
+        <span class="thanks-box-badge" aria-hidden="true">+1 UP</span>
+        <p class="thanks-box-title"><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-heart"></use></svg><span class="thanks-box-name">OBRIGADO!</span><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-heart"></use></svg></p>
+        <p class="thanks-box-text"><span class="sr-only thanks-box-sr"></span><span aria-hidden="true"><span class="thanks-box-typed"></span><span class="thanks-box-rest"></span></span></p>
+        <span class="thanks-box-next" aria-hidden="true">▼</span>
       </div>
-      <div class="location-map">
-        <iframe
-          title="Mapa interativo do Centro de Convivência da UFAC, em Rio Branco"
-          src="https://maps.google.com/maps?hl=pt-BR&amp;q=-9.955556%2C-67.866111&amp;z=18&amp;output=embed"
-          width="600"
-          height="420"
-          loading="lazy"
-          referrerpolicy="strict-origin-when-cross-origin"
-          allowfullscreen
-        ></iframe>
-        <div class="location-map-footer">
-          <span><span class="location-map-dot" aria-hidden="true"></span> Centro de Convivência · UFAC</span>
-          <a href="https://maps.app.goo.gl/vh1PXfoVqWrhr7e2A?g_st=ac" target="_blank" rel="noopener noreferrer">Ver o ponto exato ↗</a>
+      <div class="place-body">
+        <div class="place-carousel" id="place-carousel">
+          <div class="place-slides" id="place-slides" tabindex="0" aria-label="Fotos do local. Elas passam sozinhas; use as setas do teclado para trocar."></div>
+          <div class="place-dots" id="place-dots"></div>
+          <span class="place-timer" id="place-timer" aria-hidden="true"></span>
+        </div>
+        <div class="place-map-card">
+          <iframe class="place-map" id="place-map" title="Mapa do local" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+          <div class="place-map-foot">
+            <span class="place-map-note" id="place-map-note" hidden>Ponto exato a confirmar</span>
+            <a class="place-route" id="place-route" href="#" target="_blank" rel="noopener noreferrer">Traçar rota ↗</a>
+          </div>
         </div>
       </div>
     </div>
+  </dialog>
+  <dialog class="ach-dialog" id="achievements-dialog" aria-labelledby="achievements-title">
+    <div class="ach-inner">
+      <button type="button" class="partner-dialog-close ach-close" data-close-dialog aria-label="Fechar troféus">×</button>
+      <p class="ach-kicker">SAVE FILE · SASI 2026</p>
+      <h3 id="achievements-title">Segredos da página</h3>
+      <div class="ach-summary">
+        <span class="ach-plat-badge" id="ach-plat-badge" aria-hidden="true"><svg class="ach-cup" focusable="false"><use href="#px-cup"></use></svg></span>
+        <div class="ach-progress">
+          <div class="ach-progress-top"><strong id="ach-pct">0%</strong><span id="ach-score">0/1000 G</span></div>
+          <div class="ach-bar" aria-hidden="true"><span id="ach-bar-fill"></span></div>
+          <p class="ach-tiers" id="ach-tiers"></p>
+        </div>
+      </div>
+      <button type="button" class="ach-share-open" id="ach-share-open" hidden><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-cup"></use></svg> Ver e compartilhar minha platina</button>
+      <ul class="ach-list" id="achievements-list"></ul>
+      <p class="ach-note">O progresso fica salvo só neste navegador.</p>
+    </div>
+  </dialog>
+  <dialog class="plat-dialog" id="platinum-dialog" aria-labelledby="plat-title">
+    <div class="plat-inner">
+      <button type="button" class="partner-dialog-close plat-close" data-close-dialog aria-label="Fechar">×</button>
+      <div class="plat-top">
+        <div class="plat-trophy" aria-hidden="true"><span class="trophy-ray"></span><div class="trophy3d trophy3d--plat"><div class="trophy3d-spin"><svg class="trophy3d-layer" style="--z:0" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:1" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:2" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:3" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:4" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:5" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:6" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:7" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:8" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:9" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:10" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:11" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer is-side" style="--z:12" focusable="false"><use href="#px-cup"></use></svg><svg class="trophy3d-layer" style="--z:13" focusable="false"><use href="#px-cup"></use></svg></div></div></div>
+        <div>
+          <p class="plat-kicker">TROFÉU DE PLATINA · 1000G</p>
+          <h3 id="plat-title">Parabéns! Você desvendou todos os segredos.</h3>
+          <p class="plat-lead">Compartilhe essa conquista e desafie seus amigos a fazer o mesmo.</p>
+        </div>
+      </div>
+      <div class="plat-body">
+        <img class="plat-art" id="plat-art" alt="Arte: Desvendei todos os segredos do site da SASI 2026. E você, consegue fazer o mesmo?" width="1080" height="1920" decoding="async">
+        <div class="plat-actions">
+          <button type="button" class="btn btn-primary plat-share" id="plat-share">Compartilhar no status ↗</button>
+          <a class="btn btn-secondary" id="plat-download" href="./assets/share/conquista-sasi2026.jpg?v=20261113a" download="sasi2026-conquista.jpg">Baixar imagem</a>
+          <a class="btn btn-secondary" id="plat-whats" href="#" target="_blank" rel="noopener noreferrer">Enviar no WhatsApp ↗</a>
+          <button type="button" class="btn btn-secondary" id="plat-copy">Copiar link do site</button>
+          <p class="plat-status" id="plat-status" role="status"></p>
+        </div>
+      </div>
+    </div>
+  </dialog>
+  <section class="section container" id="local" data-reveal>
+    <div class="location">
+      <div class="location-copy">
+        <p class="index"><span class="stage-tag">STAGE 07</span> PONTO DE ENCONTRO</p>
+        <h2>A gente se vê <span>na UFAC.</span></h2>
+        <p>Centro de Convivência da Universidade Federal do Acre, em Rio Branco (BR-364, Km 4), próximo ao Restaurante Universitário e ao SEBRAE Lab.</p>
+        <div class="location-actions">
+          <a class="btn btn-primary" href="https://www.google.com/maps/dir/?api=1&amp;destination=-9.955764%2C-67.866230" target="_blank" rel="noopener noreferrer">Traçar rota no Google Maps ↗</a>
+          <button type="button" class="btn btn-secondary" data-place-open data-place="Centro de Convivência" aria-haspopup="dialog">Fotos e detalhes do local</button>
+        </div>
+      </div>
+      <div class="location-map-card">
+        <div class="location-map-bar">
+          <span><svg class="px-icon" aria-hidden="true" focusable="false"><use href="#px-pin"></use></svg>CENTRO DE CONVIVÊNCIA · UFAC</span>
+          <small>RIO BRANCO / AC</small>
+        </div>
+        <div class="location-map-frame-wrap" id="location-map-wrap">
+          <div class="location-map-placeholder" id="location-map-placeholder">
+            <span class="location-pin-pulse" aria-hidden="true"><svg class="px-icon" focusable="false"><use href="#px-pin"></use></svg></span>
+            <p>Campus Sede UFAC · Centro de Convivência</p>
+            <button type="button" class="btn btn-secondary btn-compact" id="load-map-btn">Carregar mapa interativo</button>
+          </div>
+          <iframe
+            id="ufac-map-iframe"
+            class="location-map-iframe"
+            title="Mapa do Centro de Convivência da UFAC em Rio Branco, Acre"
+            data-src="https://maps.google.com/maps?hl=pt-BR&amp;q=-9.955764%2C-67.866230&amp;z=17&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+    <div class="place-picker">
+      <div class="place-picker-head">
+        <p class="index"><span class="stage-tag">SELECT STAGE</span> LOCAIS DA SASI</p>
+        <p class="place-picker-lead">Toque num local para ver as fotos, o mapa e o nosso agradecimento.</p>
+      </div>
+      <div class="place-picker-grid" id="place-picker"></div>
+    </div>
   </section>
-    <section class="last-call"><div class="container"><p class="index">SASI 2026</p><h2>O jogo começa<br><span>com você.</span></h2><a class="btn btn-primary" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Participe da SASI ↗</a></div></section>
+  <section class="last-call" data-reveal><div class="container"><p class="index"><span class="stage-tag">FINAL STAGE</span> SASI 2026</p><h2>O jogo começa<br><span>com você.</span></h2><span class="last-call-actions"><a class="btn btn-primary" href="https://www.even3.com.br/iii-semana-academica-de-sistemas-de-informacao-802361/" target="_blank" rel="noopener noreferrer">Participe da SASI ↗</a><a class="btn btn-secondary" href="https://linktr.ee/sasiufac" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/linktree.svg" alt="" width="18" height="18" loading="lazy" decoding="async"> Todos os links da SASI ↗</a></span></div></section>
 </main>
-<button class="back-to-top" id="back-to-top" type="button" aria-label="Voltar ao topo da página" title="Voltar ao topo" hidden>
-  <span aria-hidden="true">↑</span>
-</button>
-<footer class="footer"><div class="container"><div class="footer-top"><div><a class="logo" href="#inicio"><span class="logo-icon">✳</span>SASI<span class="logo-year">/26</span></a><p>3ª Semana Acadêmica de Sistemas de Informação<br>Universidade Federal do Acre</p></div><div class="footer-links"><a href="#programacao">Programação</a><a href="#parceiros">Parceiros</a><a href="#local">Local</a><a href="https://www.instagram.com/sasiufac/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div><div class="footer-bottom"><span>© 2026 SASI UFAC</span><span>Conhecimento, comunidade e tecnologia.</span></div></div></footer>
+<button type="button" class="back-to-top" id="back-to-top" aria-label="Voltar ao topo" title="Voltar ao topo">↑</button>
+<div class="easter-fx-layer" id="easter-fx-layer" aria-hidden="true"></div>
+<div class="arcade-toast" id="arcade-toast" role="status" aria-live="polite" hidden></div>
+<div class="ach-toast" id="ach-toast" role="status" aria-live="polite" hidden><span class="ach-toast-bar"></span><span class="ach-toast-badge"><svg class="ach-cup" aria-hidden="true" focusable="false"><use href="#px-cup"></use></svg></span><span class="ach-toast-text"><small id="ach-toast-kicker">Conquista desbloqueada</small><strong id="ach-toast-title"></strong></span></div>
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a class="footer-logo-link" href="#inicio" aria-label="Voltar ao início"><img class="footer-logo" src="./assets/comissao-sasi-520.webp" alt="Logo da Comissão Organizadora da 3ª SASI" width="200" height="105" loading="lazy" decoding="async"></a>
+        <div>
+          <p class="footer-kicker">COMISSÃO ORGANIZADORA</p>
+          <p>3ª Semana Acadêmica de Sistemas de Informação<br>Universidade Federal do Acre · Rio Branco, AC</p>
+        </div>
+      </div>
+      <div class="footer-links"><a href="#programacao">Programação</a><a href="#convidados">Convidados</a><a href="#gamejam">Game Jam</a><a href="#parceiros">Parceiros</a><a href="#local">Local</a><a class="footer-ig" href="https://www.instagram.com/sasiufac/" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/instagram.svg" alt="" width="18" height="18" loading="lazy" decoding="async"> Instagram ↗</a><a class="footer-ig" href="https://linktr.ee/sasiufac" target="_blank" rel="noopener noreferrer"><img src="./assets/icons/linktree.svg" alt="" width="18" height="18" loading="lazy" decoding="async"> Linktree ↗</a></div>
+    </div>
+    <div class="footer-arcade">
+      <button type="button" class="insert-coin" id="insert-coin" aria-label="Inserir ficha (easter egg)"><span class="coin" aria-hidden="true"></span><span class="insert-coin-text">INSERT COIN</span><span class="coin-credit" id="coin-credit">CREDIT 00</span></button>
+      <button type="button" class="achievements-btn" id="achievements-btn" aria-haspopup="dialog"><svg class="px-icon px-icon--gold" aria-hidden="true" focusable="false"><use href="#px-trophy"></use></svg> Segredos encontrados <strong id="achievements-count">0/10</strong></button>
+    </div>
+    <div class="footer-bottom"><span>© 2026 SASI UFAC · Comissão Organizadora</span><span>Conhecimento, comunidade e tecnologia.</span></div>
+  </div>
+</footer>
 </body></html>

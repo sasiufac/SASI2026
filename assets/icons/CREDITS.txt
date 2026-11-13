@@ -1,0 +1,9 @@
+Ícones usados no site da SASI 2026
+linkedin.svg, instagram.svg (glifo) e globe.svg: Bootstrap Icons, licença MIT.
+https://icons.getbootstrap.com/ - Copyright (c) 2019-2024 The Bootstrap Authors
+lattes.svg e google-scholar.svg: Academicons (James Walsh), SIL Open Font License 1.1.
+https://jpswalsh.github.io/academicons/
+linktree.svg: Simple Icons, licença CC0 1.0 (cor #43E55E aplicada).
+https://simpleicons.org/
+As marcas LinkedIn, Instagram, Lattes/CNPq, Google Scholar e Linktree pertencem aos seus donos;
+os ícones aparecem apenas para indicar o link de cada perfil.
