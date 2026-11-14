@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113t";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113u";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1760,7 +1760,11 @@ loadMapBtn?.addEventListener("click", mountUfacMap);
 const playerSelect = $("#player-select");
 const loadPlayerSelect = () => playerSelect?.classList.add("is-loaded");
 
-const animatedZones = [logoStage, $("#site-ticker"), $(".location-pin-pulse"), $(".press-start"), $(".insert-coin"), $(".jam-prize-panel"), playerSelect].filter(Boolean);
+// Cena final (estilo Undertale): a folha baixa perto da tela e o texto "digita" quando a caixa aparece.
+const saveScene = $("#save-scene");
+const loadSaveScene = () => saveScene?.classList.add("is-loaded");
+
+const animatedZones = [logoStage, $("#site-ticker"), $(".location-pin-pulse"), $(".press-start"), $(".insert-coin"), $(".jam-prize-panel"), playerSelect, saveScene].filter(Boolean);
 const stageSections = ["#inicio", "#sobre", "#programacao", "#convidados", "#minicursos", "#gamejam", "#parceiros", "#local"]
   .map(sel => $(sel))
   .filter(Boolean);
@@ -1785,6 +1789,24 @@ if ("IntersectionObserver" in window) {
       }
     }, { rootMargin: "600px 0px" });
     psObserver.observe(playerSelect);
+  }
+
+  if (saveScene) {
+    const ssLoad = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) {
+        loadSaveScene();
+        ssLoad.disconnect();
+      }
+    }, { rootMargin: "600px 0px" });
+    ssLoad.observe(saveScene);
+    const ssType = new IntersectionObserver(entries => {
+      if (entries.some(e => e.isIntersecting)) {
+        loadSaveScene();
+        saveScene.classList.add("is-typing");
+        ssType.disconnect();
+      }
+    }, { threshold: 0.6 });
+    ssType.observe(saveScene.querySelector(".ss-dialog") || saveScene);
   }
 
   const animObserver = new IntersectionObserver(entries => {
@@ -1839,6 +1861,8 @@ if ("IntersectionObserver" in window) {
 } else {
   document.querySelectorAll("[data-reveal]").forEach(el => el.classList.add("is-revealed"));
   loadPlayerSelect();
+  loadSaveScene();
+  saveScene?.classList.add("is-typing");
 }
 
 document.addEventListener("visibilitychange", () => {
