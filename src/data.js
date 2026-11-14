@@ -226,8 +226,8 @@ export const schedule = [
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra", "Marcelo Minutti"),
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("27", "11:00", "12:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
-  activity("27", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
+  activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
+  activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "20 a 30" }),
   activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação" }),
   activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "", { seats: "40" })

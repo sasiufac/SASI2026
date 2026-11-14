@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113s";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113t";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1633,8 +1633,8 @@ const TICKER_FACTS = {
   "INOVAÇÃO": "💡 Na quinta (26/11), o Sebrae fala de inovação, carreira e negócios.",
   "COMUNIDADE": "🤝 CASI, LASI, IEEE e AWS Builder Group ajudam a SASI a acontecer.",
   "JOGOS": "🎮 O tema da 3ª edição é jogos e tecnologia.",
-  "GAME JAM": "🕹️ Inscrições até 23/11 às 15h. Prêmios em dinheiro: R$ 400, R$ 300 e R$ 200!",
-  "INTELIGÊNCIA ARTIFICIAL": "🤖 A IA aparece em 5 minicursos e oficinas da semana.",
+  "GAME JAM": "🕹️ 70 horas para criar um jogo! Inscrições até 23/11 às 15h. Prêmios: R$ 400, R$ 300 e R$ 200.",
+  "INTELIGÊNCIA ARTIFICIAL": "🤖 A IA aparece em 6 minicursos e oficinas da semana.",
   "PIXEL ART": "🎨 Minicurso de Pixel Art: segunda (23/11), às 14h.",
   "COMPUTAÇÃO EM NUVEM": "☁️ Dois minicursos de AWS: quarta (25/11) e sexta (27/11).",
   "VISÃO COMPUTACIONAL": "👁️ Conheça o PAVIC-Lab por dentro na sexta (27/11), às 14h.",

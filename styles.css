@@ -3147,6 +3147,27 @@ body.is-konami-party .stat-pill:first-child {
   background: rgba(255, 255, 255, 0.26);
 }
 
+/* Inscrição e página oficial no itch.io em destaque; grupo e avisos logo abaixo */
+.jam-actions--more {
+  margin-top: 12px;
+}
+
+.jam-cta .px-icon,
+.jam-cta img {
+  width: 18px;
+  height: 18px;
+}
+
+.jam-cta .px-icon {
+  --px-accent: var(--lime-neon);
+}
+
+.jam-cta--itch {
+  background: #ffffff;
+  color: #000431;
+  box-shadow: 0 5px 0 #000431;
+}
+
 .jam-board {
   display: grid;
   grid-template-columns: 0.9fr 1.3fr;
