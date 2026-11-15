@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113u";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113w";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -62,6 +62,12 @@ let activeScheduleFilter = "all";
 // VI WPPGCC: as atividades do workshop (e os intervalos entre elas) aparecem
 // juntas num "cartucho" dentro do dia, com as pesquisas numeradas em sequência.
 const isWp = item => item.track === "wppgcc";
+// WIE Vision Academy (IEEE WIE): só uma tag nas atividades do projeto, sem cartucho.
+const isWie = item => item.program === "wie";
+const WIE_TITLE = "WIE Vision Academy · treinamento prático em Visão Computacional e PDI, promovido pelo IEEE WIE";
+// "full" acrescenta "ACADEMY" (some nas telas bem estreitas da programação).
+const wieTag = (full = true, cls = "") =>
+  `<span class="wie-tag${cls ? " " + cls : ""}" title="${WIE_TITLE}">${pxIcon("eye")}WIE VISION${full ? '<span class="wie-tag-more">ACADEMY</span>' : ""}</span>`;
 const isBreakItem = item => item.type === "Intervalo";
 const wpTalkNo = new Map();
 schedule.filter(isWp).forEach(it => (it.talks || []).forEach(t => wpTalkNo.set(t, wpTalkNo.size + 1)));
@@ -155,6 +161,7 @@ function showDay(day, focus = false) {
             (isNow ? `<span class="live-badge">● AGORA</span>` : isNext ? `<span class="live-badge live-badge--next">PRÓXIMA</span>` : "") +
             // "Institucional" (credenciamento, solenidade, despedida) não leva etiqueta.
             (lowerType === "institucional" ? "" : `<span class="${typeClass}">${esc(item.type)}</span>`) +
+            (isWie(item) ? wieTag() : "") +
             `<h3>${esc(item.title)}</h3>` +
             (item.talks
               ? `<ol class="wp-talks">` +
@@ -330,9 +337,10 @@ function buildActs(guest, compact = false) {
         const talk = a.talks?.find(t => t.by === guest.name);
         const actTitle = talk ? talk.title : a.title;
         const wpTag = isWp(a) ? ` <span class="guest-act-wp" title="${esc(wppgcc.name)}">WPPGCC</span>` : "";
+        const wiTag = isWie(a) ? " " + wieTag(false, "wie-tag--act") : "";
         return (
           `<li><span class="guest-act-lv" aria-hidden="true">${levelLabel(a.day)}</span><div>` +
-          `<strong>${esc(d.weekday)} ${esc(a.day)}/11 · ${esc(time)}${wpTag}</strong>` +
+          `<strong>${esc(d.weekday)} ${esc(a.day)}/11 · ${esc(time)}${wpTag}${wiTag}</strong>` +
           (compact ? "" : `<span class="guest-act-title">${esc(actTitle)}</span>`) +
           (place ? placeHtml(place, "place-link--small") : "") +
           `</div></li>`
@@ -447,6 +455,7 @@ $("#workshop-grid").innerHTML = workshops
       `<article class="workshop">` +
       `<div class="workshop-top"><div class="workshop-icon" aria-hidden="true">${pxIcon(item.icon)}</div><span class="workshop-quest" aria-hidden="true">QUEST ${String(i + 1).padStart(2, "0")}</span></div>` +
       `<p class="workshop-date">${esc(item.day)} · ${esc(item.time)}</p>` +
+      (isWie(item) ? wieTag(true, "wie-tag--quest") : "") +
       `<h3>${esc(item.title)}</h3>` +
       (item.description ? `<p>${esc(item.description)}</p>` : "") +
       (item.seats || item.requirement

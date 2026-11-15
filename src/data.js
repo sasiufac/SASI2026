@@ -153,6 +153,8 @@ export const wppgcc = {
 };
 
 const WP = { track: "wppgcc" };
+// Atividades do projeto de extensão WIE Vision Academy (IEEE WIE): ganham só uma tag, sem cartucho.
+const WIE = { program: "wie" };
 const wpTalk = (title, by) => ({ title, by });
 const WP_TALKS = [
   wpTalk("Análise de Conflitos de Merge em Sistemas Feitos com Agentes de Inteligência Artificial", "Álvaro Lopes Rios"),
@@ -181,7 +183,7 @@ export const schedule = [
   activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves"),
   activity("23", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "", { seats: "20" }),
-  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning — Especial Mulheres", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy" }),
+  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning — Especial Mulheres", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", ...WIE }),
   activity("23", "16:00", "18:30", "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos", "Oficina", "Kaio Oliveira de Almeida", "", { seats: "20" }),
   activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", "", { note: "Divulgação do tema e dos desafios" }),
 
@@ -189,7 +191,7 @@ export const schedule = [
   activity("24", "07:30", "08:00", "Credenciamento", "Institucional"),
   activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricelio Moreira Soares, Laura Costa Sarkis e Ana Beatriz Alvarez Mamani · Mediação: João Gabriel Santana de Sousa"),
   activity("24", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("24", "09:45", "10:45", "Atividade a confirmar", "A confirmar"),
+  activity("24", "09:45", "10:45", "Da ideia ao produto: criando startups na era dos agentes de IA", "Palestra", "", "Centro de Convivência", { note: "Palestrante a confirmar" }),
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol e Gean Wenderson Sampaio Rebouças"),
   activity("24", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
@@ -228,7 +230,7 @@ export const schedule = [
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
   activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "20 a 30" }),
+  activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "20 a 30", ...WIE }),
   activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação" }),
   activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "", { seats: "40" })
 ];
@@ -242,7 +244,7 @@ export const workshops = [
   },
   {
     title: "Uma Breve Introdução a Deep Learning — Especial Mulheres",
-    day: "Segunda, 23/11", time: "14h–16h", icon: "network", place: "Lab 01 PAVIC",
+    day: "Segunda, 23/11", time: "14h–16h", icon: "network", place: "Lab 01 PAVIC", ...WIE,
     description: "Os conceitos fundamentais de deep learning, de forma intuitiva, para as participantes do projeto de extensão WIE Vision Academy.",
     speaker: "Manuel Menezes de Oliveira Neto"
   },
@@ -290,7 +292,7 @@ export const workshops = [
   },
   {
     title: "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC",
-    day: "Sexta, 27/11", time: "14h–18h", icon: "flask", seats: "20 a 30", place: "Lab 01 PAVIC",
+    day: "Sexta, 27/11", time: "14h–18h", icon: "flask", seats: "20 a 30", place: "Lab 01 PAVIC", ...WIE,
     description: "O PAVIC-Lab por dentro: linhas de pesquisa, infraestrutura com GPUs e os fundamentos de IA, aprendizado profundo e computação de alto desempenho.",
     speaker: "Equipe PAVIC"
   },
@@ -495,6 +497,11 @@ export const guests = [
   { name: "Kelvin do Nascimento Moreira", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
   { name: "Mayara Silva de Sousa", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
   { name: "Mirelle Campos Góis", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
+  // Apresentam pesquisa no VI WPPGCC e ainda não mandaram foto e currículo (cards compactos).
+  { name: "Álvaro Lopes Rios", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  { name: "Christopher Ric Coelho Saar", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  { name: "Jayra Nascimento Bandeira Bezerra", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  { name: "Victor Alexandre Lima Ribeiro", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   {
     name: "Clécio Elias Silva e Silva", role: "Cerimonial e equipe PAVIC",
     affiliation: "UFAC · Professor substituto e pesquisador do PAVIC",

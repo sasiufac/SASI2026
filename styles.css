@@ -6770,6 +6770,66 @@ main {
 .guest-mini-card .guest-act-wp {
   box-shadow: none;
 }
+
+/* Tag WIE Vision Academy (IEEE WIE): degradê do logo, do azul ao magenta, com o olho em pixel.
+   Todas as paradas têm contraste de pelo menos 5,4:1 com o texto branco. */
+.wie-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 8px;
+  padding: 4px 6px 3px 5px;
+  background: linear-gradient(90deg, #0065a5 0%, #3f5fd0 38%, #8a35c9 72%, #b81cb5 100%);
+  color: #ffffff;
+  font: 400 8px/1 var(--pixel);
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  vertical-align: 1px;
+  box-shadow: 2px 2px 0 #44c3e4;
+}
+
+.wie-tag .px-icon {
+  width: 10px;
+  height: 10px;
+  color: #ffffff;
+  --px-accent: #7ff3ff;
+}
+
+/* Nos cards claros dos convidados a sombra fica azul-marinho, como na tag WPPGCC */
+.guest-card .wie-tag--act {
+  margin-left: 6px;
+  box-shadow: 2px 2px 0 #0a235c;
+}
+
+.guest-mini-card .wie-tag--act {
+  margin-left: 6px;
+  box-shadow: none;
+}
+
+.workshop .wie-tag--quest {
+  align-self: flex-start;
+  margin: 12px 0 0;
+}
+
+.wie-tag-more {
+  margin-left: 3px;
+}
+
+/* No celular a tag vai para a linha de baixo do tipo, sem recuo */
+@media (max-width: 560px) {
+  .event-info .wie-tag {
+    display: flex;
+    width: max-content;
+    max-width: 100%;
+    margin: 6px 0 4px;
+  }
+}
+
+@media (max-width: 380px) {
+  .event-info .wie-tag-more {
+    display: none;
+  }
+}
 /* Chip do filtro e selo nas abas dos dias com workshop */
 .filter-chip--wppgcc {
   border-color: rgba(245, 183, 0, 0.6);
