@@ -208,6 +208,7 @@ export const schedule = [
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de cursos de computação" }),
   activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "", { seats: "15 a 25" }),
+  activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "", { seats: "20" }),
 
   // Quinta-feira, 26/11
   activity("26", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -277,6 +278,12 @@ export const workshops = [
     day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "15 a 25", requirement: "Noções básicas de terminal e de programação",
     description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
     speaker: "Flora Oliveira França"
+  },
+  {
+    title: "Introdução ao Game Design e Narrativa para Jogos Digitais",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "20", requirement: "Sem conhecimento prévio",
+    description: "Os fundamentos de game design e de narrativa para jogos: mecânicas, regras, objetivos, personagens, ambientação e enredo, com análise de jogos de exemplo.",
+    speaker: "Italo Oliveira e Tiago da Silva Félix"
   },
   {
     title: "Saúde Digital",
@@ -606,5 +613,17 @@ export const guests = [
     bio: "Estudante de Sistemas de Informação na UFAC desde 2023, com formação técnica integrada em Informática para Internet pelo IFAC (campus Rio Branco). Tem interesse em banco de dados, linguagens de programação e teoria da computação.",
     photo: photo("elias-da-cruz-de-souza-junior"),
     links: [lattes("8978521834519752")]
+  },
+  {
+    name: "Italo Oliveira", role: "Ministrante",
+    affiliation: "Infleet · Engenheiro Elixir sênior",
+    bio: "Bacharel em Sistemas de Informação pela UFAC, é engenheiro back-end com Elixir, Phoenix, PostgreSQL e Redis e trabalhou mais de cinco anos na Stone. Foi bolsista PIBIC em aprendizado de máquina e esteve entre os finalistas da fase regional da Maratona de Programação da SBC em quatro edições.",
+    photo: photo("italo-oliveira"),
+    links: [linkedin("italol")]
+  },
+  {
+    name: "Tiago da Silva Félix", role: "Ministrante",
+    affiliation: "Minicurso de Game Design e Narrativa · LASI",
+    photo: photo("tiago-da-silva-felix")
   }
 ];
