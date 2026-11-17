@@ -128,7 +128,7 @@ const PAVIC_TEAM = "Clécio Elias Silva e Silva, Cristopher Alexander Ochoa Vill
 const LASI_TESTES_TEAM = "Luís Antônio Lima Santiago, Marcos Vinícius Moraes Costa, Mychelle Ketlen Falk Rocha e Elias da Cruz de Souza Junior";
 
 // "time" e "endTime" usam HH:mm (alimentam <time datetime>). "extra" aceita
-// "note" (aviso curto) e "seats" (capacidade prevista no plano de atividade).
+// "note" (aviso curto) e "seats" (vagas da inscrição no Even3).
 const activity = (day, time, endTime, title, type, speaker = "", place = "Centro de Convivência", extra = {}) => ({
   day, time, endTime, title, type, speaker, place, ...extra
 });
@@ -182,8 +182,8 @@ export const schedule = [
   activity("23", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves"),
   activity("23", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "", { seats: "20" }),
-  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", ...WIE }),
+  activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "", { seats: "30" }),
+  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", seats: "30", ...WIE }),
   activity("23", "16:00", "18:30", "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos", "Oficina", "Kaio Oliveira de Almeida", "", { seats: "20" }),
   activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", "", { note: "Divulgação do tema e dos desafios" }),
 
@@ -195,8 +195,8 @@ export const schedule = [
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol e Gean Wenderson Sampaio Rebouças"),
   activity("24", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", "", { seats: "20" }),
-  activity("24", "14:00", "17:00", "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial", "Minicurso", "Lucas (HEADSCON)", ""),
+  activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", "", { seats: "30" }),
+  activity("24", "14:00", "17:00", "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial", "Minicurso", "Lucas (HEADSCON)", "", { seats: "30" }),
 
   // Quarta-feira, 25/11
   activity("25", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -206,9 +206,9 @@ export const schedule = [
   activity("25", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   wpSession("25", "11:00", "12:00", 2, WP_TALKS.slice(3, 6)),
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de cursos de computação" }),
-  activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "", { seats: "15 a 25" }),
-  activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "", { seats: "20" }),
+  activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de cursos de computação", seats: "30" }),
+  activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "", { seats: "25" }),
+  activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "", { seats: "30" }),
 
   // Quinta-feira, 26/11
   activity("26", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -218,9 +218,9 @@ export const schedule = [
   activity("26", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   wpSession("26", "11:00", "12:00", 3, WP_TALKS.slice(6, 9)),
   activity("26", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, ""),
+  activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, "", { seats: "30" }),
   activity("26", "15:00", "", "Término SASI: Game Jam", "Game Jam", "", "On-line · itch.io", { note: "Prazo final de envio dos jogos" }),
-  activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", "", { seats: "20" }),
+  activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", "", { seats: "30" }),
 
   // Sexta-feira, 27/11
   activity("27", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -231,21 +231,21 @@ export const schedule = [
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
   activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("27", "14:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "20 a 30", ...WIE }),
-  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação" }),
+  activity("27", "15:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "30", ...WIE }),
+  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação", seats: "30" }),
   activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "", { seats: "40" })
 ];
 
 export const workshops = [
   {
     title: "Introdução à Pixel Art para Jogos",
-    day: "Segunda, 23/11", time: "14h–16h", icon: "pencil", seats: "20",
+    day: "Segunda, 23/11", time: "14h–16h", icon: "pencil", seats: "30",
     description: "Fundamentos de pixel art e criação de sprites no LibreSprite: espaço de trabalho, ferramentas de desenho e camadas.",
     speaker: "Felipe de Pádua Silva e Clara Serena Farias Simione"
   },
   {
     title: "Uma Breve Introdução a Deep Learning",
-    day: "Segunda, 23/11", time: "14h–16h", icon: "network", place: "Lab 01 PAVIC", ...WIE,
+    day: "Segunda, 23/11", time: "14h–16h", icon: "network", seats: "30", place: "Lab 01 PAVIC", ...WIE,
     description: "Os conceitos fundamentais de deep learning, de forma intuitiva, para as participantes do projeto de extensão WIE Vision Academy.",
     speaker: "Manuel Menezes de Oliveira Neto"
   },
@@ -257,55 +257,55 @@ export const workshops = [
   },
   {
     title: "Introdução à Godot — Crie seu primeiro jogo",
-    day: "Terça, 24/11", time: "14h–17h", icon: "gamepad", seats: "20",
+    day: "Terça, 24/11", time: "14h–17h", icon: "gamepad", seats: "30",
     description: "Godot Engine na prática: cenas, nós e GDScript para montar um jogo simples. Um bom aquecimento para a Game Jam.",
     speaker: "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque"
   },
   {
     title: "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial",
-    day: "Terça, 24/11", time: "14h–17h", icon: "chip",
+    day: "Terça, 24/11", time: "14h–17h", icon: "chip", seats: "30",
     description: "",
     speaker: "Lucas (HEADSCON)"
   },
   {
     title: "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "eye", requirement: "Para estudantes de cursos de computação",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "eye", seats: "30", requirement: "Para estudantes de cursos de computação",
     description: "Análise de imagens, leitura de texto (OCR), atributos faciais e busca de rostos com o Amazon Rekognition, pelo console e pela AWS CLI.",
     speaker: AWS_TEAM
   },
   {
     title: "Docker para Desenvolvedores",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "15 a 25", requirement: "Noções básicas de terminal e de programação",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "25", requirement: "Noções básicas de terminal e de programação",
     description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
     speaker: "Flora Oliveira França"
   },
   {
     title: "Introdução ao Game Design e Narrativa para Jogos Digitais",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "20", requirement: "Sem conhecimento prévio",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "30", requirement: "Sem conhecimento prévio",
     description: "Os fundamentos de game design e de narrativa para jogos: mecânicas, regras, objetivos, personagens, ambientação e enredo, com análise de jogos de exemplo.",
     speaker: "Italo Oliveira e Tiago da Silva Félix"
   },
   {
     title: "Saúde Digital",
-    day: "Quinta, 26/11", time: "14h–18h", icon: "health",
+    day: "Quinta, 26/11", time: "14h–18h", icon: "health", seats: "30",
     description: "",
     speaker: SAUDE_TEAM
   },
   {
     title: "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
-    day: "Quinta, 26/11", time: "16h–18h", icon: "book", seats: "20",
+    day: "Quinta, 26/11", time: "16h–18h", icon: "book", seats: "30",
     description: "IA como apoio à pesquisa com o LeapSpace, da Elsevier: busca de literatura, leitura assistida, comparação de artigos e verificação das fontes.",
     speaker: "Guilherme Félix Cavalcante"
   },
   {
     title: "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC",
-    day: "Sexta, 27/11", time: "14h–18h", icon: "flask", seats: "20 a 30", place: "Lab 01 PAVIC", ...WIE,
+    day: "Sexta, 27/11", time: "15h–18h", icon: "flask", seats: "30", place: "Lab 01 PAVIC", ...WIE,
     description: "O PAVIC-Lab por dentro: linhas de pesquisa, infraestrutura com GPUs e os fundamentos de IA, aprendizado profundo e computação de alto desempenho.",
     speaker: "Equipe PAVIC"
   },
   {
     title: "AWS Lambda e S3: Automação Orientada a Eventos na Prática",
-    day: "Sexta, 27/11", time: "16h–18h", icon: "cloud", requirement: "Para estudantes de ensino superior em computação",
+    day: "Sexta, 27/11", time: "16h–18h", icon: "cloud", seats: "30", requirement: "Para estudantes de ensino superior em computação",
     description: "Computação serverless na prática: criar uma função Lambda, ler os logs no CloudWatch e disparar automações a partir de uploads no S3.",
     speaker: AWS_TEAM
   },

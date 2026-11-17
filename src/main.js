@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261113y";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261117a";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -176,7 +176,7 @@ function showDay(day, focus = false) {
             (place || item.seats
               ? `<div class="event-meta">` +
                 placeHtml(place) +
-                (item.seats ? `<small class="event-seats" title="Capacidade prevista no plano da atividade">${pxIcon("player")}≈ ${esc(item.seats)} vagas</small>` : "") +
+                (item.seats ? `<small class="event-seats" title="Vagas da inscrição no Even3">${pxIcon("player")}${esc(item.seats)} vagas</small>` : "") +
                 `</div>`
               : "") +
             `</div>` +
@@ -460,7 +460,7 @@ $("#workshop-grid").innerHTML = workshops
       (item.description ? `<p>${esc(item.description)}</p>` : "") +
       (item.seats || item.requirement
         ? `<div class="workshop-chips">` +
-          (item.seats ? `<span title="Capacidade prevista no plano da atividade">${pxIcon("player")}≈ ${esc(item.seats)} vagas</span>` : "") +
+          (item.seats ? `<span title="Vagas da inscrição no Even3">${pxIcon("player")}${esc(item.seats)} vagas</span>` : "") +
           (item.requirement ? `<span>${esc(item.requirement)}</span>` : "") +
           `</div>`
         : "") +
@@ -1646,7 +1646,7 @@ const TICKER_FACTS = {
   "INTELIGÊNCIA ARTIFICIAL": "🤖 A IA aparece em 6 minicursos e oficinas da semana.",
   "PIXEL ART": "🎨 Minicurso de Pixel Art: segunda (23/11), às 14h.",
   "COMPUTAÇÃO EM NUVEM": "☁️ Dois minicursos de AWS: quarta (25/11) e sexta (27/11).",
-  "VISÃO COMPUTACIONAL": "👁️ Conheça o PAVIC-Lab por dentro na sexta (27/11), às 14h.",
+  "VISÃO COMPUTACIONAL": "👁️ Conheça o PAVIC-Lab por dentro na sexta (27/11), às 15h.",
   "PESQUISA": "🔬 O Workshop de Pesquisa do PPGCC é na quarta (25/11).",
   "EMPREENDEDORISMO": "🚀 Oficina Da Ideia ao Pitch: segunda (23/11), às 16h.",
   "30 ANOS DE SI": "🎂 Solenidade dos 30 anos: segunda (23/11), às 8h.",
