@@ -183,7 +183,7 @@ export const schedule = [
   activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves"),
   activity("23", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "", { seats: "20" }),
-  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning — Especial Mulheres", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", ...WIE }),
+  activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", ...WIE }),
   activity("23", "16:00", "18:30", "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos", "Oficina", "Kaio Oliveira de Almeida", "", { seats: "20" }),
   activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", "", { note: "Divulgação do tema e dos desafios" }),
 
@@ -244,7 +244,7 @@ export const workshops = [
     speaker: "Felipe de Pádua Silva e Clara Serena Farias Simione"
   },
   {
-    title: "Uma Breve Introdução a Deep Learning — Especial Mulheres",
+    title: "Uma Breve Introdução a Deep Learning",
     day: "Segunda, 23/11", time: "14h–16h", icon: "network", place: "Lab 01 PAVIC", ...WIE,
     description: "Os conceitos fundamentais de deep learning, de forma intuitiva, para as participantes do projeto de extensão WIE Vision Academy.",
     speaker: "Manuel Menezes de Oliveira Neto"
