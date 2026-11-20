@@ -203,7 +203,7 @@ const WP_TALKS = [
   wpTalk("Ensino de Testes Exploratórios com SBTM: Estudo Empírico sobre o impacto do uso com Inteligência Artificial", "Jayra Nascimento Bandeira Bezerra"),
   wpTalk("Exploração de estratégias radiométricas e geométricas para reconstrução HDR de alta qualidade a partir de múltiplas exposições LDR", "Julio Sousa Martins"),
   wpTalk("Desenvolvimento e Avaliação de Redes Neurais para Super-Resolução de Imagens", "Ian Oliveira Teixeira"),
-  wpTalk("Remoção de Reflexos em Imagens", "John Pablo"),
+  wpTalk("Remoção de Reflexos em Imagens", "John Pablo Silva Rocha"),
   wpTalk("Modelo Baseado em Aprendizado Profundo para Reconstrução HDR a partir de uma Única Exposição LDR com Recuperação de Detalhes em Regiões com Perda de Informação", "Lucas Hildelbrano Costa Carvalho"),
   wpTalk("Adaptação de Hiper-heurísticas Mono-objetivo para Otimização Multi-objetivo", "Victor Alexandre Lima Ribeiro"),
   wpTalk("Hiper-heurística Multiobjetivo Guiada por Modelos de Linguagem para a Geração de Estratégias de Redução de Mutantes", "Dayan Freitas Alves")
@@ -602,31 +602,37 @@ export const guests = [
     name: "Álvaro Lopes Rios", role: "Apresentação no VI WPPGCC",
     affiliation: "UFAC · Mestrando em Ciência da Computação",
     bio: "Bacharel em Sistemas de Informação pela UFAC e especialista em Ciência de Dados pela Faculdade Unyleya. É analista de dados na Kambô Tecnologia e professor substituto no Instituto Federal do Acre (IFAC).",
-    photo: "",
+    photo: photo("alvaro-lopes-rios"),
     links: [lattes("6905334565937296")]
   },
   {
     name: "Christopher Ric Coelho Saar", role: "Apresentação no VI WPPGCC",
     affiliation: "UFAC · Mestrando em Ciência da Computação",
     bio: "Bacharel em Sistemas de Informação pela UFAC, cursa a especialização em Engenharia de Testes de Software com IA. Pesquisa engenharia de software e o ensino da área, e atua como consultor e desenvolvedor de soluções empresariais com foco em logística e saúde mental.",
-    photo: "",
+    photo: photo("christopher-ric-coelho-saar"),
     links: [lattes("8317172615824722")]
   },
   {
     name: "Jayra Nascimento Bandeira Bezerra", role: "Apresentação no VI WPPGCC",
     affiliation: "UFAC · Mestranda em Ciência da Computação",
     bio: "Bacharela em Sistemas de Informação pela UFAC, com especializações em Tecnologia da Informação e Comunicação (UFAC) e em Gerenciamento de Projetos de TI. Há mais de 10 anos trabalha com testes de software (manuais, de regressão, de usabilidade e exploratórios) e levantamento de requisitos.",
-    photo: "",
+    photo: photo("jayra-nascimento-bandeira-bezerra"),
     links: [lattes("5266663099237253")]
   },
   {
     name: "Victor Alexandre Lima Ribeiro", role: "Apresentação no VI WPPGCC",
     affiliation: "UFAC · Mestrando em Ciência da Computação",
     bio: "Bacharel em Sistemas de Informação pela UFAC, é desenvolvedor web full stack e back-end, com foco em análise de dados e inteligência artificial. Atua com deep learning, visão computacional e internet das coisas.",
-    photo: "",
+    photo: photo("victor-alexandre-lima-ribeiro"),
     links: [lattes("7588208769298979")]
   },
-  { name: "John Pablo", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  {
+    name: "John Pablo Silva Rocha", role: "Apresentação no VI WPPGCC",
+    affiliation: "UFAC · Mestrando em Ciência da Computação",
+    bio: "Pesquisador do PAVIC-Lab, atuou como monitor do Núcleo de Apoio à Inclusão da UFAC. No Web Academy, desenvolveu uma aplicação de gestão de projetos para a Secretaria de Estado da Fazenda (SEFAZ). Programa em Java, JavaScript, TypeScript, Python e C.",
+    photo: photo("john-pablo-silva-rocha"),
+    links: [lattes("5380356674059263")]
+  },
   {
     name: "Clécio Elias Silva e Silva", role: "Cerimonial e equipe PAVIC",
     affiliation: "UFAC · Professor substituto e pesquisador do PAVIC",
