@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261117a";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261119a";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1639,7 +1639,7 @@ const TICKER_TERMS = [
 // escondido e 3 cliques seguidos ligam o modo turbo. Passar o mouse pausa.
 const TICKER_FACTS = {
   "CONHECIMENTO": "📚 +10 XP! São 5 dias de palestras, mesas-redondas e minicursos.",
-  "INOVAÇÃO": "💡 Na quinta (26/11), o Sebrae fala de inovação, carreira e negócios.",
+  "INOVAÇÃO": "💡 Terça (24/11), 8h: da ideia ao produto, criando startups na era dos agentes de IA.",
   "COMUNIDADE": "🤝 CASI, LASI, IEEE e AWS Builder Group ajudam a SASI a acontecer.",
   "JOGOS": "🎮 O tema da 3ª edição é jogos e tecnologia.",
   "GAME JAM": "🕹️ 70 horas para criar um jogo! Inscrições até 23/11 às 15h. Prêmios: R$ 400, R$ 300 e R$ 200.",
@@ -1647,11 +1647,11 @@ const TICKER_FACTS = {
   "PIXEL ART": "🎨 Minicurso de Pixel Art: segunda (23/11), às 14h.",
   "COMPUTAÇÃO EM NUVEM": "☁️ Dois minicursos de AWS: quarta (25/11) e sexta (27/11).",
   "VISÃO COMPUTACIONAL": "👁️ Conheça o PAVIC-Lab por dentro na sexta (27/11), às 15h.",
-  "PESQUISA": "🔬 O Workshop de Pesquisa do PPGCC é na quarta (25/11).",
+  "PESQUISA": "🔬 O Workshop de Pesquisa do PPGCC é na quarta (25/11) e na quinta (26/11).",
   "EMPREENDEDORISMO": "🚀 Oficina Da Ideia ao Pitch: segunda (23/11), às 16h.",
   "30 ANOS DE SI": "🎂 Solenidade dos 30 anos: segunda (23/11), às 8h.",
   "PALESTRAS": "🎤 A primeira palestra é na segunda (23/11), às 9h45.",
-  "MINICURSOS": "🛠️ São 10 minicursos e oficinas. Veja o STAGE 04.",
+  "MINICURSOS": `🛠️ São ${workshops.length} minicursos e oficinas. Veja o STAGE 04.`,
   "DIREITOS DIGITAIS": "⚖️ Terça (24/11), 11h: direitos humanos e internet.",
   "SAÚDE DIGITAL": "🩺 Minicurso de Saúde Digital: quinta (26/11), às 14h.",
   "PRESS START": "▶ Ainda tem segredos escondidos nesta página..."

@@ -1,7 +1,8 @@
 // SASI 2026 — programação conferida com a planilha "precronogramasasi2026.xlsx"
-// (abas Cronograma e Detalhes) e com os planos de atividade dos convidados.
-// Conferência: 13/11/2026. A escala de voluntários e as anotações de logística
-// são internas e não entram na agenda pública.
+// (abas Cronograma e Detalhes), com a planilha "WPPGCC.xlsx" e com os planos de
+// atividade dos convidados. Conferência: 19/11/2026 (a aba Detalhes é a mais
+// atual: horários, locais e laboratórios). A escala de voluntários e as
+// anotações de logística são internas e não entram na agenda pública.
 export const days = [
   { id: "23", weekday: "SEG", name: "Segunda-feira" },
   { id: "24", weekday: "TER", name: "Terça-feira" },
@@ -20,6 +21,8 @@ export const days = [
 // sprite), photos [{ src, alt, caption }],
 // lat/lng (ponto exato) ou query (busca) e mapsUrl (link de rota).
 // A chave de cada local é o texto usado no campo "place" da programação.
+// Os laboratórios do curso (Lab 01 SI e Lab 02 SI) ainda não têm página e
+// aparecem como texto.
 const lab = file => "./assets/labs/" + file;
 const BLOCO_PAVIC_WEB = { src: lab("bloco-pavic-webacademy.webp"), alt: "Fachada do bloco com as marcas UFAC, Motorola, Web Academy e PAVIC Lab" };
 
@@ -34,7 +37,7 @@ export const places = {
     thanks: {
       theme: "sebrae", icon: "diamond", badge: "+30 VIDAS",
       title: "VALEU, SEBRAELAB!",
-      text: "Obrigado por ser o palco principal da SASI! É aqui que a gente faz o credenciamento toda manhã, celebra os 30 anos de SI na UFAC e aprende a empreender com o Sebrae. Vocês ganharam +30 VIDAS e um lugar especial no nosso coração."
+      text: "Obrigado por ser o palco principal da SASI! É aqui que a gente faz o credenciamento toda manhã, celebra os 30 anos de SI na UFAC e aprende a empreender. Vocês ganharam +30 VIDAS e um lugar especial no nosso coração."
     },
     photos: [
       { src: lab("centro/sebraelab-evento.webp"), alt: "Grupo reunido no palco do SebraeLab, com a plateia sentada em frente" },
@@ -70,10 +73,10 @@ export const places = {
     lng: -67.865235,
     mapsUrl: "https://maps.app.goo.gl/NF6P9y9st3yyWJb69"
   },
-  "Web Academy": {
+  "Lab 01 Web Academy": {
     kicker: "LABORATÓRIO · 2º ANDAR",
     name: "Web Academy",
-    subtitle: "2º andar · mesmo bloco do PAVIC-Lab",
+    subtitle: "Lab 01 · 2º andar · mesmo bloco do PAVIC-Lab",
     logo: lab("webacademy/webacademy-logo.webp"),
     logoSize: [420, 71],
     logoDark: true,
@@ -136,7 +139,7 @@ const activity = (day, time, endTime, title, type, speaker = "", place = "Centro
 // VI Workshop de Pesquisa do PPGCC: um evento dentro da SASI. As atividades com
 // track: "wppgcc" aparecem juntas num "cartucho" especial na programação, e as
 // apresentações de cada sessão ficam em "talks" (conferido com a planilha
-// WPPGCC.xlsx). A sessão extra das 12h, "se houver demanda", não entra.
+// WPPGCC.xlsx de 19/11: quatro sessões, duas na quarta e duas na quinta).
 export const wppgcc = {
   name: "VI Workshop de Pesquisa do PPGCC",
   short: "VI WPPGCC",
@@ -163,6 +166,9 @@ const WP_TALKS = [
   wpTalk("Abordagem baseada em aprendizado profundo para a reconstrução de vídeos HDR a partir de sequências de múltiplas exposições alternadas", "Cristopher Alexander Ochoa Villanueva"),
   wpTalk("Desenvolvimento de Abordagens de Baixo Custo Computacional Baseado em Redes Neurais Convolucionais para a Reconstrução de Imagens High Dynamic Range a partir de Múltiplas Exposições", "Gustavo de Souza Ferreti"),
   wpTalk("Ensino de Testes Exploratórios com SBTM: Estudo Empírico sobre o impacto do uso com Inteligência Artificial", "Jayra Nascimento Bandeira Bezerra"),
+  wpTalk("Exploração de estratégias radiométricas e geométricas para reconstrução HDR de alta qualidade a partir de múltiplas exposições LDR", "Julio Sousa Martins"),
+  wpTalk("Desenvolvimento e Avaliação de Redes Neurais para Super-Resolução de Imagens", "Ian Oliveira Teixeira"),
+  wpTalk("Remoção de Reflexos em Imagens", "John Pablo"),
   wpTalk("Modelo Baseado em Aprendizado Profundo para Reconstrução HDR a partir de uma Única Exposição LDR com Recuperação de Detalhes em Regiões com Perda de Informação", "Lucas Hildelbrano Costa Carvalho"),
   wpTalk("Adaptação de Hiper-heurísticas Mono-objetivo para Otimização Multi-objetivo", "Victor Alexandre Lima Ribeiro"),
   wpTalk("Hiper-heurística Multiobjetivo Guiada por Modelos de Linguagem para a Geração de Estratégias de Redução de Mutantes", "Dayan Freitas Alves")
@@ -176,26 +182,26 @@ export const schedule = [
   // Segunda-feira, 23/11
   activity("23", "07:30", "08:00", "Credenciamento", "Institucional"),
   activity("23", "08:00", "08:30", "Solenidade Comemorativa de 30 Anos", "Institucional", "Cerimonial: Clécio Elias Silva e Silva"),
-  activity("23", "08:30", "09:30", "Conversando com quem começou essa jornada", "Mesa-redonda", "Valmir Saraiva de Oliveira, Olacir Rodrigues Castro Junior, Laura Costa Sarkis e Daricelio Moreira Soares · Mediação: João Gabriel Santana de Sousa"),
+  activity("23", "08:30", "09:30", "Conversando com quem começou essa jornada", "Mesa-redonda", "Valmir Saraiva de Oliveira, Olacir Rodrigues Castro Junior, Laura Costa Sarkis, Daricelio Moreira Soares e Haroldo Alexandre de Araújo · Mediação: João Gabriel Santana de Sousa"),
   activity("23", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("23", "09:45", "10:45", "Computação Gráfica, Jogos Ultrarealísticos e Inteligência Artificial", "Palestra", "Manuel Menezes de Oliveira Neto"),
   activity("23", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("23", "11:00", "12:00", "Iniciativas estudantis: Protagonismo Estudantil e Inovação Tecnológica na UFAC", "Palestra", "Dayan Freitas Alves"),
   activity("23", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "", { seats: "30" }),
+  activity("23", "14:00", "16:00", "Introdução à Pixel Art para Jogos", "Minicurso", "Felipe de Pádua Silva e Clara Serena Farias Simione", "Lab 02 SI", { seats: "30" }),
   activity("23", "14:00", "16:00", "Uma Breve Introdução a Deep Learning", "Minicurso", "Manuel Menezes de Oliveira Neto", "Lab 01 PAVIC", { note: "Atividade do projeto de extensão WIE Vision Academy", seats: "30", ...WIE }),
-  activity("23", "16:00", "18:30", "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos", "Oficina", "Kaio Oliveira de Almeida", "", { seats: "20" }),
-  activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", "", { note: "Divulgação do tema e dos desafios" }),
+  activity("23", "16:00", "18:30", "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos", "Oficina", "Kaio Oliveira de Almeida", "Lab 01 Web Academy", { seats: "20" }),
+  activity("23", "17:00", "", "Abertura SASI: Game Jam", "Game Jam", "", "Lab 02 SI", { note: "Divulgação do tema e dos desafios" }),
 
   // Terça-feira, 24/11
   activity("24", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("24", "08:00", "09:30", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricelio Moreira Soares, Laura Costa Sarkis e Ana Beatriz Alvarez Mamani · Mediação: João Gabriel Santana de Sousa"),
+  activity("24", "08:00", "09:30", "Da ideia ao produto: criando startups na era dos agentes de IA", "Palestra", "Breno Campelo, Fernanda Onofre e Hugo Satiro"),
   activity("24", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("24", "09:45", "10:45", "Da ideia ao produto: criando startups na era dos agentes de IA", "Palestra", "", "Centro de Convivência", { note: "Palestrante a confirmar" }),
+  activity("24", "09:45", "10:45", "Mesa-redonda: Parcerias Público-Privadas e Convênios Tecnológicos — Desafios de Gestão e Benefícios para a Comunidade Acadêmica", "Mesa-redonda", "Daricelio Moreira Soares, Laura Costa Sarkis e Ana Beatriz Alvarez Mamani · Mediação: João Gabriel Santana de Sousa"),
   activity("24", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol e Gean Wenderson Sampaio Rebouças"),
   activity("24", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", "", { seats: "30" }),
+  activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", "Lab 01 Web Academy", { seats: "30" }),
   activity("24", "14:00", "17:00", "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial", "Minicurso", "Lucas (HEADSCON)", "", { seats: "30" }),
 
   // Quarta-feira, 25/11
@@ -206,40 +212,40 @@ export const schedule = [
   activity("25", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   wpSession("25", "11:00", "12:00", 2, WP_TALKS.slice(3, 6)),
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de cursos de computação", seats: "30" }),
-  activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "", { seats: "25" }),
-  activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "", { seats: "30" }),
+  activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "Lab 01 Web Academy", { note: "Para estudantes de cursos de computação", seats: "30" }),
+  activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "Lab 02 SI", { seats: "25" }),
+  activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "Lab 01 SI", { seats: "30" }),
 
   // Quinta-feira, 26/11
   activity("26", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("26", "08:00", "09:30", "Inovação que transforma: Da faculdade ao mercado de trabalho", "Palestra", "SEBRAE"),
+  activity("26", "08:00", "09:30", "Programa Youth e Oportunidades Internacionais", "Palestra", "Gabriel Daniel da Silva"),
   activity("26", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("26", "09:45", "10:45", "Do sonho ao negócio: Seja protagonista da sua história", "Palestra", "SEBRAE"),
+  wpSession("26", "09:45", "10:45", 3, WP_TALKS.slice(6, 9)),
   activity("26", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  wpSession("26", "11:00", "12:00", 3, WP_TALKS.slice(6, 9)),
+  wpSession("26", "11:00", "12:00", 4, WP_TALKS.slice(9, 12)),
   activity("26", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
-  activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, "", { seats: "30" }),
+  activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, "Lab 01 Web Academy", { seats: "30" }),
   activity("26", "15:00", "", "Término SASI: Game Jam", "Game Jam", "", "On-line · itch.io", { note: "Prazo final de envio dos jogos" }),
-  activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", "", { seats: "30" }),
+  activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", "Lab 02 SI", { seats: "30" }),
 
   // Sexta-feira, 27/11
   activity("27", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("27", "08:00", "08:30", "Despedida", "Institucional"),
-  activity("27", "08:30", "09:30", "Palestra nacional — HEADSCON (tema a confirmar)", "Palestra", "HEADSCON"),
+  activity("27", "08:00", "08:30", "Por que seu tiro não pegou? A culpa é da rede: O que redes de computadores e telecom podem ensinar sobre jogos digitais", "Palestra"),
+  activity("27", "08:30", "09:30", "Painel HEADSCON", "Painel", "HEADSCON"),
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra", "Marcelo Minutti"),
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
   activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
   activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("27", "15:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "30", ...WIE }),
-  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "", { note: "Para estudantes de ensino superior em computação", seats: "30" }),
-  activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "", { seats: "40" })
+  activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "Lab 01 Web Academy", { note: "Para estudantes de ensino superior em computação", seats: "30" }),
+  activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "Lab 02 SI", { seats: "40" })
 ];
 
 export const workshops = [
   {
     title: "Introdução à Pixel Art para Jogos",
-    day: "Segunda, 23/11", time: "14h–16h", icon: "pencil", seats: "30",
+    day: "Segunda, 23/11", time: "14h–16h", icon: "pencil", seats: "30", place: "Lab 02 SI",
     description: "Fundamentos de pixel art e criação de sprites no LibreSprite: espaço de trabalho, ferramentas de desenho e camadas.",
     speaker: "Felipe de Pádua Silva e Clara Serena Farias Simione"
   },
@@ -251,13 +257,13 @@ export const workshops = [
   },
   {
     title: "Da Ideia ao Pitch — Oficina Prática de Apresentação de Produtos",
-    day: "Segunda, 23/11", time: "16h–18h30", icon: "rocket", seats: "20",
+    day: "Segunda, 23/11", time: "16h–18h30", icon: "rocket", seats: "20", place: "Lab 01 Web Academy",
     description: "Como mostrar o valor de um produto em até 1 minuto: estrutura do pitch, ensaio, feedback e apresentação, junto com os makers do programa Do Maker à Indústria.",
     speaker: "Kaio Oliveira de Almeida"
   },
   {
     title: "Introdução à Godot — Crie seu primeiro jogo",
-    day: "Terça, 24/11", time: "14h–17h", icon: "gamepad", seats: "30",
+    day: "Terça, 24/11", time: "14h–17h", icon: "gamepad", seats: "30", place: "Lab 01 Web Academy",
     description: "Godot Engine na prática: cenas, nós e GDScript para montar um jogo simples. Um bom aquecimento para a Game Jam.",
     speaker: "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque"
   },
@@ -269,31 +275,31 @@ export const workshops = [
   },
   {
     title: "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "eye", seats: "30", requirement: "Para estudantes de cursos de computação",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "eye", seats: "30", place: "Lab 01 Web Academy", requirement: "Para estudantes de cursos de computação",
     description: "Análise de imagens, leitura de texto (OCR), atributos faciais e busca de rostos com o Amazon Rekognition, pelo console e pela AWS CLI.",
     speaker: AWS_TEAM
   },
   {
     title: "Docker para Desenvolvedores",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "25", requirement: "Noções básicas de terminal e de programação",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "25", place: "Lab 02 SI", requirement: "Noções básicas de terminal e de programação",
     description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
     speaker: "Flora Oliveira França"
   },
   {
     title: "Introdução ao Game Design e Narrativa para Jogos Digitais",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "30", requirement: "Sem conhecimento prévio",
+    day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "30", place: "Lab 01 SI", requirement: "Sem conhecimento prévio",
     description: "Os fundamentos de game design e de narrativa para jogos: mecânicas, regras, objetivos, personagens, ambientação e enredo, com análise de jogos de exemplo.",
     speaker: "Italo Oliveira e Tiago da Silva Félix"
   },
   {
     title: "Saúde Digital",
-    day: "Quinta, 26/11", time: "14h–18h", icon: "health", seats: "30",
+    day: "Quinta, 26/11", time: "14h–18h", icon: "health", seats: "30", place: "Lab 01 Web Academy",
     description: "",
     speaker: SAUDE_TEAM
   },
   {
     title: "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática",
-    day: "Quinta, 26/11", time: "16h–18h", icon: "book", seats: "30",
+    day: "Quinta, 26/11", time: "16h–18h", icon: "book", seats: "30", place: "Lab 02 SI",
     description: "IA como apoio à pesquisa com o LeapSpace, da Elsevier: busca de literatura, leitura assistida, comparação de artigos e verificação das fontes.",
     speaker: "Guilherme Félix Cavalcante"
   },
@@ -305,13 +311,13 @@ export const workshops = [
   },
   {
     title: "AWS Lambda e S3: Automação Orientada a Eventos na Prática",
-    day: "Sexta, 27/11", time: "16h–18h", icon: "cloud", seats: "30", requirement: "Para estudantes de ensino superior em computação",
+    day: "Sexta, 27/11", time: "16h–18h", icon: "cloud", seats: "30", place: "Lab 01 Web Academy", requirement: "Para estudantes de ensino superior em computação",
     description: "Computação serverless na prática: criar uma função Lambda, ler os logs no CloudWatch e disparar automações a partir de uploads no S3.",
     speaker: AWS_TEAM
   },
   {
     title: "Testes automatizados como guardrails no desenvolvimento assistido por IA",
-    day: "Sexta, 27/11", time: "16h–18h", icon: "lock", seats: "40",
+    day: "Sexta, 27/11", time: "16h–18h", icon: "lock", seats: "40", place: "Lab 02 SI",
     description: "A IA escreve código em segundos, e os testes mostram se ele funciona. No Citei, um projeto real, a turma pratica testes unitários, de propriedade, de integração, de carga, de interface e de ponta a ponta, e vê o teste pegar o erro da IA.",
     speaker: LASI_TESTES_TEAM
   }
@@ -392,6 +398,8 @@ export const guests = [
     photo: photo("olacir-rodrigues-castro-junior"), photoPosition: "58% 50%", photoTranslate: "0%, 3%", photoScale: 1.06,
     links: [lattes("1893693615984125")]
   },
+  // Entrou na mesa de segunda (pasta nova em 19/11, ainda sem foto e currículo).
+  { name: "Haroldo Alexandre de Araújo", role: "Mesa-redonda", affiliation: "Mesa-redonda dos 30 anos de SI", photo: "" },
   {
     name: "João Gabriel Santana de Sousa", role: "Mediador das mesas-redondas",
     affiliation: "UFAC · Graduando em Sistemas de Informação",
@@ -430,6 +438,26 @@ export const guests = [
     bio: "Estudante do 5º período de Sistemas de Informação na UFAC, fez a capacitação full stack do Web Academy. Tem foco em desenvolvimento web, com front-end em Angular e design UX/UI.",
     photo: photo("clara-serena-farias-simione"),
     links: [lattes("2804249202889262")]
+  },
+  {
+    name: "Breno Campelo", role: "Palestrante",
+    affiliation: "UFAC · Graduando em Sistemas de Informação e vice-presidente da LASI",
+    bio: "Desenvolvedor full stack com Java e Spring Boot, formado na capacitação do Web Academy (UFAC e Motorola Solutions). Programa com agentes de IA, criou o BioScan AI, vencedor da trilha Green AI & Edge de um hackathon, e é cofundador da agência Versa.",
+    photo: photo("breno-campelo"),
+    links: [linkedin("brenocampelo")]
+  },
+  {
+    name: "Fernanda Onofre", role: "Palestrante",
+    affiliation: "Wood Lab · CEO e fundadora",
+    bio: "Engenheira civil com MBA em Gestão Ambiental e Manejo Florestal, lidera a Wood Lab, startup acreana que aplica inteligência artificial e rastreabilidade à cadeia da madeira na Amazônia. Venceu o Desafio WhatsApp pela Amazônia, ficou em 1º lugar na Região Norte do Mulheres Inovadoras, da Finep, e é embaixadora do BNDES Garagem.",
+    photo: photo("fernanda-onofre")
+  },
+  {
+    name: "Hugo Satiro", role: "Palestrante",
+    affiliation: "Quintessa · Gestor de projetos",
+    bio: "Mestre em Desenvolvimento Local, atua desde 2009 como docente, pesquisador e consultor em negócios de impacto socioambiental. Na Quintessa, prospecta, seleciona e acompanha startups em programas de empreendedorismo; antes, foi analista de investimentos de impacto na Sitawi Finanças do Bem.",
+    photo: photo("hugo-satiro"),
+    links: [linkedin("hugosatiro")]
   },
   {
     name: "Sabrina Cassol", title: "Prof.ª Dr.ª", role: "Palestrante",
@@ -499,16 +527,55 @@ export const guests = [
     photo: photo("flora-oliveira-franca"),
     links: [linkedin("flora-fran%C3%A7a-827030266")]
   },
-  { name: "Gleice Beatriz Mourão Araújo", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
-  { name: "Isaque Costa Santarém", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
-  { name: "Kelvin do Nascimento Moreira", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
-  { name: "Mayara Silva de Sousa", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
-  { name: "Mirelle Campos Góis", role: "Ministrante", affiliation: "Minicurso de Saúde Digital", photo: "" },
+  {
+    name: "Gabriel Daniel da Silva", role: "Palestrante",
+    affiliation: "UFAC · Graduando em Sistemas de Informação e presidente do CASI",
+    bio: "Estudante de Sistemas de Informação na UFAC, preside o Centro Acadêmico de Sistemas de Informação e é diretor de Igualdade Racial do DCE. Integrou a delegação Youth Brasil 2026, do CGI.br, e foi um dos 10 selecionados para o 21º Fórum de Governança da Internet (IGF), em Nairóbi.",
+    photo: photo("gabriel-daniel-da-silva"),
+    links: [lattes("9406706419749655"), linkedin("gabdaniel")]
+  },
+  {
+    name: "Isaque Costa Santarém", role: "Ministrante",
+    affiliation: "Núcleo Estadual de Telessaúde do Acre · Bolsista desenvolvedor web",
+    bio: "Desenvolvedor web full stack e graduando em Sistemas de Informação na UFAC. No Telessaúde Acre, trabalhou no Portal Telessaúde e desenvolve o sistema de apoio à decisão e o de documentos médicos; também fez a capacitação do Web Academy.",
+    photo: photo("isaque-costa-santarem"),
+    links: [lattes("9670564628649240"), linkedin("isaque-costa16")]
+  },
+  {
+    name: "Kelvin do Nascimento Moreira", role: "Ministrante",
+    affiliation: "UFAC · Graduando em Sistemas de Informação",
+    bio: "Técnico em Redes de Computadores pelo IFAC e estudante de Sistemas de Informação na UFAC desde 2023. É bolsista do projeto de desenvolvimento web full stack Web Academy e tem experiência com programação e infraestrutura de redes.",
+    photo: photo("kelvin-do-nascimento-moreira"),
+    links: [lattes("6631327653746335")]
+  },
+  {
+    name: "Mayara Silva de Sousa", role: "Ministrante",
+    affiliation: "UFAC · Graduanda em Sistemas de Informação e monitora do Web Academy",
+    bio: "No Web Academy, desenvolveu uma aplicação de gestão de editais para a FAPAC. Integra o PET Saúde Digital, que investiga o prontuário eletrônico na atenção primária em Rio Branco, e foi monitora da imersão científica do programa Futuras Cientistas.",
+    photo: photo("mayara-silva-de-sousa"),
+    links: [lattes("7729827692498260")]
+  },
+  {
+    name: "Mirelle Campos Góis", role: "Ministrante",
+    affiliation: "UFAC · Graduanda em Sistemas de Informação",
+    bio: "Estudante de Sistemas de Informação na UFAC desde 2022. Participou do N.A.V.E Tech Acre, de empreendedorismo e tecnologias avançadas, e dos cursos de extensão de IoT para a Indústria 4.0, com Big Data e mineração de dados.",
+    photo: photo("mirelle-campos-gois"),
+    links: [lattes("1973059060882754")]
+  },
+  // Sem foto por enquanto (card compacto).
+  {
+    name: "Gleice Beatriz Mourão Araújo", role: "Ministrante",
+    affiliation: "UFAC · Graduanda em Sistemas de Informação",
+    bio: "Tem experiência em engenharia de software e participa da pesquisa Saúde Digital, com bolsa da UFAC, que investiga o prontuário eletrônico na rede do G-MUS. Passou pelo N.A.V.E Tech Acre e pelo Web Academy.",
+    photo: "",
+    links: [lattes("2102049538589138")]
+  },
   // Apresentam pesquisa no VI WPPGCC e ainda não mandaram foto e currículo (cards compactos).
   { name: "Álvaro Lopes Rios", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   { name: "Christopher Ric Coelho Saar", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   { name: "Jayra Nascimento Bandeira Bezerra", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   { name: "Victor Alexandre Lima Ribeiro", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  { name: "John Pablo", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   {
     name: "Clécio Elias Silva e Silva", role: "Cerimonial e equipe PAVIC",
     affiliation: "UFAC · Professor substituto e pesquisador do PAVIC",
