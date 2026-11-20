@@ -427,7 +427,12 @@ export const guests = [
     links: [lattes("1893693615984125")]
   },
   // Entrou na mesa de segunda (pasta nova em 19/11, ainda sem foto e currículo).
-  { name: "Haroldo Alexandre de Araújo", role: "Mesa-redonda", affiliation: "Mesa-redonda dos 30 anos de SI", photo: "" },
+  {
+    name: "Haroldo Alexandre de Araújo", role: "Mesa-redonda",
+    affiliation: "Mesa-redonda dos 30 anos de SI",
+    bio: "Licenciado em Matemática pela UFAC, especialista em Análise de Sistemas pela UFAC/UFMS e mestre em Ciência da Computação pela UFSC.",
+    photo: photo("haroldo-alexandre-de-araujo")
+  },
   {
     name: "João Gabriel Santana de Sousa", role: "Mediador das mesas-redondas",
     affiliation: "UFAC · Graduando em Sistemas de Informação",
@@ -593,10 +598,34 @@ export const guests = [
     links: [lattes("2102049538589138")]
   },
   // Apresentam pesquisa no VI WPPGCC e ainda não mandaram foto e currículo (cards compactos).
-  { name: "Álvaro Lopes Rios", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
-  { name: "Christopher Ric Coelho Saar", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
-  { name: "Jayra Nascimento Bandeira Bezerra", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
-  { name: "Victor Alexandre Lima Ribeiro", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
+  {
+    name: "Álvaro Lopes Rios", role: "Apresentação no VI WPPGCC",
+    affiliation: "UFAC · Mestrando em Ciência da Computação",
+    bio: "Bacharel em Sistemas de Informação pela UFAC e especialista em Ciência de Dados pela Faculdade Unyleya. É analista de dados na Kambô Tecnologia e professor substituto no Instituto Federal do Acre (IFAC).",
+    photo: "",
+    links: [lattes("6905334565937296")]
+  },
+  {
+    name: "Christopher Ric Coelho Saar", role: "Apresentação no VI WPPGCC",
+    affiliation: "UFAC · Mestrando em Ciência da Computação",
+    bio: "Bacharel em Sistemas de Informação pela UFAC, cursa a especialização em Engenharia de Testes de Software com IA. Pesquisa engenharia de software e o ensino da área, e atua como consultor e desenvolvedor de soluções empresariais com foco em logística e saúde mental.",
+    photo: "",
+    links: [lattes("8317172615824722")]
+  },
+  {
+    name: "Jayra Nascimento Bandeira Bezerra", role: "Apresentação no VI WPPGCC",
+    affiliation: "UFAC · Mestranda em Ciência da Computação",
+    bio: "Bacharela em Sistemas de Informação pela UFAC, com especializações em Tecnologia da Informação e Comunicação (UFAC) e em Gerenciamento de Projetos de TI. Há mais de 10 anos trabalha com testes de software (manuais, de regressão, de usabilidade e exploratórios) e levantamento de requisitos.",
+    photo: "",
+    links: [lattes("5266663099237253")]
+  },
+  {
+    name: "Victor Alexandre Lima Ribeiro", role: "Apresentação no VI WPPGCC",
+    affiliation: "UFAC · Mestrando em Ciência da Computação",
+    bio: "Bacharel em Sistemas de Informação pela UFAC, é desenvolvedor web full stack e back-end, com foco em análise de dados e inteligência artificial. Atua com deep learning, visão computacional e internet das coisas.",
+    photo: "",
+    links: [lattes("7588208769298979")]
+  },
   { name: "John Pablo", role: "Apresentação no VI WPPGCC", affiliation: "Mestrado em Ciência da Computação (PPGCC/UFAC)", photo: "" },
   {
     name: "Clécio Elias Silva e Silva", role: "Cerimonial e equipe PAVIC",
