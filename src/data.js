@@ -229,7 +229,7 @@ export const schedule = [
 
   // Sexta-feira, 27/11
   activity("27", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("27", "08:00", "08:30", "Por que seu tiro não pegou? A culpa é da rede: O que redes de computadores e telecom podem ensinar sobre jogos digitais", "Palestra"),
+  activity("27", "08:00", "08:30", "Por que seu tiro não pegou? A culpa é da rede: O que redes de computadores e telecom podem ensinar sobre jogos digitais", "Palestra", "César Augusto Borges Fraga"),
   activity("27", "08:30", "09:30", "Painel HEADSCON", "Painel", "HEADSCON"),
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra", "Marcelo Minutti"),
@@ -597,6 +597,12 @@ export const guests = [
     bio: "Empreendedor e executivo com atuação em gestão, tecnologia e inovação na iniciativa privada, no setor público e no terceiro setor. Coordena o HUB ACRE, preside o Instituto Mercosul Amazônia e é CEO da Almo.",
     photo: photo("kaio-oliveira-de-almeida"), photoPosition: "50% 45%",
     links: [linkedin("kaio-oliveira-de-almeida-684454b7")]
+  },
+  {
+    name: "César Augusto Borges Fraga", role: "Palestrante",
+    affiliation: "RNP · Analista de Operações Pleno",
+    bio: "Engenheiro de telecomunicações com mais de 20 anos em telecom, infraestrutura de redes e operações. Na Rede Nacional de Ensino e Pesquisa desde 2014, cuida da implantação de circuitos e de projetos de conectividade para instituições de ensino, pesquisa e governo, e é instrutor da Escola Superior de Redes.",
+    photo: photo("cesar-augusto-borges-fraga")
   },
   {
     name: "Marcelo Minutti", role: "Palestrante",
