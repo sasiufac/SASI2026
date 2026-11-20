@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261119d";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261120a";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1084,6 +1084,9 @@ function play8BitSfx(kind = "step", level = 13, forcePlay = false) {
       tone(1318.51, now + 0.07, 0.22, 0.035);
     } else if (kind === "fanfare") {
       [523.25, 659.25, 783.99, 1046.5, 783.99, 1046.5, 1318.51].forEach((f, i) => tone(f, now + [0, 0.075, 0.15, 0.225, 0.33, 0.41, 0.52][i], i === 6 ? 0.26 : 0.085, 0.038));
+    } else if (kind === "nope") {
+      tone(196, now, 0.1, 0.03);
+      tone(146.83, now + 0.11, 0.2, 0.03);
     } else [523.25, 659.25, 783.99, 1046.5].forEach((f, i) => tone(f, now + i * 0.055, 0.08, 0.036));
   } catch {
     // O navegador bloqueou o Web Audio antes de uma interação.
@@ -1300,10 +1303,10 @@ function nextToast() {
    8. EASTER EGGS & CONQUISTAS (SAVE FILE NO NAVEGADOR)
    ========================================================= */
 const ACHIEVEMENTS = [
-  { id: "konami", title: "Código Konami", hint: "Use as setas e as letras B e A, como nos fliperamas.", tier: "gold" },
+  { id: "konami", title: "Código Konami", hint: "Use as setas e as letras B e A, como nos fliperamas. No celular, use o controle aqui embaixo.", tier: "gold" },
   { id: "combo", title: "Combo ×5", hint: "Toque 5 vezes seguidas na logo do topo.", tier: "bronze" },
-  { id: "crt", title: "Modo CRT", hint: "Digite o nome do evento em qualquer lugar da página.", tier: "silver" },
-  { id: "ufac", title: "30 anos de SI", hint: "Digite a sigla da universidade.", tier: "silver" },
+  { id: "crt", title: "Modo CRT", hint: "Digite o nome do evento em qualquer lugar da página. No celular, use o campo de código aqui embaixo.", tier: "silver" },
+  { id: "ufac", title: "30 anos de SI", hint: "Digite a sigla da universidade. No celular, use o campo de código aqui embaixo.", tier: "silver" },
   { id: "coin", title: "Ficha inserida", hint: "Coloque 3 fichas na máquina do rodapé.", tier: "bronze" },
   { id: "jam", title: "Press Start", hint: "Ligue o console da Game Jam até o fim.", tier: "bronze" },
   { id: "explorer", title: "Mapa 100%", hint: "Passe por todas as fases (seções) da página.", tier: "bronze" },
@@ -1544,7 +1547,8 @@ renderAchievements();
 
 // Palavras secretas digitadas (fora de campos de texto) e Código Konami.
 const konamiSeq = ["ArrowUp", "ArrowUp", "ArrowDown", "ArrowDown", "ArrowLeft", "ArrowRight", "ArrowLeft", "ArrowRight", "b", "a"];
-let konamiPos = 0;
+const isKonami = keys => keys.length === konamiSeq.length && konamiSeq.every((k, i) => keys[i] === k);
+let konamiKeys = [];
 let typed = "";
 let crtTimer = null;
 
@@ -1556,34 +1560,150 @@ function startCrtMode() {
   play8BitSfx("levelup", 13, true);
 }
 
+// Os mesmos efeitos valem pelo teclado e pelo controle da janela de segredos.
+const SECRETS = {
+  konami() {
+    launchEasterEggParty();
+    unlockAchievement("konami");
+  },
+  crt() {
+    startCrtMode();
+    unlockAchievement("crt");
+  },
+  ufac() {
+    spawnEasterConfetti(["30 ANOS", "SI UFAC", "+30 XP", "UFAC ♥"]);
+    showArcadeToast("🎓 30 ANOS DE SISTEMAS DE INFORMAÇÃO NA UFAC!", true);
+    play8BitSfx("fanfare", 19, true);
+    unlockAchievement("ufac");
+  }
+};
+function runSecret(id) {
+  // Com a janela de segredos aberta, a festa e os avisos ficariam atrás dela.
+  if (achievementsDialog?.open) achievementsDialog.close();
+  SECRETS[id]();
+}
+
+const MODIFIER_KEYS = new Set(["Shift", "Control", "Alt", "Meta", "CapsLock"]);
 document.addEventListener("keydown", e => {
+  if (!e.key || MODIFIER_KEYS.has(e.key)) return;
   if (e.target.closest?.("input, textarea, select, [contenteditable]")) return;
   const key = e.key.length === 1 ? e.key.toLowerCase() : e.key;
-  if (key === konamiSeq[konamiPos]) {
-    konamiPos++;
-    if (konamiPos === konamiSeq.length) {
-      konamiPos = 0;
-      launchEasterEggParty();
-      unlockAchievement("konami");
-    }
-  } else {
-    konamiPos = key === konamiSeq[0] ? 1 : 0;
+  // Vale a sequência das últimas 10 teclas, então ↑↑↑↓↓… também funciona.
+  konamiKeys = [...konamiKeys, key].slice(-konamiSeq.length);
+  if (isKonami(konamiKeys)) {
+    konamiKeys = [];
+    runSecret("konami");
   }
   if (key.length === 1 && /[a-z0-9]/.test(key)) {
     typed = (typed + key).slice(-8);
     if (typed.endsWith("sasi")) {
       typed = "";
-      startCrtMode();
-      unlockAchievement("crt");
+      runSecret("crt");
     } else if (typed.endsWith("ufac")) {
       typed = "";
-      spawnEasterConfetti(["30 ANOS", "SI UFAC", "+30 XP", "UFAC ♥"]);
-      showArcadeToast("🎓 30 ANOS DE SISTEMAS DE INFORMAÇÃO NA UFAC!", true);
-      play8BitSfx("fanfare", 19, true);
-      unlockAchievement("ufac");
+      runSecret("ufac");
     }
   }
 });
+
+// Controle do player 1 (fim da janela de segredos): no celular, sem teclado, o
+// direcional e o B/A fazem o Código Konami e o campo de código aceita as palavras.
+const padScreen = $("#ach-pad-screen");
+const padSlots = $("#ach-pad-slots");
+const padMsg = $("#ach-pad-msg");
+const codeForm = $("#ach-code-form");
+const codeInput = $("#ach-code-input");
+const PAD_NAMES = { ArrowUp: "cima", ArrowDown: "baixo", ArrowLeft: "esquerda", ArrowRight: "direita" };
+const PAD_PITCH = { ArrowUp: 18, ArrowDown: 8, ArrowLeft: 11, ArrowRight: 14, b: 4, a: 22 };
+const SECRET_WORDS = [["sasi", "crt"], ["ufac", "ufac"]];
+let padKeys = [];
+let padBusy = false;
+let padTimer = null;
+
+function resetPad() {
+  clearTimeout(padTimer);
+  padKeys = [];
+  if (padSlots) padSlots.innerHTML = konamiSeq.map(() => `<span class="ach-slot"></span>`).join("");
+  padScreen?.classList.remove("is-msg", "is-ok", "is-bad");
+  if (padMsg) padMsg.textContent = "";
+}
+
+function padSay(text, ok) {
+  padScreen.classList.remove("is-ok", "is-bad");
+  void padScreen.offsetWidth; // reinicia a animação quando o aviso se repete
+  padScreen.classList.add("is-msg", ok ? "is-ok" : "is-bad");
+  padMsg.textContent = text;
+}
+
+function padAccept(id) {
+  padBusy = true;
+  clearTimeout(padTimer);
+  padSay("CÓDIGO ACEITO!", true);
+  padTimer = window.setTimeout(() => {
+    padBusy = false;
+    resetPad();
+    runSecret(id);
+  }, 650);
+}
+
+function padReject(text) {
+  padSay(text, false);
+  play8BitSfx("nope", 0, true);
+  clearTimeout(padTimer);
+  padTimer = window.setTimeout(resetPad, 1500);
+}
+
+function padSlotHtml(key) {
+  if (!PAD_NAMES[key]) return key.toUpperCase();
+  const dir = key.slice(5).toLowerCase();
+  return `<svg class="px-dir-${dir}" aria-hidden="true" focusable="false"><use href="#px-arrow"></use></svg><span class="sr-only">${PAD_NAMES[key]}</span>`;
+}
+
+document.querySelectorAll("[data-pad]").forEach(btn =>
+  btn.addEventListener("click", () => {
+    btn.classList.remove("is-hit");
+    void btn.offsetWidth;
+    btn.classList.add("is-hit");
+    window.setTimeout(() => btn.classList.remove("is-hit"), 140);
+    if (padBusy || !padScreen || !padSlots || !padMsg) return;
+    if (padScreen.classList.contains("is-msg")) resetPad();
+    const key = btn.dataset.pad;
+    const slot = padSlots.children[padKeys.length];
+    padKeys.push(key);
+    if (slot) {
+      slot.innerHTML = padSlotHtml(key);
+      slot.classList.add("is-filled");
+    }
+    if (padKeys.length < konamiSeq.length) play8BitSfx("step", PAD_PITCH[key], true);
+    else if (isKonami(padKeys)) padAccept("konami");
+    else padReject("CÓDIGO ERRADO");
+  })
+);
+
+codeForm?.addEventListener("submit", e => {
+  e.preventDefault();
+  if (padBusy || !codeInput || !padScreen || !padMsg) return;
+  const code = codeInput.value.normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().replace(/[^a-z0-9]/g, "");
+  if (!code) {
+    codeInput.focus();
+    return;
+  }
+  const hit = SECRET_WORDS.find(([word]) => code.includes(word));
+  if (hit) {
+    codeInput.value = "";
+    codeInput.blur();
+    padAccept(hit[1]);
+  } else {
+    padReject("CÓDIGO INVÁLIDO");
+    codeInput.select();
+  }
+});
+
+// Fechar a janela zera o controle (menos no meio de um código aceito).
+achievementsDialog?.addEventListener("close", () => {
+  if (!padBusy) resetPad();
+});
+resetPad();
 
 // INSERT COIN no rodapé: 3 fichas chamam o "player 2".
 const coinBtn = $("#insert-coin");

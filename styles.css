@@ -5984,6 +5984,312 @@ main {
   font-size: 12px;
 }
 
+/* Controle do player 1: no celular (sem teclado), direcional, B/A e campo de
+   código fazem os segredos de teclado. Fica no fim da janela de segredos. */
+.ach-pad {
+  --key: 44px;
+  --btn: 52px;
+  margin-top: 16px;
+  padding: 14px;
+  border: 1px solid rgba(169, 200, 232, 0.25);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.ach-pad-kicker {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  color: var(--lime-neon);
+  font: 400 9px/1.4 var(--pixel);
+}
+
+.ach-pad-kicker .px-icon {
+  flex: none;
+  width: 20px;
+  height: 20px;
+}
+
+.ach-pad-lead {
+  margin: 6px 0 12px;
+  color: #a9b4d6;
+  font-size: 12.5px;
+  line-height: 1.4;
+}
+
+/* Visor: 10 casas para o código; os avisos aparecem no lugar delas */
+.ach-pad-screen {
+  display: grid;
+  place-items: center;
+  min-height: 48px;
+  padding: 8px 12px;
+  border: 2px solid #1b2147;
+  border-radius: 10px;
+  background: #020627;
+  box-shadow: inset 0 0 18px rgba(0, 255, 51, 0.08);
+  transition: border-color 0.15s ease;
+}
+
+.ach-pad-slots {
+  display: grid;
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+  gap: 5px;
+  width: 100%;
+  max-width: 300px;
+}
+
+.ach-slot {
+  display: grid;
+  place-items: center;
+  height: 24px;
+  border-bottom: 2px solid #262e5c;
+  color: var(--lime-neon);
+  font: 400 11px/1 var(--pixel);
+}
+
+.ach-slot.is-filled {
+  border-bottom-color: rgba(0, 255, 51, 0.5);
+}
+
+.ach-slot svg {
+  width: 12px;
+  height: 12px;
+  shape-rendering: crispEdges;
+}
+
+.ach-pad-msg {
+  display: none;
+  font: 400 11px/1.5 var(--pixel);
+  text-align: center;
+}
+
+.ach-pad-screen.is-msg .ach-pad-slots {
+  display: none;
+}
+
+.ach-pad-screen.is-msg .ach-pad-msg {
+  display: block;
+}
+
+.ach-pad-screen.is-ok {
+  border-color: rgba(0, 255, 51, 0.65);
+}
+
+.ach-pad-screen.is-ok .ach-pad-msg {
+  color: var(--lime-neon);
+  animation: padBlink 0.5s steps(2, end) 2;
+}
+
+.ach-pad-screen.is-bad {
+  border-color: rgba(255, 99, 99, 0.7);
+  animation: padShake 0.36s steps(6, end);
+}
+
+.ach-pad-screen.is-bad .ach-pad-msg {
+  color: #ff8a8a;
+}
+
+@keyframes padBlink {
+  50% { opacity: 0.25; }
+}
+
+@keyframes padShake {
+  20%, 60% { transform: translateX(-4px); }
+  40%, 80% { transform: translateX(4px); }
+}
+
+/* Direcional em cruz e botões B/A (B à esquerda, A à direita, como no NES) */
+.ach-pad-body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  max-width: 320px;
+  margin: 14px auto 0;
+}
+
+.ach-dpad {
+  display: grid;
+  flex: none;
+  grid-template-columns: repeat(3, var(--key));
+  grid-template-rows: repeat(3, var(--key));
+}
+
+.ach-key {
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 0;
+  background: #1b2147;
+  color: #c9d0e8;
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.35);
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+  transition: background-color 0.1s ease, color 0.1s ease;
+}
+
+.ach-key svg {
+  width: 18px;
+  height: 18px;
+  shape-rendering: crispEdges;
+}
+
+.ach-key--up { grid-area: 1 / 2; border-radius: 8px 8px 0 0; }
+.ach-key--left { grid-area: 2 / 1; border-radius: 8px 0 0 8px; }
+.ach-key--right { grid-area: 2 / 3; border-radius: 0 8px 8px 0; }
+.ach-key--down { grid-area: 3 / 2; border-radius: 0 0 8px 8px; }
+
+.ach-dpad-hub {
+  grid-area: 2 / 2;
+  background: #1b2147;
+}
+
+.px-dir-down { transform: rotate(180deg); }
+.px-dir-left { transform: rotate(-90deg); }
+.px-dir-right { transform: rotate(90deg); }
+
+.ach-key:active,
+.ach-key.is-hit {
+  background: #2b356b;
+  color: var(--lime-neon);
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.35);
+}
+
+.ach-ab {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 12px;
+}
+
+.ach-key--btn {
+  width: var(--btn);
+  height: var(--btn);
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #ffb35c, #FF8E17 55%, #c45f00);
+  color: #2a1200;
+  font: 400 14px/1 var(--pixel);
+  box-shadow: inset 0 -4px 0 rgba(0, 0, 0, 0.28), 0 3px 0 #7a3a00;
+}
+
+.ach-key--b { margin-top: 22px; }
+.ach-key--a { margin-bottom: 22px; }
+
+.ach-key--btn:active,
+.ach-key--btn.is-hit {
+  background: radial-gradient(circle at 35% 30%, #ffc27a, #ff9d33 55%, #d96b00);
+  color: #2a1200;
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.3), 0 1px 0 #7a3a00;
+  transform: translateY(2px);
+}
+
+.ach-code {
+  margin-top: 16px;
+}
+
+.ach-code-label {
+  display: block;
+  margin-bottom: 6px;
+  color: #c9d0e8;
+  font: 700 12.5px "Space Grotesk", sans-serif;
+}
+
+.ach-code-row {
+  display: flex;
+  gap: 8px;
+}
+
+.ach-code-input {
+  flex: 1;
+  min-width: 0;
+  min-height: 46px;
+  padding: 0 12px;
+  border: 2px solid #2b356b;
+  border-radius: 10px;
+  background: #020627;
+  color: #ffffff;
+  /* 16px evita o zoom automático do iPhone ao tocar no campo. */
+  font: 700 16px/1 "Space Grotesk", sans-serif;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.ach-code-input::placeholder {
+  color: #5c6596;
+  opacity: 1;
+}
+
+.ach-code-input:focus {
+  outline: none;
+  border-color: var(--lime-neon);
+  box-shadow: 0 0 0 3px rgba(0, 255, 51, 0.18);
+}
+
+.ach-code-ok {
+  flex: none;
+  min-width: 64px;
+  min-height: 46px;
+  padding: 0 14px;
+  border: 0;
+  border-radius: 10px;
+  background: var(--lime-neon);
+  color: #000431;
+  font: 400 12px/1 var(--pixel);
+  box-shadow: inset 0 -3px 0 rgba(0, 0, 0, 0.25);
+  touch-action: manipulation;
+}
+
+.ach-code-ok:active {
+  box-shadow: inset 0 2px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(1px);
+}
+
+@media (max-width: 380px) {
+  .ach-pad {
+    --key: 40px;
+    --btn: 46px;
+    padding: 12px;
+  }
+
+  .ach-pad-body {
+    gap: 10px;
+  }
+
+  .ach-ab {
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ach-pad-screen.is-ok .ach-pad-msg,
+  .ach-pad-screen.is-bad {
+    animation: none;
+  }
+}
+
+/* Toques rápidos nos segredos (logo, faixa, ficha e console) sem o zoom de
+   toque duplo do celular. */
+.hero-logo-trigger,
+.ticker,
+.insert-coin,
+.jam-window {
+  touch-action: manipulation;
+}
+
+/* No toque, o invasor da faixa ganha uma área maior para o dedo (sem mudar o desenho). */
+@media (pointer: coarse) {
+  .ticker .ticker-seq > .ticker-invader {
+    position: relative;
+    z-index: 1;
+    margin: -9px -12px;
+    padding: 9px 12px;
+  }
+}
+
 /* Aviso de conquista: medalha que surge e barra que abre (estilo console) */
 .ach-toast {
   position: fixed;
