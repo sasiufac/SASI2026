@@ -202,7 +202,6 @@ export const schedule = [
   activity("24", "11:00", "12:00", "A Evolução dos Direitos Humanos, a Internet como Direito Fundamental e os Desafios do Manejo Digital", "Palestra", "Sabrina Cassol e Gean Wenderson Sampaio Rebouças"),
   activity("24", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("24", "14:00", "17:00", "Introdução à Godot — Crie seu primeiro jogo", "Minicurso", "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque", "Lab 01 Web Academy", { seats: "30" }),
-  activity("24", "14:00", "17:00", "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial", "Minicurso", "Lucas (HEADSCON)", "", { seats: "30" }),
 
   // Quarta-feira, 25/11
   activity("25", "07:30", "08:00", "Credenciamento", "Institucional"),
@@ -235,7 +234,7 @@ export const schedule = [
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra", "Marcelo Minutti"),
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora da Game Jam"),
+  activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora: Amanda Mafra Borges, Flávio Miranda de Farias e Guilherme Félix Cavalcante"),
   activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("27", "15:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "30", ...WIE }),
   activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "Lab 01 Web Academy", { note: "Para estudantes de ensino superior em computação", seats: "30" }),
@@ -266,12 +265,6 @@ export const workshops = [
     day: "Terça, 24/11", time: "14h–17h", icon: "gamepad", seats: "30", place: "Lab 01 Web Academy",
     description: "Godot Engine na prática: cenas, nós e GDScript para montar um jogo simples. Um bom aquecimento para a Game Jam.",
     speaker: "Luís Geovani de Lima Moraes e Caio Gabriel Pontes de Albuquerque"
-  },
-  {
-    title: "Treinamento em Engenharia Artificial — Módulo 1: A Inferência em Modelos Locais de Inteligência Artificial",
-    day: "Terça, 24/11", time: "14h–17h", icon: "chip", seats: "30",
-    description: "",
-    speaker: "Lucas (HEADSCON)"
   },
   {
     title: "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition",
@@ -488,11 +481,6 @@ export const guests = [
     links: [lattes("8242385965340751")]
   },
   {
-    name: "Lucas (HEADSCON)", role: "Ministrante",
-    affiliation: "HEADSCON",
-    photo: ""
-  },
-  {
     name: "Elcio Hideiti Shiguemori", title: "Prof. Dr.", role: "Palestrante",
     affiliation: "IEAv/DCTA · Pesquisador titular e docente no INPE e no ITA",
     bio: "Doutor em Computação Aplicada pelo INPE, é pesquisador do Instituto de Estudos Avançados e docente das pós-graduações do INPE e do ITA. Trabalha com IA, aprendizado de máquina, visão computacional e navegação aérea autônoma.",
@@ -562,12 +550,11 @@ export const guests = [
     photo: photo("mirelle-campos-gois"),
     links: [lattes("1973059060882754")]
   },
-  // Sem foto por enquanto (card compacto).
   {
     name: "Gleice Beatriz Mourão Araújo", role: "Ministrante",
     affiliation: "UFAC · Graduanda em Sistemas de Informação",
     bio: "Tem experiência em engenharia de software e participa da pesquisa Saúde Digital, com bolsa da UFAC, que investiga o prontuário eletrônico na rede do G-MUS. Passou pelo N.A.V.E Tech Acre e pelo Web Academy.",
-    photo: "",
+    photo: photo("gleice-beatriz-mourao-araujo"),
     links: [lattes("2102049538589138")]
   },
   // Apresentam pesquisa no VI WPPGCC e ainda não mandaram foto e currículo (cards compactos).
@@ -584,7 +571,7 @@ export const guests = [
     links: [lattes("4595049657680778")]
   },
   {
-    name: "Guilherme Félix Cavalcante", role: "Ministrante",
+    name: "Guilherme Félix Cavalcante", role: "Ministrante e jurado da Game Jam",
     affiliation: "UFAC · Graduando em Sistemas de Informação e bolsista PIBIT/CNPq",
     bio: "Pesquisa jogos digitais para a saúde, prototipados em ambiente de Game Jam, e aplica ciência de dados e IA em projetos interdisciplinares. Foi desenvolvedor full-stack no programa WebAcademy (Motorola e UFAC).",
     photo: photo("guilherme-felix-cavalcante"), photoPosition: "50% 50%", photoTranslate: "2%, 1%", photoScale: 1.08,
@@ -690,7 +677,21 @@ export const guests = [
   },
   {
     name: "Tiago da Silva Félix", role: "Ministrante",
-    affiliation: "Minicurso de Game Design e Narrativa · LASI",
+    affiliation: "Psicólogo formado pela UFAC",
+    bio: "Tem experiência em psicologia social e políticas públicas, com estágios em instituições públicas e trabalho em grupos terapêuticos. Também já deu aulas de inglês.",
     photo: photo("tiago-da-silva-felix")
+  },
+  // Comissão avaliadora da Game Jam (pasta "Game Jam - Jurados", 19/11)
+  {
+    name: "Flávio Miranda de Farias", title: "Prof. Dr.", role: "Jurado da Game Jam",
+    affiliation: "IFAC · Professor; docente do PPGCC/UFAC",
+    bio: "Doutor em Computação pela UFF, com tese em realidade virtual para aplicações mulsemídia interativas, e mestre pela UFRGS. Formado em Sistemas de Informação pela UFAC, pesquisa realidade virtual, multimídia e desenvolvimento de jogos.",
+    photo: photo("flavio-miranda-de-farias"),
+    links: [lattes("0538014484812750")]
+  },
+  {
+    name: "Amanda Mafra Borges", role: "Jurada da Game Jam",
+    affiliation: "Bacharel em Medicina e graduanda em Enfermagem",
+    photo: photo("amanda-mafra-borges")
   }
 ];

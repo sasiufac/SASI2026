@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261119a";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261119b";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);
@@ -1643,7 +1643,7 @@ const TICKER_FACTS = {
   "COMUNIDADE": "🤝 CASI, LASI, IEEE e AWS Builder Group ajudam a SASI a acontecer.",
   "JOGOS": "🎮 O tema da 3ª edição é jogos e tecnologia.",
   "GAME JAM": "🕹️ 70 horas para criar um jogo! Inscrições até 23/11 às 15h. Prêmios: R$ 400, R$ 300 e R$ 200.",
-  "INTELIGÊNCIA ARTIFICIAL": "🤖 A IA aparece em 6 minicursos e oficinas da semana.",
+  "INTELIGÊNCIA ARTIFICIAL": "🤖 A IA aparece em 5 minicursos da semana.",
   "PIXEL ART": "🎨 Minicurso de Pixel Art: segunda (23/11), às 14h.",
   "COMPUTAÇÃO EM NUVEM": "☁️ Dois minicursos de AWS: quarta (25/11) e sexta (27/11).",
   "VISÃO COMPUTACIONAL": "👁️ Conheça o PAVIC-Lab por dentro na sexta (27/11), às 15h.",
