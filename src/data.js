@@ -21,8 +21,6 @@ export const days = [
 // sprite), photos [{ src, alt, caption }],
 // lat/lng (ponto exato) ou query (busca) e mapsUrl (link de rota).
 // A chave de cada local é o texto usado no campo "place" da programação.
-// Os laboratórios do curso (Lab 01 SI e Lab 02 SI) ainda não têm página e
-// aparecem como texto.
 const lab = file => "./assets/labs/" + file;
 const BLOCO_PAVIC_WEB = { src: lab("bloco-pavic-webacademy.webp"), alt: "Fachada do bloco com as marcas UFAC, Motorola, Web Academy e PAVIC Lab" };
 
@@ -99,6 +97,43 @@ export const places = {
     lat: -9.956458,
     lng: -67.865235,
     mapsUrl: "https://maps.app.goo.gl/NF6P9y9st3yyWJb69"
+  },
+  // Laboratórios do curso de SI: fotos e pontos do mapa enviados pela organização em 19/11.
+  "Lab 01 SI": {
+    kicker: "LABORATÓRIO · CURSO DE SI",
+    name: "Lab 01 SI",
+    subtitle: "Laboratório Charles Babbage · UFAC, Campus Rio Branco",
+    logo: "./assets/partners/ufac.webp",
+    logoSize: [204, 300],
+    thanks: {
+      icon: "alien", badge: "LEVEL 01",
+      title: "VALEU, LAB 01!",
+      text: "Obrigado por receber a SASI no Laboratório Charles Babbage! Na quarta, é aqui que a turma aprende game design e narrativa para jogos digitais."
+    },
+    photos: [
+      { src: lab("si/lab01-si.webp"), alt: "Laboratório de informática com fileiras de computadores nas bancadas e janelas altas" }
+    ],
+    lat: -9.9568943,
+    lng: -67.8642304,
+    mapsUrl: "https://maps.app.goo.gl/wHkSntogzpp3V41j7"
+  },
+  "Lab 02 SI": {
+    kicker: "LABORATÓRIO · CURSO DE SI",
+    name: "Lab 02 SI",
+    subtitle: "Laboratório do curso de Sistemas de Informação · UFAC, Campus Rio Branco",
+    logo: "./assets/partners/ufac.webp",
+    logoSize: [204, 300],
+    thanks: {
+      icon: "gamepad", badge: "COMBO x5",
+      title: "VALEU, LAB 02!",
+      text: "Obrigado por segurar a semana inteira! Pixel art, a abertura da Game Jam, Docker, LeapSpace e testes automatizados passam por aqui: cinco atividades, um combo e tanto."
+    },
+    photos: [
+      { src: lab("si/lab02-si.webp"), alt: "Laboratório de informática com computadores ligados nas bancadas, todos com a tela da Maratona de Programação" }
+    ],
+    lat: -9.956872,
+    lng: -67.864316,
+    mapsUrl: "https://maps.app.goo.gl/3yUCHfymfMCT2hLs8"
   },
   "NaveTech": {
     kicker: "LABORATÓRIO · 2º PISO",

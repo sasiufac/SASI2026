@@ -38,7 +38,7 @@ O arquivo `.nojekyll` impede o processamento Jekyll e mantém a publicação fie
 - `assets/favicon-comissao-32.png`, `assets/favicon-comissao-192.png` e `assets/apple-touch-icon.png`: ícone da aba do navegador, feito com a logo da Comissão.
 - `assets/logosasi-compact.svg`: logotipo SASI UFAC 2026 usado no topo (versão leve).
 - `assets/logosasi.svg`: arquivo original do logotipo (1,76 MB), não é carregado pelo site.
-- `assets/labs/`: fotos e logos dos locais (Centro de Convivência/SebraeLab, PAVIC-Lab, Web Academy e NaveTech), em WebP.
+- `assets/labs/`: fotos e logos dos locais (Centro de Convivência/SebraeLab, PAVIC-Lab, Web Academy, Lab 01 e Lab 02 de SI e NaveTech; os labs de SI usam o logo da UFAC), em WebP.
 - `assets/share/conquista-sasi2026.jpg`: arte para compartilhar a platina (só é baixada quando alguém completa os segredos).
 
 ## Manutenção de conteúdo
