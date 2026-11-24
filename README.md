@@ -3,7 +3,7 @@
 Site da **3ª Semana Acadêmica de Sistemas de Informação da Universidade Federal do Acre**.
 
 **Datas:** 23 a 27 de novembro de 2026.  
-**Local:** Centro de Convivência da UFAC, Rio Branco, Acre.
+**Local:** UFAC, Rio Branco, Acre. Palco principal no Centro de Convivência na segunda (23/11) e no Auditório do Bloco de Elétrica de terça a sexta (24 a 27/11); minicursos e oficinas nos laboratórios.
 
 ## Executar localmente
 

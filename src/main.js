@@ -1,4 +1,4 @@
-import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261120c";
+import { days, schedule, workshops, partners, guests, places, wppgcc } from "./data.js?v=20261124a";
 
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const $ = selector => document.querySelector(selector);

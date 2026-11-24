@@ -25,8 +25,20 @@ const lab = file => "./assets/labs/" + file;
 const BLOCO_PAVIC_WEB = { src: lab("bloco-pavic-webacademy.webp"), alt: "Fachada do bloco com as marcas UFAC, Motorola, Web Academy e PAVIC Lab" };
 
 export const places = {
+  // Palco principal desde terça, 24/11 (mudança avisada pela organização em 24/11, com o ponto do mapa).
+  "Auditório do Bloco de Elétrica": {
+    kicker: "PONTO DE ENCONTRO · DESDE 24/11",
+    name: "Auditório do Bloco de Elétrica",
+    subtitle: "UFAC, Campus Rio Branco",
+    logo: "./assets/partners/ufac.webp",
+    logoSize: [204, 300],
+    about: "Desde terça, 24/11, o credenciamento, as palestras, as mesas-redondas, o painel, o VI WPPGCC e a premiação da Game Jam acontecem aqui, no lugar do Centro de Convivência. Os minicursos e as oficinas continuam nos laboratórios.",
+    lat: -9.95527,
+    lng: -67.867142,
+    mapsUrl: "https://maps.app.goo.gl/fY3koWNMDFwnkWwZA"
+  },
   "Centro de Convivência": {
-    kicker: "PONTO DE ENCONTRO",
+    kicker: "ABERTURA · 23/11",
     name: "Centro de Convivência",
     subtitle: "SebraeLab · UFAC, Campus Rio Branco",
     logo: lab("centro/sebraelab-logo.webp"),
@@ -35,7 +47,7 @@ export const places = {
     thanks: {
       theme: "sebrae", icon: "diamond", badge: "+30 VIDAS",
       title: "VALEU, SEBRAELAB!",
-      text: "Obrigado por ser o palco principal da SASI! É aqui que a gente faz o credenciamento toda manhã, celebra os 30 anos de SI na UFAC e aprende a empreender. Vocês ganharam +30 VIDAS e um lugar especial no nosso coração."
+      text: "Obrigado por receber a abertura da SASI! Foi aqui que a gente fez o primeiro credenciamento e celebrou os 30 anos de SI na UFAC. Vocês ganharam +30 VIDAS e um lugar especial no nosso coração."
     },
     photos: [
       { src: lab("centro/sebraelab-evento.webp"), alt: "Grupo reunido no palco do SebraeLab, com a plateia sentada em frente" },
@@ -167,7 +179,10 @@ const LASI_TESTES_TEAM = "Luís Antônio Lima Santiago, Marcos Vinícius Moraes 
 
 // "time" e "endTime" usam HH:mm (alimentam <time datetime>). "extra" aceita
 // "note" (aviso curto) e "seats" (vagas da inscrição no Even3).
-const activity = (day, time, endTime, title, type, speaker = "", place = "Centro de Convivência", extra = {}) => ({
+// Palco principal (credenciamento, palestras, mesas e WPPGCC): Centro de Convivência
+// na segunda, 23/11; desde terça, 24/11, o auditório do Bloco de Elétrica.
+const palcoDoDia = day => (day === "23" ? "Centro de Convivência" : "Auditório do Bloco de Elétrica");
+const activity = (day, time, endTime, title, type, speaker = "", place = palcoDoDia(day), extra = {}) => ({
   day, time, endTime, title, type, speaker, place, ...extra
 });
 
@@ -211,7 +226,7 @@ const WP_TALKS = [
 const joinNames = names => (names.length > 1 ? names.slice(0, -1).join(", ") + " e " + names[names.length - 1] : names[0] || "");
 // O "speaker" com os nomes liga cada apresentação ao card do convidado.
 const wpSession = (day, time, endTime, n, talks) =>
-  activity(day, time, endTime, `Apresentações de pesquisas de mestrado · Sessão ${n}`, "Apresentação", joinNames(talks.map(t => t.by)), "Centro de Convivência", { ...WP, talks });
+  activity(day, time, endTime, `Apresentações de pesquisas de mestrado · Sessão ${n}`, "Apresentação", joinNames(talks.map(t => t.by)), palcoDoDia(day), { ...WP, talks });
 
 export const schedule = [
   // Segunda-feira, 23/11
@@ -240,7 +255,7 @@ export const schedule = [
 
   // Quarta-feira, 25/11
   activity("25", "07:30", "08:00", "Credenciamento", "Institucional"),
-  activity("25", "08:00", "09:30", "Aplicações e Desafios da Inteligência Artificial e dos Sistemas Inteligentes em Tecnologias Aeroespaciais", "Palestra", "Elcio Hideiti Shiguemori", "Centro de Convivência", WP),
+  activity("25", "08:00", "09:30", "Aplicações e Desafios da Inteligência Artificial e dos Sistemas Inteligentes em Tecnologias Aeroespaciais", "Palestra", "Elcio Hideiti Shiguemori", palcoDoDia("25"), WP),
   activity("25", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
   wpSession("25", "09:45", "10:45", 1, WP_TALKS.slice(0, 3)),
   activity("25", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
