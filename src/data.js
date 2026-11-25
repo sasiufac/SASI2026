@@ -25,14 +25,26 @@ const lab = file => "./assets/labs/" + file;
 const BLOCO_PAVIC_WEB = { src: lab("bloco-pavic-webacademy.webp"), alt: "Fachada do bloco com as marcas UFAC, Motorola, Web Academy e PAVIC Lab" };
 
 export const places = {
-  // Palco principal desde terça, 24/11 (mudança avisada pela organização em 24/11, com o ponto do mapa).
+  // Palco principal desde quarta, 25/11 (nova mudança avisada pela organização em 25/11, com o ponto do mapa).
+  "Auditório do Bloco de Mestrados": {
+    kicker: "PONTO DE ENCONTRO · DESDE 25/11",
+    name: "Auditório do Bloco de Mestrados",
+    subtitle: "UFAC, Campus Rio Branco",
+    logo: "./assets/partners/ufac.webp",
+    logoSize: [204, 300],
+    about: "Desde quarta, 25/11, o credenciamento, as palestras, as mesas-redondas, o painel, o VI WPPGCC e a premiação da Game Jam acontecem aqui. Na segunda, o palco foi o Centro de Convivência e, na terça, o Auditório do Bloco de Elétrica. Os minicursos e as oficinas continuam nos laboratórios.",
+    lat: -9.956645,
+    lng: -67.865468,
+    mapsUrl: "https://maps.app.goo.gl/MyRAdffSpsifLbhq6"
+  },
+  // Palco principal na terça, 24/11.
   "Auditório do Bloco de Elétrica": {
-    kicker: "PONTO DE ENCONTRO · DESDE 24/11",
+    kicker: "TERÇA · 24/11",
     name: "Auditório do Bloco de Elétrica",
     subtitle: "UFAC, Campus Rio Branco",
     logo: "./assets/partners/ufac.webp",
     logoSize: [204, 300],
-    about: "Desde terça, 24/11, o credenciamento, as palestras, as mesas-redondas, o painel, o VI WPPGCC e a premiação da Game Jam acontecem aqui, no lugar do Centro de Convivência. Os minicursos e as oficinas continuam nos laboratórios.",
+    about: "Na terça, 24/11, o credenciamento, as palestras e a mesa-redonda da manhã aconteceram aqui. Desde quarta, 25/11, o palco principal é o Auditório do Bloco de Mestrados.",
     lat: -9.95527,
     lng: -67.867142,
     mapsUrl: "https://maps.app.goo.gl/fY3koWNMDFwnkWwZA"
@@ -180,8 +192,9 @@ const LASI_TESTES_TEAM = "Luís Antônio Lima Santiago, Marcos Vinícius Moraes 
 // "time" e "endTime" usam HH:mm (alimentam <time datetime>). "extra" aceita
 // "note" (aviso curto) e "seats" (vagas da inscrição no Even3).
 // Palco principal (credenciamento, palestras, mesas e WPPGCC): Centro de Convivência
-// na segunda, 23/11; desde terça, 24/11, o auditório do Bloco de Elétrica.
-const palcoDoDia = day => (day === "23" ? "Centro de Convivência" : "Auditório do Bloco de Elétrica");
+// na segunda, 23/11; na terça, 24/11, o auditório do Bloco de Elétrica; desde quarta, 25/11, o auditório do
+// Bloco de Mestrados.
+const palcoDoDia = day => (day === "23" ? "Centro de Convivência" : day === "24" ? "Auditório do Bloco de Elétrica" : "Auditório do Bloco de Mestrados");
 const activity = (day, time, endTime, title, type, speaker = "", place = palcoDoDia(day), extra = {}) => ({
   day, time, endTime, title, type, speaker, place, ...extra
 });
@@ -343,7 +356,7 @@ export const workshops = [
   },
     {
     title: "Docker para Desenvolvedores",
-    day: "Quarta, 26/11", time: "14h–16h", icon: "terminal", seats: "30", place: "Lab 01 SI", requirement: "Noções básicas de terminal e de programação",
+    day: "Quinta, 26/11", time: "14h–16h", icon: "terminal", seats: "30", place: "Lab 01 SI", requirement: "Noções básicas de terminal e de programação",
     description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
     speaker: "Flora Oliveira França"
   },
