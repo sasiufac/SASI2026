@@ -262,7 +262,6 @@ export const schedule = [
   wpSession("25", "11:00", "12:00", 2, WP_TALKS.slice(3, 6)),
   activity("25", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("25", "14:00", "16:00", "Visão Computacional e Reconhecimento Facial na Nuvem com Amazon Rekognition", "Minicurso", AWS_TEAM, "Lab 01 Web Academy", { note: "Para estudantes de cursos de computação", seats: "30" }),
-  activity("25", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "Lab 02 SI", { seats: "25" }),
   activity("25", "14:00", "16:00", "Introdução ao Game Design e Narrativa para Jogos Digitais", "Minicurso", "Italo Oliveira e Tiago da Silva Félix", "Lab 01 SI", { seats: "30" }),
 
   // Quinta-feira, 26/11
@@ -274,6 +273,7 @@ export const schedule = [
   wpSession("26", "11:00", "12:00", 4, WP_TALKS.slice(9, 12)),
   activity("26", "12:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("26", "14:00", "18:00", "Saúde Digital", "Minicurso", SAUDE_TEAM, "Lab 01 Web Academy", { seats: "30" }),
+  activity("26", "14:00", "16:00", "Docker para Desenvolvedores", "Minicurso", "Flora Oliveira França", "Lab 01 SI", { seats: "30" }),
   activity("26", "15:00", "", "Término SASI: Game Jam", "Game Jam", "", "On-line · itch.io", { note: "Prazo final de envio dos jogos" }),
   activity("26", "16:00", "18:00", "Inteligência Artificial na Pesquisa Científica: explorando o LeapSpace na prática", "Minicurso", "Guilherme Félix Cavalcante", "Lab 02 SI", { seats: "30" }),
 
