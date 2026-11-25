@@ -322,12 +322,7 @@ export const workshops = [
     description: "Análise de imagens, leitura de texto (OCR), atributos faciais e busca de rostos com o Amazon Rekognition, pelo console e pela AWS CLI.",
     speaker: AWS_TEAM
   },
-  {
-    title: "Docker para Desenvolvedores",
-    day: "Quarta, 25/11", time: "14h–16h", icon: "terminal", seats: "25", place: "Lab 02 SI", requirement: "Noções básicas de terminal e de programação",
-    description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
-    speaker: "Flora Oliveira França"
-  },
+
   {
     title: "Introdução ao Game Design e Narrativa para Jogos Digitais",
     day: "Quarta, 25/11", time: "14h–16h", icon: "alien", seats: "30", place: "Lab 01 SI", requirement: "Sem conhecimento prévio",
@@ -345,6 +340,12 @@ export const workshops = [
     day: "Quinta, 26/11", time: "16h–18h", icon: "book", seats: "30", place: "Lab 02 SI",
     description: "IA como apoio à pesquisa com o LeapSpace, da Elsevier: busca de literatura, leitura assistida, comparação de artigos e verificação das fontes.",
     speaker: "Guilherme Félix Cavalcante"
+  },
+    {
+    title: "Docker para Desenvolvedores",
+    day: "Quarta, 26/11", time: "14h–16h", icon: "terminal", seats: "30", place: "Lab 01 SI", requirement: "Noções básicas de terminal e de programação",
+    description: "Conteinerização na prática: imagens, containers, Dockerfile e Docker Compose, do ambiente no Windows com WSL 2 ou no Linux até uma aplicação web rodando em container.",
+    speaker: "Flora Oliveira França"
   },
   {
     title: "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC",
