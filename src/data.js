@@ -25,14 +25,13 @@ const lab = file => "./assets/labs/" + file;
 const BLOCO_PAVIC_WEB = { src: lab("bloco-pavic-webacademy.webp"), alt: "Fachada do bloco com as marcas UFAC, Motorola, Web Academy e PAVIC Lab" };
 
 export const places = {
-  // Palco principal desde quarta, 25/11 (nova mudança avisada pela organização em 25/11, com o ponto do mapa).
   "Auditório do Bloco de Mestrados": {
-    kicker: "PONTO DE ENCONTRO · DESDE 25/11",
+    kicker: "QUARTA E QUINTA · 25 E 26/11",
     name: "Auditório do Bloco de Mestrados",
     subtitle: "UFAC, Campus Rio Branco",
     logo: "./assets/partners/ufac.webp",
     logoSize: [204, 300],
-    about: "Desde quarta, 25/11, o credenciamento, as palestras, as mesas-redondas, o painel, o VI WPPGCC e a premiação da Game Jam acontecem aqui. Na segunda, o palco foi o Centro de Convivência e, na terça, o Auditório do Bloco de Elétrica. Os minicursos e as oficinas continuam nos laboratórios.",
+    about: "O credenciamento e as atividades da manhã de quarta e quinta, incluindo o VI WPPGCC, acontecem aqui. Na sexta, 27/11, o palco principal é o Centro de Convivência.",
     lat: -9.956645,
     lng: -67.865468,
     mapsUrl: "https://maps.app.goo.gl/MyRAdffSpsifLbhq6"
@@ -44,17 +43,18 @@ export const places = {
     subtitle: "UFAC, Campus Rio Branco",
     logo: "./assets/partners/ufac.webp",
     logoSize: [204, 300],
-    about: "Na terça, 24/11, o credenciamento, as palestras e a mesa-redonda da manhã aconteceram aqui. Desde quarta, 25/11, o palco principal é o Auditório do Bloco de Mestrados.",
+    about: "Na terça, 24/11, o credenciamento, as palestras e a mesa-redonda da manhã aconteceram aqui.",
     lat: -9.95527,
     lng: -67.867142,
     mapsUrl: "https://maps.app.goo.gl/fY3koWNMDFwnkWwZA"
   },
   "Centro de Convivência": {
-    kicker: "ABERTURA · 23/11",
+    kicker: "SEGUNDA E SEXTA · 23 E 27/11",
     name: "Centro de Convivência",
     subtitle: "SebraeLab · UFAC, Campus Rio Branco",
     logo: lab("centro/sebraelab-logo.webp"),
     logoSize: [290, 112],
+    about: "O Centro de Convivência recebeu a abertura da SASI na segunda, 23/11, e recebe o credenciamento e as atividades da manhã de sexta, 27/11.",
     links: [{ type: "instagram", url: "https://www.instagram.com/sebraelab_ac/", owner: "SebraeLab" }],
     thanks: {
       theme: "sebrae", icon: "diamond", badge: "+30 VIDAS",
@@ -191,10 +191,9 @@ const LASI_TESTES_TEAM = "Luís Antônio Lima Santiago, Marcos Vinícius Moraes 
 
 // "time" e "endTime" usam HH:mm (alimentam <time datetime>). "extra" aceita
 // "note" (aviso curto) e "seats" (vagas da inscrição no Even3).
-// Palco principal (credenciamento, palestras, mesas e WPPGCC): Centro de Convivência
-// na segunda, 23/11; na terça, 24/11, o auditório do Bloco de Elétrica; desde quarta, 25/11, o auditório do
-// Bloco de Mestrados.
-const palcoDoDia = day => (day === "23" ? "Centro de Convivência" : day === "24" ? "Auditório do Bloco de Elétrica" : "Auditório do Bloco de Mestrados");
+// Palco principal: Centro de Convivência na segunda e na sexta, Auditório do Bloco de Elétrica
+// na terça e Auditório do Bloco de Mestrados na quarta e na quinta.
+const palcoDoDia = day => (day === "23" || day === "27" ? "Centro de Convivência" : day === "24" ? "Auditório do Bloco de Elétrica" : "Auditório do Bloco de Mestrados");
 const activity = (day, time, endTime, title, type, speaker = "", place = palcoDoDia(day), extra = {}) => ({
   day, time, endTime, title, type, speaker, place, ...extra
 });
@@ -293,12 +292,13 @@ export const schedule = [
   // Sexta-feira, 27/11
   activity("27", "07:30", "08:00", "Credenciamento", "Institucional"),
   activity("27", "08:00", "08:30", "Por que seu tiro não pegou? A culpa é da rede: O que redes de computadores e telecom podem ensinar sobre jogos digitais", "Palestra", "César Augusto Borges Fraga"),
-  activity("27", "08:30", "09:30", "Painel HEADSCON", "Painel", "HEADSCON"),
+  activity("27", "08:30", "09:30", "A Comunidade Acreana de Games e seu papel para o desenvolvimento do setor", "Painel HEADSCON", "Flávio Miranda de Farias, Álefe Leonardo, Hecton Magalhães e Ciro Facundo · Mediação: Diogo Soares"),
   activity("27", "09:30", "09:45", "Intervalo", "Intervalo", "", ""),
-  activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra", "Marcelo Minutti"),
+  activity("27", "09:45", "10:45", "Games e o Futuro do Trabalho na Era da IA", "Palestra HEADSCON", "Marcelo Minutti"),
   activity("27", "10:45", "11:00", "Intervalo", "Intervalo", "", ""),
-  activity("27", "11:00", "13:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora: Amanda Mafra Borges, Flávio Miranda de Farias e Guilherme Félix Cavalcante"),
-  activity("27", "13:00", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
+  activity("27", "11:00", "12:00", "Sessão de Avaliação, Exibição de Protótipos e Premiação — SASI: Game Jam", "Game Jam", "Comissão avaliadora: Amanda Mafra Borges, Flávio Miranda de Farias e Guilherme Félix Cavalcante"),
+  activity("27", "12:00", "12:30", "Cerimônia de formalização da Comunidade Acreana de Games", "Institucional"),
+  activity("27", "12:30", "14:00", "Intervalo para almoço", "Intervalo", "", ""),
   activity("27", "15:00", "18:00", "Conhecendo na Prática os Projetos e Pesquisas em Desenvolvimento pelo PAVIC", "Minicurso", "Equipe PAVIC: " + PAVIC_TEAM, "Lab 01 PAVIC", { seats: "30", ...WIE }),
   activity("27", "16:00", "18:00", "AWS Lambda e S3: Automação Orientada a Eventos na Prática", "Minicurso", AWS_TEAM, "Lab 01 Web Academy", { note: "Para estudantes de ensino superior em computação", seats: "30" }),
   activity("27", "16:00", "18:00", "Testes automatizados como guardrails no desenvolvimento assistido por IA", "Minicurso", LASI_TESTES_TEAM, "Lab 02 SI", { seats: "40" })
@@ -786,14 +786,35 @@ export const guests = [
     bio: "Tem experiência em psicologia social e políticas públicas, com estágios em instituições públicas e trabalho em grupos terapêuticos. Também já deu aulas de inglês.",
     photo: photo("tiago-da-silva-felix")
   },
-  // Comissão avaliadora da Game Jam (pasta "Game Jam - Jurados", 19/11)
+  // Participantes do Painel HEADSCON
   {
-    name: "Flávio Miranda de Farias", title: "Prof. Dr.", role: "Jurado da Game Jam",
+    name: "Diogo Soares", role: "Mediador do Painel HEADSCON",
+    affiliation: "Sebrae Acre · Economia Criativa e Games",
+    bio: "É artista, advogado, produtor audiovisual e gestor de projetos. Vocalista e compositor da banda Los Porongas, atua há mais de duas décadas em projetos culturais e socioambientais. É analista do Sebrae no Acre, onde gerencia projetos de economia criativa e games com foco no fortalecimento dos ecossistemas criativos e inovadores da Amazônia.",
+    photo: photo("diogo-soares")
+  },
+  {
+    name: "Flávio Miranda de Farias", title: "Prof. Dr.", role: "Painelista HEADSCON e jurado da Game Jam",
     affiliation: "IFAC · Professor; docente do PPGCC/UFAC",
-    bio: "Doutor em Computação pela UFF, com tese em realidade virtual para aplicações mulsemídia interativas, e mestre pela UFRGS. Formado em Sistemas de Informação pela UFAC, pesquisa realidade virtual, multimídia e desenvolvimento de jogos.",
+    bio: "Doutor em Computação pela UFF e mestre pela UFRGS, é professor no IFAC e na UFAC. Especialista em desenvolvimento de jogos, pesquisa realidade virtual e multimídia. É graduado em Sistemas de Informação pela UFAC.",
     photo: photo("flavio-miranda-de-farias"),
     links: [lattes("0538014484812750")]
   },
+  {
+    name: "Álefe Leonardo", role: "Painelista HEADSCON",
+    affiliation: "Senac Acre · Orientação educacional / SENAI Hub/AC · Coordenação técnica"
+  },
+  {
+    name: "Hecton Magalhães", role: "Painelista HEADSCON",
+    affiliation: "Associação de Nerds do Acre (ANAC) · Presidente",
+    bio: "É arquiteto, promotor de eventos e fundador da Associação de Nerds do Acre (ANAC). Idealizou o Comic Nerd, evento que promove o entretenimento, a economia criativa e a inclusão da juventude e de fãs da cultura pop na Região Norte.",
+    photo: photo("hecton-magalhaes")
+  },
+  {
+    name: "Ciro Facundo", role: "Painelista HEADSCON",
+    affiliation: "BCT Stúdios"
+  },
+  // Comissão avaliadora da Game Jam
   {
     name: "Amanda Mafra Borges", role: "Jurada da Game Jam",
     affiliation: "Bacharel em Medicina e graduanda em Enfermagem",
